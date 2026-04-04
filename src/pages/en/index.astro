@@ -1,0 +1,41 @@
+---
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting...</title>
+    <script is:inline>
+      (function() {
+        const supportedLanguages = ['es', 'en', 'pt'];
+        const defaultLanguage = 'en';
+        
+        // 1. Check localStorage
+        const storedLang = localStorage.getItem('preferred-lang');
+        if (storedLang && supportedLanguages.includes(storedLang)) {
+          window.location.pathname = `/${storedLang}/`;
+          return;
+        }
+
+        // 2. Check navigator.languages for best match
+        const userLangs = navigator.languages || [navigator.language];
+        let matchedLang = null;
+
+        for (const lang of userLangs) {
+          const shortLang = lang.split('-')[0].toLowerCase();
+          if (supportedLanguages.includes(shortLang)) {
+            matchedLang = shortLang;
+            break;
+          }
+        }
+
+        // 3. Fallback to default
+        const finalLang = matchedLang || defaultLanguage;
+        window.location.pathname = `/${finalLang}/`;
+      })();
+    </script>
+  </head>
+  <body>
+    <p>Redirecting / Redireccionando / Redirecionando...</p>
+  </body>
+</html>
