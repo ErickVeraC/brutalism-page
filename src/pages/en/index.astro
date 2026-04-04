@@ -1,41 +1,18 @@
 ---
+import MainLayout from '../../layouts/MainLayout.astro';
 ---
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Redirecting...</title>
-    <script is:inline>
-      (function() {
-        const supportedLanguages = ['es', 'en', 'pt'];
-        const defaultLanguage = 'en';
-        
-        // 1. Check localStorage
-        const storedLang = localStorage.getItem('preferred-lang');
-        if (storedLang && supportedLanguages.includes(storedLang)) {
-          window.location.pathname = `/${storedLang}/`;
-          return;
-        }
 
-        // 2. Check navigator.languages for best match
-        const userLangs = navigator.languages || [navigator.language];
-        let matchedLang = null;
+<MainLayout title="The Nomadic Architect" lang="en">
+	<a href="#blog" slot="nav" class="mono-label">Blog</a>
 
-        for (const lang of userLangs) {
-          const shortLang = lang.split('-')[0].toLowerCase();
-          if (supportedLanguages.includes(shortLang)) {
-            matchedLang = shortLang;
-            break;
-          }
-        }
+	<section id="home">
+		<p class="mono-label">Software Architect / Digital Nomad</p>
+		<h1>The Nomadic<br/>Architect</h1>
+		<p>Building resilient structures in code and space. Minimalist by design, punk by conviction.</p>
+	</section>
 
-        // 3. Fallback to default
-        const finalLang = matchedLang || defaultLanguage;
-        window.location.pathname = `/${finalLang}/`;
-      })();
-    </script>
-  </head>
-  <body>
-    <p>Redirecting / Redireccionando / Redirecionando...</p>
-  </body>
-</html>
+	<section id="blog">
+		<h2 class="mono-label">Latest Thoughts</h2>
+		<p>Coming soon: Architecture, code and sanitization.</p>
+	</section>
+</MainLayout>

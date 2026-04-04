@@ -1,0 +1,76 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	lang: 'es' | 'en' | 'pt';
+}
+
+const { title, lang } = Astro.props;
+
+const navItems = [
+	{ label: '/01_MANIFESTO', href: '#manifesto' },
+	{ label: '/02_BLUEPRINTS', href: '#blueprints' },
+	{ label: '/03_LOG', href: '#log' },
+	{ label: '/04_CONTACT', href: '#contact' },
+];
+
+const languages = [
+	{ code: 'es', label: 'ES' },
+	{ code: 'en', label: 'EN' },
+	{ code: 'pt', label: 'PT' },
+];
+---
+
+<!doctype html>
+<html lang={lang}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{title} | Erick Vera</title>
+	</head>
+	<body>
+		<header>
+			<div class="brand mono-label">
+				<a href="/">/EVERA</a>
+			</div>
+			
+			<nav class="desktop-nav">
+				{navItems.map(item => (
+					<a href={item.href} class="mono-label">{item.label}</a>
+				))}
+			</nav>
+
+			<div class="lang-selector mono-label">
+				[ {languages.map((l, i) => (
+					<>
+						<a href={`/${l.code}/`} class={lang === l.code ? 'active' : ''}>{l.label}</a>
+						{i < languages.length - 1 && ' / '}
+					</>
+				))} ]
+			</div>
+		</header>
+		
+		<main>
+			<slot />
+		</main>
+
+		<footer>
+			<div class="footer-content">
+				<h1 style="color: var(--bg-dark); font-size: 8vw;">READY TO BUILD<br/>WITH LOGIC?</h1>
+				
+				<div class="footer-actions" style="margin-top: 40px;">
+					<a href="https://upwork.com" class="brutal-card" style="background: var(--bg-dark); color: var(--text-main); display: inline-block; text-decoration: none; font-family: var(--font-mono);">
+						[ HIRE_ON_UPWORK ]
+					</a>
+				</div>
+
+				<div class="footer-meta mono-label" style="margin-top: 80px; display: flex; justify-content: space-between; border-top: 2px solid var(--bg-dark); padding-top: 20px;">
+					<div>GITHUB: erickccoder</div>
+					<div>LOCATION: MEXICO_CITY // TLAXCALA</div>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,159 @@
+/* global.css - Neo-Brutalist / Software Architect Identity */
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/satoshi/Satoshi-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/satoshi/Satoshi-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/jetbrains-mono/JetBrainsMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --bg-dark: #171717;
+  --text-main: #FFFFFF;
+  --accent-red: #F20505;
+  --text-muted: #DEDEDE;
+  
+  --font-primary: 'Satoshi', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  --border-main: 2px solid var(--text-main);
+  --shadow-brutal: 6px 6px 0px var(--accent-red);
+  --shadow-white: 4px 4px 0px var(--text-main);
+  
+  --space-unit: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 0 !important;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-dark);
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: var(--font-primary);
+  font-weight: 300;
+  line-height: 1.4;
+  overflow-x: hidden;
+}
+
+/* Typography Giga */
+h1 {
+  font-family: var(--font-primary);
+  font-weight: 900;
+  font-size: 12vw;
+  line-height: 0.85;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+}
+
+h2 {
+  font-family: var(--font-primary);
+  font-weight: 900;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.mono-label {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+}
+
+/* Components */
+.brutal-border {
+  border: var(--border-main);
+}
+
+.brutal-card {
+  border: var(--border-main);
+  padding: var(--space-unit);
+  background: transparent;
+  transition: transform 0.1s ease;
+}
+
+.brutal-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: var(--shadow-white);
+}
+
+/* Sculpture Filters */
+.sculpture-img {
+  filter: grayscale(100%) contrast(150%) brightness(80%);
+  object-fit: cover;
+}
+
+/* Layout */
+section {
+  padding: calc(var(--space-unit) * 4) var(--space-unit);
+  border-bottom: var(--border-main);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-unit);
+  background: var(--bg-dark);
+  border-bottom: var(--border-main);
+  z-index: 1000;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-main);
+  margin: 0 15px;
+  font-family: var(--font-mono);
+}
+
+nav a:hover, nav a.active {
+  color: var(--accent-red);
+}
+
+.lang-selector a {
+  font-family: var(--font-mono);
+  text-decoration: none;
+  color: var(--text-main);
+  padding: 2px 5px;
+}
+
+.lang-selector a.active {
+  background: var(--accent-red);
+  color: var(--bg-dark);
+}
+
+footer {
+  background: var(--accent-red);
+  color: var(--bg-dark);
+  padding: calc(var(--space-unit) * 4) var(--space-unit);
+  border-top: 5px solid var(--text-main);
+}

@@ -1,11 +1,18 @@
 ---
+import MainLayout from '../../layouts/MainLayout.astro';
 ---
-<html lang="pt">
-	<head>
-		<meta charset="utf-8" />
-		<title>O Arquiteto Nômade - PT</title>
-	</head>
-	<body>
-		<h1>Olá, sou o Arquiteto Nômade</h1>
-	</body>
-</html>
+
+<MainLayout title="O Arquiteto Nômade" lang="pt">
+	<a href="#blog" slot="nav" class="mono-label">Blog</a>
+
+	<section id="home">
+		<p class="mono-label">Arquiteto de Software / Nômade Digital</p>
+		<h1>O Arquiteto<br/>Nômade</h1>
+		<p>Construindo estruturas resilientes em código e espaço. Minimalista por design, punk por convicção.</p>
+	</section>
+
+	<section id="blog">
+		<h2 class="mono-label">Últimos Pensamentos</h2>
+		<p>Em breve: Arquitetura, código e sanitização.</p>
+	</section>
+</MainLayout>
