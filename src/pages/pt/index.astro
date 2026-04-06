@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import MainLayout from '../../layouts/MainLayout.astro';
 import Gallery from '../../components/Gallery.astro';
+import Blueprints from '../../components/Blueprints.astro';
 import heroImage from '../../assets/hero-concrete.jpg';
 ---
 
@@ -21,14 +22,13 @@ import heroImage from '../../assets/hero-concrete.jpg';
 		<div class="hero-content" style="position: relative; z-index: 1;">
 			<p class="mono-label" style="color: var(--accent-red); margin-bottom: 20px;">// ARQUITETO DE SOFTWARE. DESIGNER DE SISTEMAS DE PENSAMENTO.</p>
 			<h1>O Arquiteto<br/>Nômade</h1>
-			<p style="font-size: 2rem; font-weight: 900; text-transform: uppercase; margin-top: 20px;">"Construindo estruturas resilientes em código e espaço."</p>
+			<p style="font-size: 2rem; font-weight: 900; text-transform: uppercase; margin-top: 20px;">"Construindo estruturas resilientes em código e espacio."</p>
 		</div>
 	</section>
 
-	<Gallery />
+	<!-- MANIFESTO GALLERY (IDENTITY SECTION) -->
+	<Gallery lang="pt" />
 
-	<section id="blog">
-		<h2 class="mono-label">Últimos Pensamentos</h2>
-		<p>Em breve: Arquitetura, código e sanitização.</p>
-	</section>
+	<!-- BLUEPRINTS SECTION (DYNAMIC ARCHITECTURES) -->
+	<Blueprints lang="pt" />
 </MainLayout>

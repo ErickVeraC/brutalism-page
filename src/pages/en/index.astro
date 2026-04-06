@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import MainLayout from '../../layouts/MainLayout.astro';
 import Gallery from '../../components/Gallery.astro';
+import Blueprints from '../../components/Blueprints.astro';
 import heroImage from '../../assets/hero-concrete.jpg';
 ---
 
@@ -25,10 +26,9 @@ import heroImage from '../../assets/hero-concrete.jpg';
 		</div>
 	</section>
 
-	<Gallery />
+	<!-- MANIFESTO GALLERY (IDENTITY SECTION) -->
+	<Gallery lang="en" />
 
-	<section id="blog">
-		<h2 class="mono-label">Latest Thoughts</h2>
-		<p>Coming soon: Architecture, code and sanitization.</p>
-	</section>
+	<!-- BLUEPRINTS SECTION (DYNAMIC ARCHITECTURES) -->
+	<Blueprints lang="en" />
 </MainLayout>

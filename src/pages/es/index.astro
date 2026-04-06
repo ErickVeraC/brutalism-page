@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import MainLayout from '../../layouts/MainLayout.astro';
 import Gallery from '../../components/Gallery.astro';
+import Blueprints from '../../components/Blueprints.astro';
 import heroImage from '../../assets/hero-concrete.jpg';
 ---
 
@@ -24,64 +25,9 @@ import heroImage from '../../assets/hero-concrete.jpg';
 		</div>
 	</section>
 
-	<!-- MANIFESTO SECTION -->
-	<section id="manifesto" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 0;">
-		<div style="padding: 80px 40px; border-right: var(--border-main);">
-			<h2 style="margin-bottom: 40px;">LA IDEA ES LA MÁQUINA QUE GENERA LA OBRA.</h2>
-			<p class="mono-label" style="color: var(--accent-red);">[ // NOTA: EL CÓDIGO ES EFÍMERO. LA ESTRUCTURA ES PERMANENTE. ]</p>
-		</div>
-		<div style="padding: 80px 40px; display: flex; flex-direction: column; justify-content: center;">
-			<p style="font-size: 1.5rem; line-height: 1.2;">"No pico código; diseño sistemas de pensamiento. Mi valor no es la ejecución perfunctoria, sino la arquitectura lógica previa. En mi mesa, la lógica gobierna la sintaxis."</p>
-		</div>
-	</section>
+	<!-- MANIFESTO GALLERY (IDENTITY SECTION) -->
+	<Gallery lang="es" />
 
-	<!-- BRUTAL GALLERY (PUNK AESTHETIC) -->
-	<Gallery />
-
-	<!-- BLUEPRINTS SECTION -->
-	<section id="blueprints">
-		<div style="margin-bottom: 60px;">
-			<p class="mono-label" style="color: var(--accent-red);">// TECH_BLUEPRINTS</p>
-			<h2>SISTEMAS DE ALTA PRECISIÓN</h2>
-		</div>
-
-		<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px;">
-			<div class="brutal-card">
-				<h3 class="mono-label" style="margin-bottom: 20px;">HIGH_AVAILABILITY_ECOMMERCE</h3>
-				<ul class="mono-label" style="list-style: none; opacity: 0.8; font-size: 0.7rem;">
-					<li>> NODE.JS // MICROSERVICES</li>
-					<li>> REDIS // KAFKA</li>
-					<li>> AWS_INFRASTRUCTURE</li>
-				</ul>
-			</div>
-			<div class="brutal-card">
-				<h3 class="mono-label" style="margin-bottom: 20px;">REAL-TIME_DATA_SYSTEMS</h3>
-				<ul class="mono-label" style="list-style: none; opacity: 0.8; font-size: 0.7rem;">
-					<li>> WEBSOCKETS // RUST</li>
-					<li>> TIMESCALE_DB</li>
-					<li>> PROTOBUF</li>
-				</ul>
-			</div>
-			<div class="brutal-card">
-				<h3 class="mono-label" style="margin-bottom: 20px;">SCALABLE_SAAS_INFRASTRUCTURE</h3>
-				<ul class="mono-label" style="list-style: none; opacity: 0.8; font-size: 0.7rem;">
-					<li>> KUBERNETES // TERRAFORM</li>
-					<li>> MULTI-TENANCY_LOGIC</li>
-					<li>> CI_CD_AUTOMATION</li>
-				</ul>
-			</div>
-			<div class="brutal-card">
-				<h3 class="mono-label" style="margin-bottom: 20px;">BACKEND_ORCHESTRATION</h3>
-				<ul class="mono-label" style="list-style: none; opacity: 0.8; font-size: 0.7rem;">
-					<li>> GRAPHQL_FEDERATION</li>
-					<li>> EVENT-DRIVEN_ARCH</li>
-					<li>> GO_LANG</li>
-				</ul>
-			</div>
-		</div>
-
-		<p class="mono-label" style="margin-top: 60px; text-align: center; opacity: 0.5;">
-			// ALL SYSTEMS ARE CUSTOM-BUILT TO SPECIFIC LOGIC.
-		</p>
-	</section>
+	<!-- BLUEPRINTS SECTION (DYNAMIC ARCHITECTURES) -->
+	<Blueprints lang="es" />
 </MainLayout>
