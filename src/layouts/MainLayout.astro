@@ -9,10 +9,10 @@ interface Props {
 const { title, lang } = Astro.props;
 
 const navItems = [
-	{ label: '/01_MANIFESTO', href: '#manifesto' },
-	{ label: '/02_BLUEPRINTS', href: '#blueprints' },
-	{ label: '/03_LOG', href: '#log' },
-	{ label: '/04_CONTACT', href: '#contact' },
+	{ label: '/01_MANIFESTO', href: `/${lang}/#manifesto` },
+	{ label: '/02_BLUEPRINTS', href: `/${lang}/#blueprints` },
+	{ label: '/03_LOG', href: `/${lang}/blog/` },
+	{ label: '/04_CONTACT', href: `/${lang}/#contact` },
 ];
 
 const languages = [
