@@ -108,10 +108,16 @@ const imageSrc = imageImport ? (await imageImport()).default : null;
 		border: var(--border-main);
 		margin-bottom: 60px;
 		overflow: hidden;
+		max-height: 50vh; /* Alto de banner dinámico */
+		min-height: 300px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
 	.hero-container img {
 		width: 100%;
+		height: 100%;
 		display: block;
 		object-fit: cover;
 	}

@@ -2,7 +2,7 @@
 title: "Los Mecenas del Código: El Arte de Entender Antes de Crear"
 description: "El Domain-Driven Design y el Event Storming no son metodologías ágiles; son las herramientas para lograr el entendimiento sagrado del dominio."
 pubDate: 2026-04-06
-heroImage: "/src/assets/Estatua de hormigón gris.jpg"
+heroImage: "/src/assets/estatua-hormigon-gris.jpg"
 tags: ["arquitectura", "ddd", "event-storming", "diseño"]
 lang: "es"
 ---
