@@ -14,8 +14,9 @@ const { entry } = Astro.props;
 const { Content } = await render(entry);
 
 // Resolve dynamic image path for production optimization
-const images = import.meta.glob<{ default: any }>('/src/assets/*.{jpeg,jpg,png,gif}');
+const images = import.meta.glob<{ default: any }>('/src/assets/*.{jpeg,jpg,png,gif,webp,avif}');
 const heroImagePath = entry.data.heroImage;
+
 const imageImport = heroImagePath ? images[heroImagePath] : null;
 const imageSrc = imageImport ? (await imageImport()).default : null;
 ---
