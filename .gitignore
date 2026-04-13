@@ -28,3 +28,10 @@ pnpm-debug.log*
 
 # AI dev instructions (local only)
 GEMINI.md
+
+# Agent Skills y utilidades
+.agents/
+.trae/
+SKILL.md
+skills-lock.json
+skills.sh
