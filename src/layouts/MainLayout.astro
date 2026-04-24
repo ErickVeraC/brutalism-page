@@ -50,6 +50,8 @@ const languages = [
 					</>
 				))} ]
 			</div>
+
+			<button id="mobile-toggle" class="mobile-toggle mono-label">[ MENU ]</button>
 		</header>
 		
 		<main>
@@ -81,5 +83,39 @@ const languages = [
 				</div>
 			</div>
 		</footer>
+
+		<script>
+			// Execute on page load (and view transitions if enabled)
+			function setupNav() {
+				const toggleBtn = document.getElementById('mobile-toggle');
+				const nav = document.querySelector('.desktop-nav');
+				
+				if (toggleBtn && nav) {
+					toggleBtn.addEventListener('click', () => {
+						nav.classList.toggle('nav-open');
+						if (nav.classList.contains('nav-open')) {
+							toggleBtn.textContent = '[ CLOSE ]';
+							document.body.style.overflow = 'hidden';
+						} else {
+							toggleBtn.textContent = '[ MENU ]';
+							document.body.style.overflow = 'auto';
+						}
+					});
+
+					// Cerramos el menú si hacen click en algún link internamente
+					const links = nav.querySelectorAll('a');
+					links.forEach(link => {
+						link.addEventListener('click', () => {
+							nav.classList.remove('nav-open');
+							toggleBtn.textContent = '[ MENU ]';
+							document.body.style.overflow = 'auto';
+						});
+					});
+				}
+			}
+			
+			setupNav();
+			document.addEventListener('astro:page-load', setupNav);
+		</script>
 	</body>
 </html>
