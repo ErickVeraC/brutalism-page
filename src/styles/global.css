@@ -65,7 +65,7 @@ body {
 h1 {
   font-family: var(--font-primary);
   font-weight: 900;
-  font-size: 12vw;
+  font-size: clamp(3.5rem, 12vw, 14rem);
   line-height: 0.85;
   text-transform: uppercase;
   letter-spacing: -0.04em;
@@ -113,6 +113,9 @@ h2 {
 section {
   padding: calc(var(--space-unit) * 4) var(--space-unit);
   border-bottom: var(--border-main);
+  /* Prevent horizontal overflow on mobile */
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 header {
@@ -156,9 +159,15 @@ footer {
   color: var(--bg-dark);
   padding: calc(var(--space-unit) * 4) var(--space-unit);
   border-top: 5px solid var(--text-main);
+  overflow-x: hidden;
 }
 
 /* --- Mobile Navigation --- */
+/* mobile-lang block is inside .desktop-nav — hidden on desktop */
+.mobile-lang {
+  display: none;
+}
+
 .mobile-toggle {
   display: none;
   background: transparent;
@@ -166,6 +175,8 @@ footer {
   color: var(--text-main);
   cursor: pointer;
   font-size: 1rem;
+  padding: 0;
+  white-space: nowrap;
 }
 
 .mobile-toggle:hover {
@@ -176,6 +187,11 @@ footer {
   .mobile-toggle {
     display: block;
     z-index: 2000;
+  }
+
+  /* Hide lang selector in header — it moves inside the mobile menu */
+  header .lang-selector {
+    display: none;
   }
 
   .desktop-nav {
@@ -194,13 +210,47 @@ footer {
     height: 100vh;
     background: var(--bg-dark);
     z-index: 1500;
+    overflow-y: auto;
+    padding: 40px 20px;
   }
 
   .desktop-nav.nav-open a {
-    margin: 20px 0;
-    font-size: 2.5rem; /* Enormous for brutalist aesthetic */
+    margin: 16px 0;
+    font-size: clamp(1.5rem, 8vw, 2.5rem);
     font-weight: bold;
     text-align: center;
+    display: block;
+    width: 100%;
+  }
+
+  /* Mobile nav lang links */
+  .desktop-nav.nav-open .mobile-lang {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    font-size: 1rem;
+  }
+
+  /* Override oversized font for lang links inside overlay */
+  .desktop-nav.nav-open .mobile-lang a {
+    font-size: 1.1rem !important;
+    margin: 0 !important;
+    width: auto !important;
+  }
+
+  /* Footer mobile */
+  footer h1 {
+    font-size: clamp(2rem, 10vw, 8vw) !important;
+  }
+
+  footer .footer-meta {
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  /* Section mobile padding */
+  section {
+    padding: calc(var(--space-unit) * 2) calc(var(--space-unit) * 0.75);
   }
 }
 

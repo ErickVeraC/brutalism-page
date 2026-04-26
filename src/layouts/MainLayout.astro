@@ -26,7 +26,7 @@ const languages = [
 <html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<title>{title} | Erick Vera</title>
 	</head>
@@ -40,6 +40,15 @@ const languages = [
 				{navItems.map(item => (
 					<a href={item.href} class="mono-label">{item.label}</a>
 				))}
+				{/* Lang links visible only inside the mobile overlay */}
+				<div class="mobile-lang mono-label">
+					[ {languages.map((l, i) => (
+						<>
+							<a href={`/${l.code}/`} class={lang === l.code ? 'active' : ''}>{l.label}</a>
+							{i < languages.length - 1 && ' / '}
+						</>
+					))} ]
+				</div>
 			</nav>
 
 			<div class="lang-selector mono-label">

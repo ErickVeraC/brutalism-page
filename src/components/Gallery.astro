@@ -166,18 +166,33 @@ const texts = {
   }
 
   @media (max-width: 768px) {
+    /* Switch title to in-flow on mobile */
+    .gallery-manifesto {
+      padding: 0 !important;
+    }
     .overflow-title-container {
-      top: 100px;
+      position: relative !important;
+      top: auto !important;
+      left: auto !important;
+      transform: none !important;
+      width: 100% !important;
+      padding: 20px 0 0 0;
+      text-align: center;
+      overflow: hidden;
+    }
+    .manifesto-title-massive {
+      font-size: clamp(3rem, 18vw, 8rem);
+      white-space: nowrap;
     }
     .gallery-grid {
       grid-template-columns: 1fr;
     }
     .grid-item {
       clip-path: none !important;
-      min-height: 400px;
+      min-height: 300px;
     }
-    .manifesto-title-massive {
-      font-size: 20vw;
+    .text-block {
+      padding: 40px 20px !important;
     }
   }
 </style>

@@ -287,6 +287,42 @@ const content = blueprintTexts[lang];
     .display-area { padding: 40px 20px; }
     .summary { font-size: 1.5rem; }
   }
+
+  @media (max-width: 768px) {
+    .blueprints-section {
+      padding: 40px 15px !important;
+    }
+    .command-center {
+      margin-top: 30px;
+      overflow-x: hidden;
+    }
+    .nav-item {
+      padding: 18px 15px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .nav-item .label {
+      font-size: 0.7rem;
+      word-break: break-word;
+    }
+    .display-area {
+      padding: 25px 15px;
+      min-height: auto;
+    }
+    .summary {
+      font-size: 1.2rem;
+    }
+    .stack-grid {
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 12px;
+    }
+    .tech-card {
+      padding: 15px 10px;
+    }
+    .header-blueprints {
+      overflow-x: hidden;
+    }
+  }
 </style>
 
 <script>
