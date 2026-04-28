@@ -35,7 +35,7 @@ En ese instante, sus ojos brillaron. Entendió qué era el rate limiting. Y si u
 
 ## Los Nuevos Sofistas de la Era de la IA
 
-No podemos finalizar esta reflexión sin mirar hacia lo que viene. Vivimos en la era del IA-driven development. Muchos desarrolladores desearían que la inteligencia artificial simplemente desapareciera, temiendo que su velocidad eclipse nuestra habilidad. Pero las tecnologías son como los lengripcion: van y vienen, nacen nuevos favoritos y otros caen en el olvido. Lo único que permanece inmutable es la lógica.
+No podemos finalizar esta reflexión sin mirar hacia lo que viene. Vivimos en la era del IA-driven development. Muchos desarrolladores desearían que la inteligencia artificial simplemente desapareciera, temiendo que su velocidad eclipse nuestra habilidad. Pero las tecnologías son como las corrientes filosóficas: van y vienen, nacen nuevos favoritos y otros caen en el olvido. Lo único que permanece inmutable es la lógica.
 
 Yo siempre instruiré a personas que no le teman a lo que codea más rápido que ellos. Quiero formar desarrolladores que vean a la IA como una herramienta, pero que conserven para sí la capacidad de pensar. Esa lógica los hará "sofistas" en el sentido más noble de la palabra: maestros de la retórica técnica, profesionales que perduran porque entienden el porqué y no solo el cómo.
 
