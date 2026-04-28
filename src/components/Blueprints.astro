@@ -129,8 +129,8 @@ const content = blueprintTexts[lang];
     <!-- Navegación lateral -->
     <nav class="blueprint-nav">
       {content.scenarios.map((s, index) => (
-        <button 
-          class={`nav-item ${index === 0 ? 'active' : ''}`} 
+        <button
+          class={`nav-item ${index === 0 ? 'active' : ''}`}
           data-id={s.id}
         >
           <span class="index">[{String(index + 1).padStart(2, '0')}]</span>
@@ -142,14 +142,14 @@ const content = blueprintTexts[lang];
     <!-- Visualizador central -->
     <div class="display-area">
       {content.scenarios.map((s, index) => (
-        <div 
-          id={`content-${s.id}`} 
+        <div
+          id={`content-${s.id}`}
           class={`blueprint-content ${index === 0 ? 'visible' : ''}`}
         >
           <div class="blueprint-info">
-            <p class="summary">{s.summary}</p>
+            <p class="blueprint-summary">{s.summary}</p>
           </div>
-          
+
           <div class="stack-grid">
             {s.stack.map(tech => (
               <div class="tech-card">
@@ -166,165 +166,6 @@ const content = blueprintTexts[lang];
   </div>
 </section>
 
-<style>
-  .blueprints-section {
-    padding: 80px 40px !important;
-    background: var(--bg-dark);
-    border-bottom: var(--border-main);
-  }
-
-  .accent-text { color: var(--accent-red); margin-bottom: 10px; }
-  .description { opacity: 0.6; margin-top: 20px; max-width: 600px; line-height: 1.4; }
-
-  .command-center {
-    display: grid;
-    grid-template-columns: 350px 1fr;
-    gap: 0;
-    margin-top: 60px;
-    border: var(--border-main);
-  }
-
-  /* Nav Lateral */
-  .blueprint-nav {
-    border-right: var(--border-main);
-    display: flex;
-    flex-direction: column;
-  }
-
-  .nav-item {
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    color: var(--text-muted);
-    padding: 30px;
-    text-align: left;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    gap: 15px;
-    font-family: var(--font-mono);
-  }
-
-  .nav-item .index { color: var(--accent-red); font-weight: bold; }
-  .nav-item:hover, .nav-item.active {
-    background: var(--accent-red);
-    color: var(--bg-dark);
-  }
-  .nav-item.active .index { color: var(--bg-dark); }
-
-  /* Display Area */
-  .display-area {
-    padding: 60px;
-    background: #0a0a0a;
-    position: relative;
-    min-height: 500px;
-  }
-
-  .blueprint-content {
-    display: none;
-    animation: fadeIn 0.4s ease-out;
-  }
-
-  .blueprint-content.visible {
-    display: block;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .summary {
-    font-size: 2rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    line-height: 1.1;
-    margin-bottom: 40px;
-  }
-
-  .stack-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 20px;
-  }
-
-  .tech-card {
-    border: 1px solid rgba(255,255,255,0.1);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    transition: all 0.3s ease;
-  }
-
-  .tech-card:hover {
-    border-color: var(--accent-red);
-    background: rgba(242, 5, 5, 0.05);
-    transform: translateY(-5px);
-  }
-
-  .tech-icon-placeholder {
-    width: 60px;
-    height: 60px;
-    border: 2px solid var(--text-main);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #111;
-  }
-
-  .tech-label {
-    font-size: 0.7rem;
-    text-align: center;
-    opacity: 0.8;
-  }
-
-  /* Mobile */
-  @media (max-width: 1024px) {
-    .command-center { grid-template-columns: 1fr; }
-    .blueprint-nav { border-right: none; border-bottom: var(--border-main); }
-    .display-area { padding: 40px 20px; }
-    .summary { font-size: 1.5rem; }
-  }
-
-  @media (max-width: 768px) {
-    .blueprints-section {
-      padding: 40px 15px !important;
-    }
-    .command-center {
-      margin-top: 30px;
-      overflow-x: hidden;
-    }
-    .nav-item {
-      padding: 18px 15px;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .nav-item .label {
-      font-size: 0.7rem;
-      word-break: break-word;
-    }
-    .display-area {
-      padding: 25px 15px;
-      min-height: auto;
-    }
-    .summary {
-      font-size: 1.2rem;
-    }
-    .stack-grid {
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-      gap: 12px;
-    }
-    .tech-card {
-      padding: 15px 10px;
-    }
-    .header-blueprints {
-      overflow-x: hidden;
-    }
-  }
-</style>
-
 <script>
   function initBlueprints() {
     const navItems = document.querySelectorAll('.nav-item');
@@ -334,11 +175,9 @@ const content = blueprintTexts[lang];
       item.addEventListener('click', () => {
         const targetId = (item as HTMLElement).dataset.id;
 
-        // Update Nav
         navItems.forEach(nav => nav.classList.remove('active'));
         item.classList.add('active');
 
-        // Update Content
         contents.forEach(content => {
           content.classList.remove('visible');
           if (content.id === `content-${targetId}`) {
@@ -349,6 +188,5 @@ const content = blueprintTexts[lang];
     });
   }
 
-  document.addEventListener('astro:page-load', initBlueprints);
-  initBlueprints();
+  document.addEventListener('DOMContentLoaded', initBlueprints);
 </script>
