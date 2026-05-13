@@ -1,5 +1,5 @@
 ---
-title: "El Arquitect."
+title: "El Arquitecto."
 description: "Siempre he pensado que una ciudad revela más sobre una civilización que cualquiera de sus discursos. La arquitectura jamás es inocente. Y tampoco lo son los sistemas que construimos."
 pubDate: 2026-05-13
 heroImage: "/src/assets/victor-iaquA2snPbk-unsplash.jpg"
