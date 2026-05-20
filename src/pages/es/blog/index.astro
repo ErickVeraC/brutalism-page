@@ -15,6 +15,10 @@ const posts = (await getCollection('blog', ({ data }) => {
 			<p class="mono-label accent-text">// LOG_DE_CONSTRUCCIÓN</p>
 			<h1>ESTUDIO<br/>ABIERTO</h1>
 			<p class="description mono-label">NOTAS SOBRE EXPERIENCIAS, DIVAGACIONES ESTÉTICAS Y ARQUITECTURAS LÓGICAS.</p>
+			<a href="/rss.xml" class="rss-link mono-label" target="_blank" rel="noopener noreferrer">
+				<span class="rss-label">// SUSCRIBIRSE_AL_LOG</span>
+				<span class="rss-arrow">→</span>
+			</a>
 		</div>
 
 		<div class="posts-list">
@@ -58,6 +62,33 @@ const posts = (await getCollection('blog', ({ data }) => {
 
 	.accent-text { color: var(--accent-red); margin-bottom: 10px; }
 	.description { opacity: 0.6; margin-top: 20px; max-width: 600px; line-height: 1.4; }
+
+	.rss-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 12px;
+		margin-top: 30px;
+		padding: 10px 18px;
+		border: var(--border-main);
+		color: var(--text-main);
+		text-decoration: none;
+		font-size: 0.75rem;
+		transition: all 0.3s ease;
+	}
+
+	.rss-link:hover {
+		border-color: var(--accent-red);
+		color: var(--accent-red);
+		box-shadow: var(--shadow-brutal);
+	}
+
+	.rss-arrow {
+		transition: transform 0.3s ease;
+	}
+
+	.rss-link:hover .rss-arrow {
+		transform: translateX(4px);
+	}
 
 	.posts-list {
 		display: flex;
