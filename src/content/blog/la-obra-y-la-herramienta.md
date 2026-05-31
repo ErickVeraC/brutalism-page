@@ -6,7 +6,7 @@ heroImage: "/src/assets/ingres_delacroix_banner.webp"
 tags: ["filosofia", "liderazgo", "desarrollo", "arte"]
 lang: "es"
 ---
-## Los dibujos de Ingres
+### Los dibujos de Ingres
 
 En algún momento de la Francia del siglo XIX, los salones de París comenzaron a dividirse alrededor de una discusión que, vista desde la distancia, parece hablar de pintura, pero que en realidad aborda una pregunta mucho más profunda. La disputa enfrentaba a dos de los artistas más importantes de su tiempo: Jean-Auguste-Dominique Ingres y Eugène Delacroix. Ambos eran admirados, ambos eran maestros de su oficio y ambos dedicaron su vida al arte. Sin embargo, representaban dos maneras distintas de entender qué significa alcanzar la excelencia.
 
