@@ -41,11 +41,11 @@ const imageSrc = imageImport ? (await imageImport()).default : null;
 		<!-- IMAGEN HERO OPTIMIZADA -->
 		{imageSrc ? (
 			<div class="hero-container">
-				<Image src={imageSrc} alt={entry.data.title} class="sculpture-img" />
+				<Image src={imageSrc} alt={entry.data.title} class={entry.data.heroFilter ? "sculpture-img" : "hero-img-raw"} />
 			</div>
 		) : entry.data.heroImage ? (
 			<div class="hero-container">
-				<img src={entry.data.heroImage} alt={entry.data.title} class="sculpture-img" />
+				<img src={entry.data.heroImage} alt={entry.data.title} class={entry.data.heroFilter ? "sculpture-img" : "hero-img-raw"} />
 			</div>
 		) : null}
 
@@ -113,6 +113,13 @@ const imageSrc = imageImport ? (await imageImport()).default : null;
 	}
 
 	.hero-container img {
+		width: 100%;
+		height: 100%;
+		display: block;
+		object-fit: cover;
+	}
+
+	.hero-img-raw {
 		width: 100%;
 		height: 100%;
 		display: block;
