@@ -1,43 +1,107 @@
-# Astro Starter Kit: Minimal
+# erickvcoder.codes
+
+Sitio personal, portafolio profesional y blog editorial de Erick Vera. El proyecto combina una identidad visual brutalista con contenido sobre arquitectura de software, inteligencia artificial, filosofía, arte e historia.
+
+Producción: [www.erickvcoder.codes](https://www.erickvcoder.codes)
+
+## Stack
+
+- [Astro 7](https://astro.build/) con generación estática.
+- Content Collections para los artículos Markdown.
+- TypeScript con configuración estricta.
+- CSS propio, sin framework de componentes.
+- Sharp y `astro:assets` para optimización de imágenes.
+- RSS para las publicaciones en español.
+- Vercel para previews y despliegue.
+- GitHub Actions como quality gate.
+
+## Requisitos
+
+- Node.js 22.12 o superior.
+- pnpm 10.14.
+
+El campo `packageManager` de `package.json` define la versión esperada de pnpm.
+
+## Desarrollo local
 
 ```sh
-pnpm create astro@latest -- --template minimal
+pnpm install --frozen-lockfile
+pnpm dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+El servidor queda disponible normalmente en `http://localhost:4321`.
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+Rutas principales:
 
 ```text
-/
-├── public/
+/                 Redirección al idioma predeterminado
+/es/              Portafolio en español
+/en/              Portafolio en inglés
+/pt/              Portafolio en portugués
+/{lang}/blog/      Archivo del blog por idioma
+/{lang}/blog/:id/  Artículo individual
+/rss.xml           Feed de publicaciones en español
+```
+
+## Comandos
+
+| Comando | Descripción |
+| --- | --- |
+| `pnpm dev` | Inicia el servidor de desarrollo |
+| `pnpm build` | Genera el sitio estático en `dist/` |
+| `pnpm preview` | Sirve localmente el resultado del build |
+| `pnpm typecheck` | Ejecuta Astro Check |
+| `pnpm lint` | Ejecuta ESLint |
+| `pnpm check` | Ejecuta typecheck, lint y build |
+
+Antes de abrir un pull request:
+
+```sh
+pnpm check
+```
+
+## Estructura
+
+```text
+.
+├── .github/workflows/ci.yml   Quality gate de GitHub
+├── docs/
+│   ├── ARCHITECTURE.md        Decisiones y flujo del sistema
+│   └── CONTENT_GUIDE.md       Publicación y traducción de artículos
+├── public/                    Favicon y fuentes públicas
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── assets/                Imágenes procesadas por Astro
+│   ├── components/            Secciones reutilizables
+│   ├── content/blog/          Artículos Markdown
+│   ├── layouts/               Layout global
+│   ├── pages/                 Rutas del sitio
+│   ├── styles/                CSS global
+│   ├── content.config.ts      Esquema del blog
+│   └── i18n.ts                Textos de interfaz e idiomas
+├── astro.config.mjs
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Consulta [la arquitectura](docs/ARCHITECTURE.md) para entender el enrutamiento y [la guía de contenido](docs/CONTENT_GUIDE.md) antes de añadir o traducir artículos.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Calidad y despliegue
 
-Any static assets, like images, can be placed in the `public/` directory.
+Cada pull request contra `main` ejecuta el job obligatorio `Quality gate`:
 
-## 🧞 Commands
+1. Instalación con lockfile congelado.
+2. Typecheck.
+3. Lint.
+4. Build de producción.
 
-All commands are run from the root of the project, from a terminal:
+Vercel genera un preview por pull request. La rama `main` está protegida y no acepta merges cuando el quality gate falla o está desactualizado.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+El despliegue de producción ocurre desde `main` mediante la integración de Vercel.
 
-## 👀 Want to learn more?
+## Principios del proyecto
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Mantener las páginas estáticas siempre que sea posible.
+- Evitar JavaScript cliente innecesario.
+- Conservar la identidad visual sin sacrificar accesibilidad.
+- No duplicar imágenes entre traducciones.
+- Tratar cada artículo como contenido editorial, no como una página aislada.
+- Incorporar infraestructura solo cuando resuelva una necesidad real.

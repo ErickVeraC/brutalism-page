@@ -3,7 +3,7 @@ import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 
 const blog = defineCollection({
-	// Usamos el nuevo loader para Astro v5/v6
+	// Carga las entradas editoriales desde el directorio local del blog.
 	loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/blog" }),
 	schema: z.object({
 		title: z.string(),
