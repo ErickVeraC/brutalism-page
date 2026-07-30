@@ -1,25 +1,24 @@
 ---
 import '../styles/global.css';
+import { languages, ui, type Language } from '../i18n';
 
 interface Props {
 	title: string;
-	lang: 'es' | 'en' | 'pt';
+	lang: Language;
+	languagePaths?: Partial<Record<Language, string>>;
 }
 
-const { title, lang } = Astro.props;
+const { title, lang, languagePaths = {} } = Astro.props;
+const text = ui[lang];
 
 const navItems = [
-	{ label: '/01_MANIFESTO', href: `/${lang}/#manifesto` },
-	{ label: '/02_BLUEPRINTS', href: `/${lang}/#blueprints` },
-	{ label: '/03_LOG', href: `/es/blog/` },
-	{ label: '/04_CONTACT', href: `/${lang}/#contact` },
+	{ label: text.nav.manifesto, href: `/${lang}/#manifesto` },
+	{ label: text.nav.blueprints, href: `/${lang}/#blueprints` },
+	{ label: text.nav.log, href: `/${lang}/blog/` },
+	{ label: text.nav.contact, href: `/${lang}/#contact` },
 ];
 
-const languages = [
-	{ code: 'es', label: 'ES' },
-	{ code: 'en', label: 'EN' },
-	{ code: 'pt', label: 'PT' },
-];
+const languageLinks = languages.map(code => ({ code, label: code.toUpperCase() }));
 ---
 
 <!doctype html>
@@ -36,44 +35,44 @@ const languages = [
 				<a href={`/${lang}/`}>erickvcoder.codes</a>
 			</div>
 			
-			<nav class="desktop-nav">
+			<nav id="primary-navigation" class="desktop-nav">
 				{navItems.map(item => (
 					<a href={item.href} class="mono-label">{item.label}</a>
 				))}
 				{/* Lang links visible only inside the mobile overlay */}
 				<div class="mobile-lang mono-label">
-					[ {languages.map((l, i) => (
+					[ {languageLinks.map((l, i) => (
 						<>
-							<a href={`/${l.code}/`} class={lang === l.code ? 'active' : ''}>{l.label}</a>
-							{i < languages.length - 1 && ' / '}
+							<a href={languagePaths[l.code] ?? `/${l.code}/`} class={lang === l.code ? 'active' : ''} lang={l.code} hreflang={l.code}>{l.label}</a>
+							{i < languageLinks.length - 1 && ' / '}
 						</>
 					))} ]
 				</div>
 			</nav>
 
 			<div class="lang-selector mono-label">
-				[ {languages.map((l, i) => (
+				[ {languageLinks.map((l, i) => (
 					<>
-						<a href={`/${l.code}/`} class={lang === l.code ? 'active' : ''}>{l.label}</a>
-						{i < languages.length - 1 && ' / '}
+						<a href={languagePaths[l.code] ?? `/${l.code}/`} class={lang === l.code ? 'active' : ''} lang={l.code} hreflang={l.code}>{l.label}</a>
+						{i < languageLinks.length - 1 && ' / '}
 					</>
 				))} ]
 			</div>
 
-			<button id="mobile-toggle" class="mobile-toggle mono-label">[ MENU ]</button>
+			<button id="mobile-toggle" class="mobile-toggle mono-label" data-menu-label={text.nav.menu} data-close-label={text.nav.close} aria-expanded="false" aria-controls="primary-navigation">{text.nav.menu}</button>
 		</header>
 		
 		<main>
 			<slot />
 		</main>
 
-		<footer>
+		<footer id="contact">
 			<div class="footer-content">
-				<h1 class="footer-heading">READY TO BUILD<br/>WITH LOGIC?</h1>
+				<h1 class="footer-heading">{text.footer.heading[0]}<br/>{text.footer.heading[1]}</h1>
 
 				<div class="footer-actions">
 					<a href="https://www.upwork.com/freelancers/~01638bc46d04e16563" class="brutal-card footer-hire-link">
-						[ HIRE_ON_UPWORK ]
+						{text.footer.hire}
 					</a>
 				</div>
 
@@ -88,7 +87,7 @@ const languages = [
 							LINKEDIN
 						</a>
 					</div>
-					<div>LOCATION: MEXICO_CITY // TLAXCALA</div>
+					<div>{text.footer.location}</div>
 				</div>
 			</div>
 		</footer>
@@ -100,13 +99,17 @@ const languages = [
 				const nav = document.querySelector('.desktop-nav');
 				
 				if (toggleBtn && nav) {
+					const menuLabel = toggleBtn.dataset.menuLabel ?? '[ MENU ]';
+					const closeLabel = toggleBtn.dataset.closeLabel ?? '[ CLOSE ]';
 					toggleBtn.addEventListener('click', () => {
 						nav.classList.toggle('nav-open');
 						if (nav.classList.contains('nav-open')) {
-							toggleBtn.textContent = '[ CLOSE ]';
+							toggleBtn.textContent = closeLabel;
+							toggleBtn.setAttribute('aria-expanded', 'true');
 							document.body.style.overflow = 'hidden';
 						} else {
-							toggleBtn.textContent = '[ MENU ]';
+							toggleBtn.textContent = menuLabel;
+							toggleBtn.setAttribute('aria-expanded', 'false');
 							document.body.style.overflow = 'auto';
 						}
 					});
@@ -116,7 +119,8 @@ const languages = [
 					links.forEach(link => {
 						link.addEventListener('click', () => {
 							nav.classList.remove('nav-open');
-							toggleBtn.textContent = '[ MENU ]';
+							toggleBtn.textContent = menuLabel;
+							toggleBtn.setAttribute('aria-expanded', 'false');
 							document.body.style.overflow = 'auto';
 						});
 					});

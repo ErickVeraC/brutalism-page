@@ -13,6 +13,7 @@ const blog = defineCollection({
 		heroFilter: z.boolean().default(true),
 		tags: z.array(z.string()).default([]),
 		lang: z.enum(['es', 'en', 'pt']).default('es'),
+		translationKey: z.string().optional(),
 	}),
 });
 

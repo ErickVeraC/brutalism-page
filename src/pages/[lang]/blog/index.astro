@@ -1,32 +1,46 @@
 ---
 import { getCollection } from 'astro:content';
 import MainLayout from '../../../layouts/MainLayout.astro';
+import { languages, isLanguage, localeByLanguage, ui } from '../../../i18n';
 
-const posts = (await getCollection('blog', ({ data }) => {
-	return data.lang === 'es';
-})).sort(
+export function getStaticPaths() {
+	return languages.map(lang => ({ params: { lang } }));
+}
+
+const langParam = Astro.params.lang;
+
+if (!isLanguage(langParam)) {
+	throw new Error(`Unsupported language: ${langParam}`);
+}
+
+const lang = langParam;
+const text = ui[lang].blog;
+const posts = (await getCollection('blog', ({ data }) => data.lang === lang)).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
+const languagePaths = Object.fromEntries(languages.map(code => [code, `/${code}/blog/`]));
 ---
 
-<MainLayout title="ESTUDIO ABIERTO / LOG" lang="es">
+<MainLayout title={text.pageTitle} lang={lang} languagePaths={languagePaths}>
 	<section class="blog-archive">
 		<div class="archive-header">
-			<p class="mono-label accent-text">// LOG_DE_CONSTRUCCIÓN</p>
-			<h1>ESTUDIO<br/>ABIERTO</h1>
-			<p class="description mono-label">NOTAS SOBRE EXPERIENCIAS, DIVAGACIONES ESTÉTICAS Y ARQUITECTURAS LÓGICAS.</p>
-			<a href="/rss.xml" class="rss-link mono-label" target="_blank" rel="noopener noreferrer">
-				<span class="rss-label">// SUSCRIBIRSE_AL_LOG</span>
-				<span class="rss-arrow">→</span>
-			</a>
+			<p class="mono-label accent-text">{text.label}</p>
+			<h1>{text.heading[0]}<br/>{text.heading[1]}</h1>
+			<p class="description mono-label">{text.description}</p>
+			{lang === 'es' && (
+				<a href="/rss.xml" class="rss-link mono-label" target="_blank" rel="noopener noreferrer" aria-label={text.subscribe}>
+					<span class="rss-label">{text.subscribe}</span>
+					<span class="rss-arrow">→</span>
+				</a>
+			)}
 		</div>
 
 		<div class="posts-list">
 			{posts.map((post, index) => (
-				<a href={`/es/blog/${post.id}/`} class="post-item">
+				<a href={`/${lang}/blog/${post.id}/`} class="post-item">
 					<div class="post-index mono-label">[{String(index + 1).padStart(2, '0')}]</div>
 					<div class="post-meta">
-						<span class="pub-date mono-label">{post.data.pubDate.toLocaleDateString('es-ES', { year: 'numeric', month: '2-digit', day: '2-digit' })}</span>
+						<span class="pub-date mono-label">{post.data.pubDate.toLocaleDateString(localeByLanguage[lang], { year: 'numeric', month: '2-digit', day: '2-digit' })}</span>
 						<h2 class="post-title">{post.data.title}</h2>
 						<div class="post-tags">
 							{post.data.tags.map(tag => (
@@ -40,8 +54,9 @@ const posts = (await getCollection('blog', ({ data }) => {
 		</div>
 
 		{posts.length === 0 && (
-			<div style="padding: 100px 0; text-align: center;">
-				<p class="mono-label" style="opacity: 0.5;">// NO_POSTS_FOUND_IN_THIS_LOG</p>
+			<div class="empty-state">
+				<p class="mono-label">{text.empty}</p>
+				<p>{text.emptyHint}</p>
 			</div>
 		)}
 	</section>
@@ -93,6 +108,20 @@ const posts = (await getCollection('blog', ({ data }) => {
 	.posts-list {
 		display: flex;
 		flex-direction: column;
+	}
+
+	.empty-state {
+		padding: 100px 0;
+		text-align: center;
+	}
+
+	.empty-state .mono-label {
+		color: var(--accent-red);
+		margin-bottom: 12px;
+	}
+
+	.empty-state p:last-child {
+		opacity: 0.65;
 	}
 
 	.post-item {

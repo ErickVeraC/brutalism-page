@@ -1,11 +1,13 @@
 ---
-const { lang = 'es' } = Astro.props;
+import type { Language } from '../i18n';
+
+const { lang = 'es' } = Astro.props as { lang?: Language };
 
 const blueprintTexts = {
   es: {
-    title: "// TECH_BLUEPRINTS",
+    title: "// PLANOS_TÉCNICOS",
     subtitle: "SISTEMAS DE ALTA PRECISIÓN",
-    description: "Cada arquitectura es una respuesta lógica a un problema de negocio. Selecciona una para ver el stack recomendado.",
+    description: "Cada arquitectura es una respuesta lógica a un problema de negocio. Selecciona una para ver la tecnología recomendada.",
     scenarios: [
       {
         id: "landing",
@@ -40,7 +42,7 @@ const blueprintTexts = {
     ]
   },
   en: {
-    title: "// TECH_BLUEPRINTS",
+    title: "// TECHNICAL_BLUEPRINTS",
     subtitle: "HIGH PRECISION SYSTEMS",
     description: "Each architecture is a logical response to a business problem. Select one to see the recommended stack.",
     scenarios: [
@@ -53,7 +55,7 @@ const blueprintTexts = {
       {
         id: "saas",
         label: "02_SCALABLE SAAS / WEB APP",
-        summary: "Modern architecture for interactive applications with safe types and fast deployment.",
+        summary: "Modern architecture for interactive applications with type safety and fast deployment.",
         stack: ["Next.js / React", "Hono / Node.js", "PostgreSQL (Prisma/Drizzle)", "Auth.js / Clerk", "Terraform"]
       },
       {
@@ -77,9 +79,9 @@ const blueprintTexts = {
     ]
   },
   pt: {
-    title: "// TECH_BLUEPRINTS",
+    title: "// PROJETOS_TÉCNICOS",
     subtitle: "SISTEMAS DE ALTA PRECISÃO",
-    description: "Cada arquitetura é uma resposta lógica a um problema de negócio. Selecione uma para ver a stack recomendada.",
+    description: "Cada arquitetura é uma resposta lógica a um problema de negócio. Selecione uma para ver as tecnologias recomendadas.",
     scenarios: [
       {
         id: "landing",
@@ -90,13 +92,13 @@ const blueprintTexts = {
       {
         id: "saas",
         label: "02_SCALABLE SAAS / WEB APP",
-        summary: "Arquitetura moderna para aplicações interactivas com tipos seguros e implementação rápida.",
+        summary: "Arquitetura moderna para aplicações interativas, com tipagem segura e implantação rápida.",
         stack: ["Next.js / React", "Hono / Node.js", "PostgreSQL (Prisma/Drizzle)", "Auth.js / Clerk", "Terraform"]
       },
       {
         id: "highperf",
         label: "03_HIGH PERFORMANCE / EVENT-DRIVEN",
-        summary: "Sistemas distribuídos para processamento maciço de datos e baixa latência.",
+        summary: "Sistemas distribuídos para processamento massivo de dados e baixa latência.",
         stack: ["Go / Python", "Kafka / RabbitMQ", "MongoDB / TimescaleDB", "Kubernetes (K8s)", "AWS EKS / EC2"]
       },
       {

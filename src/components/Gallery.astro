@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import type { Language } from '../i18n';
 
 // Importación de imágenes
 import img1 from '../assets/Camisa de vestir blanca.jpg';
@@ -7,27 +8,44 @@ import img2 from '../assets/Ramo de rosas blancas.jpg';
 import img4 from '../assets/Estatua hombre desnudo.jpg';
 import img5 from '../assets/Ventanas góticas iluminadas.jpg';
 
-const { lang = 'es' } = Astro.props;
+const { lang = 'es' } = Astro.props as { lang?: Language };
 
 const texts = {
-  es: "No pico código; diseño sistemas de pensamiento. Mi valor no es la ejecución perfunctoria, sino la arquitectura lógica previa. En mi mesa, la estructura dicta la sintaxis.",
-  en: "I don't just write code; I design systems of thought. My value is not perfunctory execution, but prior logical architecture. On my desk, structure dictates syntax.",
-  pt: "Não apenas escrevo código; desenho sistemas de pensamento. Meu valor não é a execução perfunctória, mas a arquitetura lógica prévia. Na minha mesa, a estrutura dita a sintaxe."
+  es: {
+    title: "EL MANIFIESTO",
+    label: "// VALOR_ARQUITECTÓNICO",
+    body: "No solo escribo código; diseño sistemas de pensamiento. Mi valor no está en la ejecución mecánica, sino en la arquitectura lógica que la precede. En mi mesa, la estructura dicta la sintaxis.",
+    alts: ["Camisa blanca, estudio de textura", "Estatua clásica, estudio de forma", "Rosas blancas, estudio de contraste", "Ventanas góticas iluminadas"]
+  },
+  en: {
+    title: "THE MANIFESTO",
+    label: "// ARCHITECTURAL_VALUE",
+    body: "I don't just write code; I design systems of thought. My value lies not in mechanical execution, but in the logical architecture that precedes it. At my desk, structure dictates syntax.",
+    alts: ["White shirt, texture study", "Classical statue, study of form", "White roses, contrast study", "Illuminated Gothic windows"]
+  },
+  pt: {
+    title: "O MANIFESTO",
+    label: "// VALOR_ARQUITETÔNICO",
+    body: "Não apenas escrevo código; projeto sistemas de pensamento. Meu valor não está na execução mecânica, mas na arquitetura lógica que a precede. Na minha mesa, a estrutura dita a sintaxe.",
+    alts: ["Camisa branca, estudo de textura", "Estátua clássica, estudo da forma", "Rosas brancas, estudo de contraste", "Janelas góticas iluminadas"]
+  }
 };
+
+const text = texts[lang];
 ---
 
 <section class="gallery-manifesto" id="manifesto">
 
   <!-- TÍTULO DESBORDADO (EL CENTRO) -->
   <div class="overflow-title-container">
-    <h2 class="manifesto-title-massive">THE MANIFEST</h2>
+    <h2 class="manifesto-title-massive">{text.title}</h2>
   </div>
 
   <div class="gallery-grid">
 
     <!-- 01: IMAGEN (CAMISA) -->
     <div class="grid-item img-container clip-1">
-      <Image src={img1} alt="Texture 01" class="sculpture-img" width={800} />
+      <Image src={img1} alt={text.alts[0]} class="sculpture-img" width={800} />
     </div>
 
     <!-- 02: BLOQUE VACÍO -->
@@ -37,24 +55,24 @@ const texts = {
 
     <!-- 03: IMAGEN (ESTATUA) -->
     <div class="grid-item img-container clip-2">
-      <Image src={img4} alt="Statue Logic" class="sculpture-img" width={800} />
+      <Image src={img4} alt={text.alts[1]} class="sculpture-img" width={800} />
     </div>
 
     <!-- 04: IMAGEN (ROSAS) -->
     <div class="grid-item img-container clip-3">
-      <Image src={img2} alt="Roses Brutal" class="sculpture-img" width={800} />
+      <Image src={img2} alt={text.alts[2]} class="sculpture-img" width={800} />
     </div>
 
     <!-- 05: TEXTO (BODY) -->
     <div class="grid-item text-block body-block clip-4 grid-item--dark">
       <div class="serigrafia-overlay"></div>
-      <p class="mono-label gallery-accent-label">// ARCHITECT_VALUE</p>
-      <h2 class="manifesto-body">{texts[lang]}</h2>
+      <p class="mono-label gallery-accent-label">{text.label}</p>
+      <h2 class="manifesto-body">{text.body}</h2>
     </div>
 
     <!-- 06: IMAGEN (VENTANAS) -->
     <div class="grid-item img-container clip-3">
-      <Image src={img5} alt="Gothic Windows" class="sculpture-img" width={800} />
+      <Image src={img5} alt={text.alts[3]} class="sculpture-img" width={800} />
     </div>
 
   </div>
