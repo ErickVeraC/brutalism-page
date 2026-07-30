@@ -2,7 +2,7 @@
 title: "De Ríos, Hormigón y Código: Reiniciando la Arquitectura Digital"
 description: "Reflexiones sobre el flujo constante de Heráclito, el minimalismo brutalista y la búsqueda de la verdad constructiva en el software."
 pubDate: 2026-04-05
-heroImage: "/src/assets/hero-concrete.jpg"
+heroImage: "/src/assets/hero-concrete.webp"
 tags: ["arquitectura", "brutalismo", "mcp", "filosofía"]
 lang: "es"
 ---

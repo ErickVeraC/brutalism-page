@@ -2,7 +2,7 @@
 title: "La Artillería del Pensamiento: IA, Precisión y Estrategia en Sistemas Críticos"
 description: "La IA no es un atajo: es un multiplicador. Si tu proceso es débil, lo hará evidente. Si es sólido, lo escalará. La diferencia entre generar código y construir sistemas."
 pubDate: 2026-05-05
-heroImage: "/src/assets/nicolas-hippert-71wxZqCDcNU-unsplash.jpg"
+heroImage: "/src/assets/nicolas-hippert-71wxZqCDcNU-unsplash.webp"
 tags: ["ia", "arquitectura", "sistemas-criticos"]
 lang: "es"
 ---

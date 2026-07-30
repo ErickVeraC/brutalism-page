@@ -2,7 +2,7 @@
 title: "Las Nuevas Imprentas del Renacimiento"
 description: "Del scriptorium medieval a Kubernetes: la humanidad siempre ha construido máquinas para replicar ideas más rápido. Solo cambian las herramientas."
 pubDate: 2026-05-20
-heroImage: "/src/assets/imprenta.jpg"
+heroImage: "/src/assets/imprenta.webp"
 tags: ["historia", "infraestructura", "nube"]
 lang: "es"
 ---
