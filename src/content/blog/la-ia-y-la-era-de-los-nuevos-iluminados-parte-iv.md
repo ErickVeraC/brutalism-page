@@ -1,13 +1,17 @@
 ---
-title: "La nueva era de los Illuminati — 4 de 5: La IA y el fin de la Edad del Bronce"
-description: "La caída de la Edad del Bronce como espejo de una economía global frágil y de una IA que puede liberarnos del trabajo o concentrar aún más el poder."
+title: "La IA y la Era de los Nuevos Iluminados — Parte IV"
+description: "Parte IV de la serie para desmitificar la Inteligencia Artificial: la caída de la Edad del Bronce como espejo de una economía global frágil."
 pubDate: 2026-08-24
 heroImage: "/src/assets/bronze-age.webp"
 heroFilter: true
 tags: ["ia", "historia", "filosofia", "tecnologia"]
 lang: "es"
-translationKey: "la-nueva-era-de-los-illuminati-parte-iv"
+translationKey: "la-ia-y-la-era-de-los-nuevos-iluminados-parte-iv"
 ---
+
+## Desmitificando la Inteligencia Artificial — Parte IV
+
+### La IA y el fin de la Edad del Bronce
 
 Uno de mis gustos más grandes siempre ha sido el cine.
 
@@ -307,6 +311,4 @@ Después llegó el hierro.
 
 Y quizá esa sea la pregunta que realmente deberíamos hacernos mientras observamos nacer la era de la Inteligencia Artificial:
 
-**¿estamos construyendo una tecnología que nos permitirá vivir mejor...
-
-o simplemente estamos fabricando las armas de los nuevos Pueblos del Mar?**
+**¿Estamos construyendo una tecnología que nos permitirá vivir mejor... o simplemente estamos fabricando las armas de los nuevos Pueblos del Mar?**
