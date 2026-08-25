@@ -38,7 +38,7 @@ const languagePaths = Object.fromEntries(languages.map(code => [code, `/${code}/
 		<div class="posts-list">
 			{posts.map((post, index) => (
 				<a href={`/${lang}/blog/${post.id}/`} class="post-item">
-					<div class="post-index mono-label">[{String(index + 1).padStart(2, '0')}]</div>
+					<div class="post-index mono-label">[{String(posts.length - index).padStart(2, '0')}]</div>
 					<div class="post-meta">
 						<span class="pub-date mono-label">{post.data.pubDate.toLocaleDateString(localeByLanguage[lang], { year: 'numeric', month: '2-digit', day: '2-digit' })}</span>
 						<h2 class="post-title">{post.data.title}</h2>
