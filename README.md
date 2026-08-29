@@ -17,7 +17,7 @@ Producción: [www.erickvcoder.codes](https://www.erickvcoder.codes)
 
 ## Requisitos
 
-- Node.js 22.12 o superior.
+- Node.js 24 (Active LTS) o superior.
 - pnpm 10.14.
 
 El campo `packageManager` de `package.json` define la versión esperada de pnpm.

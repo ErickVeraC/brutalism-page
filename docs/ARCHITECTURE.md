@@ -112,6 +112,28 @@ install → typecheck → lint → build
 
 Todos los cambios deben entrar mediante una rama y un pull request con los checks aprobados.
 
+## Plataforma y versiones
+
+El proyecto está fijado a un conjunto de versiones explícito para que el build local y el de CI sean reproducibles.
+
+| Herramienta | Versión | Dónde se declara | Racional |
+| --- | --- | --- | --- |
+| Astro | `^7.1.6` | `package.json` | Última major estable. Genera el sitio estático, resuelve las Content Collections y optimiza imágenes con `astro:assets`. |
+| Node.js | `>=24.0.0` (pin `24.20.0`) | `package.json` (`engines`), `.node-version`, `ci.yml` | Node 24 «Krypton» es la línea **Active LTS**. Astro 7 soporta la Active LTS y la Maintenance LTS de Node; se elige la Active LTS para maximizar la vida útil y alinear el runner de CI con el entorno local. |
+| pnpm | `10.14.0` | `package.json` (`packageManager`) | Gestor de paquetes único. El lockfile congelado (`--frozen-lockfile`) garantiza instalaciones deterministas. |
+
+Los tres puntos donde se declara la versión de Node deben moverse **juntos** al actualizar: `engines` en `package.json`, `.node-version` (usado por Vercel y version managers locales) y `node-version` en `.github/workflows/ci.yml`. Un desajuste entre ellos produce advertencias de motor o builds que pasan en local y fallan en CI.
+
+### Qué aporta Astro 7 a este proyecto
+
+- **Generación estática por defecto**: sin adaptador de servidor, cada ruta se resuelve a HTML en `build`.
+- **Content Collections tipadas** (`astro:content` + esquema Zod en `src/content.config.ts`) para el blog Markdown.
+- **`astro:assets` con Sharp** para optimizar los héroes WebP durante el build.
+- **`getStaticPaths()`** para generar únicamente las combinaciones válidas de idioma y slug del blog.
+- **Islas de JavaScript mínimas**: el sitio no monta ningún framework de UI; los únicos scripts cliente son vanilla (menú móvil y selector de blueprints).
+
+Para actualizar Astro y sus integraciones oficiales de forma coordinada: `pnpm dlx @astrojs/upgrade`. Revisa la [guía de upgrade a v7](https://docs.astro.build/en/guides/upgrade-to/v7/) antes de saltar de major.
+
 ## Decisiones conscientes
 
 - No se usa Turborepo: el repositorio contiene una sola aplicación.
