@@ -78,6 +78,18 @@ article-pt.md  ─┘
 
 Si una traducción no existe, el selector no inventa una URL de artículo.
 
+## Redirecciones
+
+Los slugs históricos que fueron renombrados se conservan como redirecciones **301 declarativas** en `astro.config.mjs` (`redirects`), no como páginas `.astro` sueltas. Esto mantiene el sistema de rutas dinámicas `[lang]/blog/[slug]` sin archivos fuera de patrón y centraliza las redirecciones en un solo lugar.
+
+```js
+redirects: {
+  '/es/blog/slug-viejo': { status: 301, destination: '/es/blog/slug-nuevo/' },
+}
+```
+
+Regla: al renombrar el slug de un artículo ya publicado, añade aquí un 301 del slug anterior al nuevo. Nunca borres el redirect de un slug que pudo ser indexado.
+
 ## Imágenes
 
 Los assets en `src/assets` se importan con `astro:assets` o se resuelven mediante `import.meta.glob()` para los héroes definidos en Markdown.
