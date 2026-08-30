@@ -5,6 +5,7 @@ pubDate: 2026-05-31
 heroImage: "/src/assets/ingres_delacroix_banner.webp"
 tags: ["filosofia", "liderazgo", "desarrollo", "arte"]
 lang: "es"
+translationKey: "la-obra-y-la-herramienta"
 ---
 ### Ingres y Delacroix
 

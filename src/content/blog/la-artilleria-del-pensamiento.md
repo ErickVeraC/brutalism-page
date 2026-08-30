@@ -5,6 +5,7 @@ pubDate: 2026-05-05
 heroImage: "/src/assets/nicolas-hippert-71wxZqCDcNU-unsplash.webp"
 tags: ["ia", "arquitectura", "sistemas-criticos"]
 lang: "es"
+translationKey: "la-artilleria-del-pensamiento"
 ---
 
 Hubo un momento en la historia donde la guerra dejó de depender únicamente del coraje humano y comenzó a depender de algo mucho más inquietante: organización, precisión y velocidad.

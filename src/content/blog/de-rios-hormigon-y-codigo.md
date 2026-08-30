@@ -5,6 +5,7 @@ pubDate: 2026-04-05
 heroImage: "/src/assets/hero-concrete.webp"
 tags: ["arquitectura", "brutalismo", "mcp", "filosofía"]
 lang: "es"
+translationKey: "de-rios-hormigon-y-codigo"
 ---
 
 Nadie se baña dos veces en el mismo río, decía Heráclito, porque ni el río ni el hombre son los mismos. Esta idea de flujo constante ha sido el motor detrás de la renovación de mi espacio digital. Sentía la necesidad visceral de mostrar que el desarrollador que era hace unos años ha mutado; que mi pasión me ha llevado a cruzar fronteras donde la ingeniería se funde con la plástica.

@@ -5,6 +5,7 @@ pubDate: 2026-04-09
 heroImage: "/src/assets/personas-caminando-fuera.jpg"
 tags: ["accesibilidad", "ddd", "arquitectura"]
 lang: "es"
+translationKey: "la-ilusion-de-lo-universal"
 ---
 
 ## Lo universal: la tarea colosal

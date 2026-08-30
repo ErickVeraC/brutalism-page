@@ -5,6 +5,7 @@ pubDate: 2026-04-06
 heroImage: "/src/assets/estatua-hormigon-gris.webp"
 tags: ["arquitectura", "ddd", "event-storming", "diseño"]
 lang: "es"
+translationKey: "mecenas-del-codigo"
 ---
 
 La Tesis

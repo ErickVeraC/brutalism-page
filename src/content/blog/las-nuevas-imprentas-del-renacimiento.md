@@ -5,6 +5,7 @@ pubDate: 2026-05-20
 heroImage: "/src/assets/imprenta.webp"
 tags: ["historia", "infraestructura", "nube"]
 lang: "es"
+translationKey: "las-nuevas-imprentas-del-renacimiento"
 ---
 
 Hubo una época donde reproducir un libro era un acto casi sagrado.
