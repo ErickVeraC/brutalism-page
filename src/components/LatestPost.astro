@@ -1,0 +1,168 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import { localeByLanguage, ui, type Language } from '../i18n';
+
+const { lang = 'es' } = Astro.props as { lang?: Language };
+const text = ui[lang].latest;
+
+// Post más reciente publicado en este idioma.
+const slugOf = (id: string) => id.replace(/^(es|en|pt)\//, '');
+const posts = (await getCollection('blog', ({ data }) => data.lang === lang)).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+const latest = posts[0];
+
+// Resolución de imagen hero como en la página del artículo.
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg,jpg,png,gif,webp,avif}');
+const heroPath = latest?.data.heroImage;
+const heroImport = heroPath ? images[heroPath] : null;
+const heroSrc = heroImport ? (await heroImport()).default : null;
+---
+
+{latest && (
+	<section id="latest" class="latest-section">
+		<div class="latest-header">
+			<p class="mono-label accent-text">{text.label}</p>
+			<h2>{text.heading}</h2>
+		</div>
+
+		<a href={`/${lang}/blog/${slugOf(latest.id)}/`} class="latest-card">
+			<div class="latest-media">
+				{heroSrc ? (
+					<Image src={heroSrc} alt={latest.data.title} class="latest-img" />
+				) : heroPath ? (
+					<img src={heroPath} alt={latest.data.title} class="latest-img" />
+				) : (
+					<div class="latest-img latest-img--empty" aria-hidden="true"></div>
+				)}
+			</div>
+
+			<div class="latest-body">
+				<span class="pub-date mono-label">{latest.data.pubDate.toLocaleDateString(localeByLanguage[lang], { year: 'numeric', month: '2-digit', day: '2-digit' })}</span>
+				<h3 class="latest-title">{latest.data.title}</h3>
+				<p class="latest-desc">{latest.data.description}</p>
+				<div class="latest-tags">
+					{latest.data.tags.map(tag => (
+						<span class="tag mono-label">#{tag}</span>
+					))}
+				</div>
+				<span class="latest-cta mono-label">{text.cta}</span>
+			</div>
+		</a>
+
+		<a href={`/${lang}/blog/`} class="latest-all mono-label">{text.all} →</a>
+	</section>
+)}
+
+<style>
+	.latest-section {
+		padding: 120px 40px;
+		background: var(--bg-dark);
+		border-top: var(--border-main);
+	}
+
+	.latest-header {
+		margin-bottom: 60px;
+	}
+
+	.accent-text { color: var(--accent-red); margin-bottom: 10px; }
+
+	.latest-header h2 {
+		font-size: clamp(2rem, 6vw, 4.5rem);
+		font-weight: 900;
+		text-transform: uppercase;
+		line-height: 0.95;
+	}
+
+	.latest-card {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+		border: var(--border-main);
+		box-shadow: var(--shadow-brutal);
+		text-decoration: none;
+		color: var(--text-main);
+		background: var(--bg-dark);
+		transition: transform 0.25s ease, box-shadow 0.25s ease;
+	}
+
+	.latest-card:hover {
+		transform: translate(-3px, -3px);
+		box-shadow: 10px 10px 0px var(--accent-red);
+	}
+
+	.latest-media {
+		overflow: hidden;
+		border-right: var(--border-main);
+		min-height: 320px;
+	}
+
+	.latest-img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+		filter: grayscale(100%) contrast(115%);
+		transition: filter 0.3s ease, transform 0.4s ease;
+	}
+
+	.latest-img--empty { background: #0e0e0e; }
+
+	.latest-card:hover .latest-img {
+		filter: grayscale(0%) contrast(105%);
+		transform: scale(1.03);
+	}
+
+	.latest-body {
+		padding: 40px;
+		display: flex;
+		flex-direction: column;
+		gap: 18px;
+		justify-content: center;
+	}
+
+	.pub-date { opacity: 0.5; font-size: 0.8rem; }
+
+	.latest-title {
+		font-size: clamp(1.6rem, 3vw, 2.8rem);
+		font-weight: 900;
+		text-transform: uppercase;
+		line-height: 1;
+	}
+
+	.latest-desc {
+		opacity: 0.75;
+		font-weight: 300;
+		line-height: 1.5;
+		max-width: 60ch;
+	}
+
+	.latest-tags { display: flex; flex-wrap: wrap; gap: 14px; }
+	.tag { font-size: 0.7rem; opacity: 0.45; }
+
+	.latest-cta {
+		margin-top: 10px;
+		color: var(--accent-red);
+		font-weight: bold;
+		letter-spacing: 0.05em;
+	}
+
+	.latest-all {
+		display: inline-block;
+		margin-top: 40px;
+		color: var(--text-main);
+		text-decoration: none;
+		opacity: 0.7;
+		transition: color 0.2s ease, opacity 0.2s ease;
+	}
+
+	.latest-all:hover { color: var(--accent-red); opacity: 1; }
+
+	@media (max-width: 860px) {
+		.latest-section { padding: 80px 20px; }
+		.latest-card { grid-template-columns: 1fr; }
+		.latest-media { border-right: none; border-bottom: var(--border-main); min-height: 220px; }
+		.latest-body { padding: 28px; }
+	}
+</style>

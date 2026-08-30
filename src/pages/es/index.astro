@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import MainLayout from '../../layouts/MainLayout.astro';
 import Gallery from '../../components/Gallery.astro';
 import Blueprints from '../../components/Blueprints.astro';
+import LatestPost from '../../components/LatestPost.astro';
 import heroImage from '../../assets/hero-concrete.webp';
 ---
 
@@ -29,6 +30,9 @@ import heroImage from '../../assets/hero-concrete.webp';
 
 	<!-- BLUEPRINTS SECTION (DYNAMIC ARCHITECTURES) -->
 	<Blueprints lang="es" />
+
+	<!-- LATEST POST -->
+	<LatestPost lang="es" />
 </MainLayout>
 
 <style>

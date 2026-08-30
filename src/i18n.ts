@@ -21,6 +21,7 @@ export const ui = {
 			empty: '// NO_HAY_PUBLICACIONES_EN_ESTE_IDIOMA', emptyHint: 'Las traducciones se incorporarán en una próxima entrega.',
 			record: '// REGISTRO', back: '← [ VOLVER_A_LA_BITÁCORA ]',
 		},
+		latest: { label: '// ÚLTIMA_ENTRADA', heading: 'LO MÁS RECIENTE', cta: '[ LEER_ENTRADA ]', all: '// VER_TODA_LA_BITÁCORA' },
 	},
 	en: {
 		nav: { manifesto: '/01_MANIFESTO', blueprints: '/02_BLUEPRINTS', log: '/03_LOG', contact: '/04_CONTACT', menu: '[ MENU ]', close: '[ CLOSE ]' },
@@ -31,6 +32,7 @@ export const ui = {
 			empty: '// NO_POSTS_IN_THIS_LANGUAGE', emptyHint: 'English translations will be added in an upcoming release.',
 			record: '// RECORD', back: '← [ BACK_TO_THE_LOG ]',
 		},
+		latest: { label: '// LATEST_ENTRY', heading: 'THE MOST RECENT', cta: '[ READ_ENTRY ]', all: '// SEE_THE_WHOLE_LOG' },
 	},
 	pt: {
 		nav: { manifesto: '/01_MANIFESTO', blueprints: '/02_PROJETOS', log: '/03_DIÁRIO', contact: '/04_CONTATO', menu: '[ MENU ]', close: '[ FECHAR ]' },
@@ -41,5 +43,6 @@ export const ui = {
 			empty: '// NÃO_HÁ_PUBLICAÇÕES_NESTE_IDIOMA', emptyHint: 'As traduções para o português serão adicionadas em uma próxima versão.',
 			record: '// REGISTRO', back: '← [ VOLTAR_AO_DIÁRIO ]',
 		},
+		latest: { label: '// ÚLTIMA_ENTRADA', heading: 'O MAIS RECENTE', cta: '[ LER_ENTRADA ]', all: '// VER_TODO_O_DIÁRIO' },
 	},
 } as const;
