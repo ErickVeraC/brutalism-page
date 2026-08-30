@@ -130,7 +130,7 @@ El proyecto está fijado a un conjunto de versiones explícito para que el build
 
 | Herramienta | Versión | Dónde se declara | Racional |
 | --- | --- | --- | --- |
-| Astro | `^7.1.6` | `package.json` | Última major estable. Genera el sitio estático, resuelve las Content Collections y optimiza imágenes con `astro:assets`. |
+| Astro | `^7.2.9` | `package.json` | Última major estable. Genera el sitio estático, resuelve las Content Collections y optimiza imágenes con `astro:assets`. |
 | Node.js | `>=24.0.0` (pin `24.20.0`) | `package.json` (`engines`), `.node-version`, `ci.yml` | Node 24 «Krypton» es la línea **Active LTS**. Astro 7 soporta la Active LTS y la Maintenance LTS de Node; se elige la Active LTS para maximizar la vida útil y alinear el runner de CI con el entorno local. |
 | pnpm | `10.14.0` | `package.json` (`packageManager`) | Gestor de paquetes único. El lockfile congelado (`--frozen-lockfile`) garantiza instalaciones deterministas. |
 
@@ -145,6 +145,26 @@ Los tres puntos donde se declara la versión de Node deben moverse **juntos** al
 - **Islas de JavaScript mínimas**: el sitio no monta ningún framework de UI; los únicos scripts cliente son vanilla (menú móvil y selector de blueprints).
 
 Para actualizar Astro y sus integraciones oficiales de forma coordinada: `pnpm dlx @astrojs/upgrade`. Revisa la [guía de upgrade a v7](https://docs.astro.build/en/guides/upgrade-to/v7/) antes de saltar de major.
+
+### Seguridad de dependencias
+
+Toda dependencia del proyecto es de **build-time** (no hay runtime de servidor): Astro genera HTML estático y Vercel lo sirve. Aun así, se mantiene `pnpm audit` en cero.
+
+Las vulnerabilidades reportadas suelen ser **transitivas** (dependencias de dependencias). Cuando el parche vive más profundo de lo que alcanza un bump del paquete padre, se fuerza la versión parcheada con `pnpm.overrides` en `package.json`:
+
+```jsonc
+"pnpm": {
+  "overrides": {
+    "js-yaml@>=4.0.0 <4.3.1": ">=4.3.1",   // GHSA-5p4m-2wfm-xmqj (CPU cuadrática en !!omap)
+    "fast-uri@>=3.0.0 <3.1.5": ">=3.1.5",  // host confusion
+    "nanoid@<3.3.18": ">=3.3.18"           // GHSA-2v37-7h3g-55p8 (loop infinito size=0)
+  }
+}
+```
+
+Regla de mantenimiento: correr `pnpm audit` periódicamente; para un hallazgo transitivo, preferir un override con rango (no un pin exacto) que deje que pnpm resuelva a la última compatible. Estas tres CVEs eran de superficie de runtime de servidor y, en un sitio estático, de riesgo práctico bajo — se cerraron por higiene.
+
+Para actualizar dependencias directas usa `pnpm outdated` y sube minors/patches en su propio PR. Los majors (p. ej. TypeScript 6→7) van en un PR aparte con verificación dedicada.
 
 ## Decisiones conscientes
 
