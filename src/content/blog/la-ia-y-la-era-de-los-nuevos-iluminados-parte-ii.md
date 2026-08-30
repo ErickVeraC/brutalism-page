@@ -6,6 +6,7 @@ heroImage: "/src/assets/maquinas-ia.webp"
 heroFilter: true
 tags: ["ia", "filosofia", "tecnologia"]
 lang: "es"
+translationKey: "la-ia-y-la-era-de-los-nuevos-iluminados-parte-ii"
 ---
 
 ## Desmitificando la Inteligencia Artificial — Parte II
