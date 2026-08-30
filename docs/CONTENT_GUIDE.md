@@ -86,29 +86,42 @@ Usa `false` únicamente cuando el color original sea parte importante de la obra
 
 ## Traducir un artículo
 
-Cada idioma usa un archivo independiente y puede tener un slug natural:
+El español es el idioma fuente. Cada traducción vive en una **subcarpeta por idioma** dentro de la colección, con el mismo nombre de archivo que el post fuente:
 
 ```text
-logical-architecture.md
-arquitectura-logica.md
-arquitetura-logica.md
+src/content/blog/el-mar-y-los-mensajes.md      # fuente (es)
+src/content/blog/en/el-mar-y-los-mensajes.md   # inglés
+src/content/blog/pt/el-mar-y-los-mensajes.md   # portugués
 ```
 
-Las tres entradas deben compartir la misma `translationKey`:
+El slug de la URL es el mismo en los tres idiomas (`/es|en|pt/blog/el-mar-y-los-mensajes/`); el prefijo de carpeta solo separa los archivos y no aparece en la ruta.
+
+### Andamiaje con script
+
+No crees el archivo destino a mano. Usa el script de scaffolding, que copia el frontmatter mecánico y añade `translationKey` al fuente si le falta:
+
+```sh
+pnpm scaffold:translation el-mar-y-los-mensajes en
+pnpm scaffold:translation el-mar-y-los-mensajes pt
+```
+
+El script deja `title`, `description`, `tags` y el cuerpo marcados con `<!-- TRANSLATE -->`. Rellena esos campos con la traducción editorial.
+
+Las tres entradas comparten la misma `translationKey` (el script la garantiza):
 
 ```yaml
-translationKey: "logical-architecture"
+translationKey: "el-mar-y-los-mensajes"
 ```
 
 Cambia en cada versión:
 
 - `title`
 - `description`
-- `lang`
+- `lang` (lo fija el script)
 - Cuerpo del artículo
 - Etiquetas cuando necesiten traducción editorial
 
-Conserva:
+Conserva (el script los copia; no los toques):
 
 - `pubDate`
 - `heroImage`

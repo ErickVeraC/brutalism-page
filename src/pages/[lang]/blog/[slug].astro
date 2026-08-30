@@ -7,20 +7,24 @@ import { localeByLanguage, ui, type Language } from '../../../i18n';
 
 export async function getStaticPaths() {
 	const blogEntries = await getCollection('blog');
+	// El id puede venir prefijado por el idioma cuando la entrada vive en una
+	// subcarpeta (p.ej. "en/el-mar-y-los-mensajes"). El slug de la URL es el
+	// basename sin ese prefijo, para que la ruta sea /<lang>/blog/<slug>/.
+	const slugOf = (entry: { id: string }) => entry.id.replace(/^(es|en|pt)\//, '');
 	return blogEntries.map(entry => {
-		const translationKey = entry.data.translationKey ?? entry.id;
+		const translationKey = entry.data.translationKey ?? slugOf(entry);
 		const translations = blogEntries.filter(candidate =>
-			(candidate.data.translationKey ?? candidate.id) === translationKey
+			(candidate.data.translationKey ?? slugOf(candidate)) === translationKey
 		);
 		const languagePaths = Object.fromEntries(
 			translations.map(candidate => [
 				candidate.data.lang,
-				`/${candidate.data.lang}/blog/${candidate.id}/`,
+				`/${candidate.data.lang}/blog/${slugOf(candidate)}/`,
 			])
 		);
 
 		return {
-			params: { lang: entry.data.lang, slug: entry.id },
+			params: { lang: entry.data.lang, slug: slugOf(entry) },
 			props: { entry, languagePaths },
 		};
 	});

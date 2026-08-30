@@ -11,6 +11,16 @@ export default defineConfig(
   ...tseslint.configs.recommended,
   ...eslintPluginAstro.configs.recommended,
   {
+    // Scripts de build/tooling: se ejecutan en Node, no en el navegador.
+    files: ['scripts/**/*.{js,mjs,cjs}'],
+    languageOptions: {
+      globals: {
+        process: 'readonly',
+        console: 'readonly',
+      },
+    },
+  },
+  {
     rules: {
       // Reglas personalizadas
     },
