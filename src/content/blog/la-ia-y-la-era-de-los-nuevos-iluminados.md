@@ -6,6 +6,7 @@ heroImage: "/src/assets/delfos.webp"
 heroFilter: true
 tags: ["ia", "filosofia", "tecnologia"]
 lang: "es"
+translationKey: "la-ia-y-la-era-de-los-nuevos-iluminados"
 ---
 
 ## Desmitificando la Inteligencia Artificial — Parte I
