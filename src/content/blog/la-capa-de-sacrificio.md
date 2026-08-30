@@ -5,6 +5,7 @@ pubDate: 2026-04-12
 heroImage: "/src/assets/The Night Watch.webp"
 tags: ["arquitectura", "legacy", "clean-code"]
 lang: "es"
+translationKey: "la-capa-de-sacrificio"
 ---
 
 En el silencio sepulcral de los talleres de restauración, rodeados del olor áspero a solventes y trementina, existe un concepto que roza lo devocional: la *capa de sacrificio*.

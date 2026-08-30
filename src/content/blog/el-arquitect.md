@@ -5,6 +5,7 @@ pubDate: 2026-05-13
 heroImage: "/src/assets/victor-iaquA2snPbk-unsplash.webp"
 tags: ["arquitectura", "filosofia", "diseño"]
 lang: "es"
+translationKey: "el-arquitect"
 ---
 
 Siempre he pensado que una ciudad revela más sobre una civilización que cualquiera de sus discursos. Basta caminar algunos kilómetros para entender qué teme una sociedad, qué admira, qué desea preservar y qué está dispuesta a sacrificar. Hay ciudades construidas para la contemplación y otras para la productividad; algunas fueron levantadas como monumentos al poder, mientras otras parecen resignadas a la mera supervivencia. Ninguna de ellas es inocente. La arquitectura jamás lo es.

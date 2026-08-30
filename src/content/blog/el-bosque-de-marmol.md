@@ -5,6 +5,7 @@ pubDate: 2026-04-19
 heroImage: "/src/assets/Cruz_de_hormigon_gris_banner.webp"
 tags: ["arquitectura", "monolitos", "historia"]
 lang: "es"
+translationKey: "el-bosque-de-marmol"
 ---
 
 Existió un tiempo en que la arquitectura no buscaba solo la utilidad, sino la divinidad. El Templo de Artemisa en Éfeso, una de las Siete Maravillas del Mundo Antiguo, era el triunfo absoluto de esa idea. Imagina una estructura construida casi en su totalidad —un 99%— de mármol blanco purísimo. Bajo el sol del Mediterráneo, el templo no solo reflejaba la luz; parecía generarla. Quienes se acercaban describían un efecto casi divino, un brillo cegador que hacía que las 127 columnas de veinte metros de altura parecieran un bosque petrificado de luz.

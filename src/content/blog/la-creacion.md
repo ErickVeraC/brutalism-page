@@ -6,6 +6,7 @@ heroImage: "/src/assets/Vlady.webp"
 heroFilter: false
 tags: ["filosofia", "arte", "creacion"]
 lang: "es"
+translationKey: "la-creacion"
 ---
 
 ### Para Lucio

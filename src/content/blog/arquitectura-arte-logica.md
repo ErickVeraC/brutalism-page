@@ -5,6 +5,7 @@ pubDate: 2026-04-23
 heroImage: "/src/assets/Carretera_de_montana_banner.webp"
 tags: ["arquitectura", "filosofia", "desarrollo"]
 lang: "es"
+translationKey: "arquitectura-arte-logica"
 ---
 
 No busco la elevación mística ni la aprobación de los cielos. Mi vida no es una ópera sacra; es un cántico de Goliardo, ese monje que, tras entender el silencio de Dios, decidió cantar a la taberna, a la carne y al destino caprichoso. Soy la percusión de O Fortuna: rítmico, terrenal, a veces áspero y siempre inexorable.

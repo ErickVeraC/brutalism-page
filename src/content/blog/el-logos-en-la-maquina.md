@@ -5,6 +5,7 @@ pubDate: 2026-04-25
 heroImage: "/src/assets/anciano_con_estatua_banner.webp"
 tags: ["filosofia", "arquitectura", "ia", "mentoría"]
 lang: "es"
+translationKey: "el-logos-en-la-maquina"
 ---
 
 Se dice que el silencio de Sócrates es el vacío más fértil de la historia de la humanidad. El maestro de la duda, aquel que caminaba por el Ágora desafiando las certezas de los hombres, jamás puso una sola de sus palabras sobre un papiro. No dejó "código" escrito. Y, sin embargo, aquí estamos, miles de años después, habitando un mundo cimentado sobre sus ideas. Su inmortalidad no nació de su propia pluma, sino de la lealtad, la constancia y la entrega de su alumno más brillante: Platón.
