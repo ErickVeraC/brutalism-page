@@ -41,6 +41,7 @@ Rutas principales:
 /{lang}/blog/      Archivo del blog por idioma
 /{lang}/blog/:id/  Artículo individual
 /rss.xml           Feed de publicaciones en español
+/llms.txt          Índice de contenido para asistentes de IA (llmstxt.org)
 ```
 
 ## Comandos
