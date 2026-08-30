@@ -10,6 +10,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "scaffold:translation": "node scripts/scaffold-translation.mjs",
     "typecheck": "astro check",
     "lint": "eslint .",
     "check": "pnpm typecheck && pnpm lint && pnpm build"

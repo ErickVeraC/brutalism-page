@@ -5,6 +5,7 @@ pubDate: 2026-06-10
 heroImage: "/src/assets/acapulco.webp"
 tags: ["comunicacion", "historia", "reflexion"]
 lang: "es"
+translationKey: "el-mar-y-los-mensajes"
 ---
 
 Vine a Acapulco por trabajo. Durante todo el día escuché conversaciones sobre telecomunicaciones, mensajería y nuevos canales de comunicación. Las preguntas eran las habituales: cómo llegar más lejos, cómo entregar más rápido, cómo captar la atención de usuarios cada vez más saturados de información. Al terminar la exposición decidí caminar un poco por la playa antes de regresar al hotel. La arena todavía conservaba algo del calor del día. El viento arrastraba el olor del mar y, por un momento, el ruido de las presentaciones, las pantallas y las conversaciones de negocios comenzó a desaparecer. Solo quedaron las olas avanzando y retrocediendo sobre la costa con una paciencia imposible.
