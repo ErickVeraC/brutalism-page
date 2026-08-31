@@ -1,0 +1,588 @@
+---
+import { ui, type Language } from '../i18n';
+
+interface Props {
+	lang: Language;
+	title: string;
+	role: string;
+	quote: string;
+}
+
+const { lang, title, role, quote } = Astro.props;
+const text = ui[lang];
+---
+
+<script is:inline>
+	try {
+		const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		const alreadyPlayed = sessionStorage.getItem('web-history-intro:v1') === 'played';
+		if (!reducedMotion && !alreadyPlayed && window.location.hash === '') {
+			document.documentElement.classList.add('history-pending');
+		}
+	} catch {
+		// The site remains usable when storage is unavailable.
+	}
+</script>
+
+<div class="history-shell" data-history-shell>
+	<div class="history-overlay" data-history-overlay hidden>
+		<div class="history-stage" data-history-stage data-era="terminal" aria-hidden="true">
+			<div class="history-scanlines"></div>
+
+			<div class="history-desktop-bar">
+				<span class="history-system" data-history-system>TTY / UNIX</span>
+				<span class="history-clock" data-history-year>1971</span>
+			</div>
+
+			<div class="history-browser-bar">
+				<div class="history-browser-menu">FILE&nbsp;&nbsp; EDIT&nbsp;&nbsp; VIEW&nbsp;&nbsp; GO&nbsp;&nbsp; FAVORITES&nbsp;&nbsp; HELP</div>
+				<div class="history-address"><span>ADDRESS</span> https://www.erickvcoder.codes</div>
+			</div>
+
+			<div class="history-window">
+				<div class="history-titlebar">
+					<div class="history-controls" aria-hidden="true"><span></span><span></span><span></span></div>
+					<span data-history-window-title>erickvcoder.codes</span>
+					<span class="history-titlebar-mark">□</span>
+				</div>
+
+				<div class="history-content">
+					<p class="history-command"><span data-history-prompt>&gt;</span> <span data-history-status>INITIALIZING IDENTITY...</span><span class="history-cursor">_</span></p>
+					<p class="history-role">{role}</p>
+					<div class="history-name">{title}</div>
+					<p class="history-quote">“{quote}”</p>
+
+					<div class="history-nav">
+						<span>{text.nav.manifesto}</span>
+						<span>{text.nav.blueprints}</span>
+						<span>{text.nav.log}</span>
+					</div>
+				</div>
+
+				<div class="history-statusbar">
+					<span>erickvcoder.codes</span>
+					<span data-history-progress>01 / 08</span>
+				</div>
+			</div>
+
+			<div class="history-era">
+				<span class="history-era-year" data-history-era-year>1971</span>
+				<span class="history-era-name" data-history-era-name>THE TERMINAL</span>
+			</div>
+
+			<div class="history-track" aria-hidden="true">
+				<span class="is-current"></span><span></span><span></span><span></span>
+				<span></span><span></span><span></span><span></span>
+			</div>
+		</div>
+
+		<button class="history-skip" type="button" data-history-skip>{text.history.skip}</button>
+	</div>
+
+	<button class="history-replay mono-label" type="button" data-history-replay hidden>{text.history.replay}</button>
+</div>
+
+<script>
+	const eras = [
+		{ id: 'terminal', year: '1971', name: 'THE TERMINAL', system: 'TTY / UNIX', status: 'INITIALIZING IDENTITY...' },
+		{ id: 'mac', year: '1984', name: 'THE PERSONAL COMPUTER', system: 'MACINTOSH SYSTEM 1', status: 'WELCOME TO ERICKVCODER.CODES' },
+		{ id: 'win95', year: '1995', name: 'THE DESKTOP', system: 'MICROSOFT WINDOWS 95', status: 'LOADING PERSONAL SITE...' },
+		{ id: 'browser', year: '1998', name: 'THE EARLY WEB', system: 'INTERNET EXPLORER 4', status: 'DOCUMENT: DONE' },
+		{ id: 'linux', year: '1999', name: 'THE OPEN WEB', system: 'LINUX DESKTOP', status: 'USER@WEB:~$ ./BUILD' },
+		{ id: 'mac2000', year: '2000', name: 'THE CREATIVE WEB', system: 'MAC OS 9', status: 'THINK DIFFERENT. BUILD DIFFERENT.' },
+		{ id: 'xp', year: '2001', name: 'THE SOCIAL WEB', system: 'WINDOWS XP', status: 'CONNECTED TO THE INTERNET' },
+		{ id: 'present', year: '2026', name: 'THE PRESENT', system: 'ERICKVCODER.CODES', status: 'STRUCTURE OVER DECORATION.' },
+	] as const;
+
+	const FRAME_DURATION = 820;
+	const SESSION_KEY = 'web-history-intro:v1';
+
+	function setupHistoryIntro() {
+		const shell = document.querySelector<HTMLElement>('[data-history-shell]');
+		if (!shell || shell.dataset.initialized === 'true') return;
+		shell.dataset.initialized = 'true';
+
+		const overlay = shell.querySelector<HTMLElement>('[data-history-overlay]');
+		const stage = shell.querySelector<HTMLElement>('[data-history-stage]');
+		const skip = shell.querySelector<HTMLButtonElement>('[data-history-skip]');
+		const replay = shell.querySelector<HTMLButtonElement>('[data-history-replay]');
+		const system = shell.querySelector<HTMLElement>('[data-history-system]');
+		const year = shell.querySelector<HTMLElement>('[data-history-year]');
+		const eraYear = shell.querySelector<HTMLElement>('[data-history-era-year]');
+		const eraName = shell.querySelector<HTMLElement>('[data-history-era-name]');
+		const status = shell.querySelector<HTMLElement>('[data-history-status]');
+		const progress = shell.querySelector<HTMLElement>('[data-history-progress]');
+		const track = [...shell.querySelectorAll<HTMLElement>('.history-track span')];
+		const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+		let timers: number[] = [];
+		let playing = false;
+
+		if (!overlay || !stage || !skip || !replay || !system || !year || !eraYear || !eraName || !status || !progress) return;
+		const overlayElement = overlay;
+		const stageElement = stage;
+		const replayButton = replay;
+		const systemLabel = system;
+		const yearLabel = year;
+		const eraYearLabel = eraYear;
+		const eraNameLabel = eraName;
+		const statusLabel = status;
+		const progressLabel = progress;
+
+		const pageElements = [
+			document.body.querySelector<HTMLElement>(':scope > header'),
+			...document.querySelectorAll<HTMLElement>('main > :not([data-history-shell])'),
+			document.body.querySelector<HTMLElement>(':scope > footer'),
+		].filter((element): element is HTMLElement => element !== null);
+
+		function setPageInteractive(interactive: boolean) {
+			pageElements.forEach(element => { element.inert = !interactive; });
+			document.body.style.overflow = interactive ? '' : 'hidden';
+		}
+
+		function renderEra(index: number) {
+			const era = eras[index];
+			stageElement.dataset.era = era.id;
+			systemLabel.textContent = era.system;
+			yearLabel.textContent = era.year;
+			eraYearLabel.textContent = era.year;
+			eraNameLabel.textContent = era.name;
+			statusLabel.textContent = era.status;
+			progressLabel.textContent = `${String(index + 1).padStart(2, '0')} / ${String(eras.length).padStart(2, '0')}`;
+			track.forEach((item, itemIndex) => item.classList.toggle('is-current', itemIndex === index));
+		}
+
+		function clearTimers() {
+			timers.forEach(timer => window.clearTimeout(timer));
+			timers = [];
+		}
+
+		function finishHistory() {
+			if (!playing) return;
+			playing = false;
+			clearTimers();
+			document.documentElement.classList.remove('history-pending');
+			overlayElement.classList.add('is-leaving');
+			setPageInteractive(true);
+			window.setTimeout(() => {
+				overlayElement.hidden = true;
+				overlayElement.classList.remove('is-active', 'is-leaving');
+				replayButton.hidden = false;
+			}, 380);
+		}
+
+		function playHistory(force = false) {
+			if (playing || reducedMotion.matches) return;
+			if (!force && !document.documentElement.classList.contains('history-pending')) {
+				replayButton.hidden = false;
+				return;
+			}
+
+			playing = true;
+			clearTimers();
+			try { sessionStorage.setItem(SESSION_KEY, 'played'); } catch { /* Storage is optional. */ }
+			replayButton.hidden = true;
+			overlayElement.hidden = false;
+			overlayElement.classList.remove('is-leaving');
+			overlayElement.classList.add('is-active');
+			setPageInteractive(false);
+			renderEra(0);
+
+			eras.slice(1).forEach((_, offset) => {
+				timers.push(window.setTimeout(() => renderEra(offset + 1), FRAME_DURATION * (offset + 1)));
+			});
+			timers.push(window.setTimeout(finishHistory, FRAME_DURATION * eras.length + 250));
+		}
+
+		skip.addEventListener('click', finishHistory);
+		replay.addEventListener('click', () => playHistory(true));
+		document.addEventListener('keydown', event => {
+			if (event.key === 'Escape' && playing) finishHistory();
+		});
+		reducedMotion.addEventListener('change', event => {
+			if (event.matches) finishHistory();
+		});
+
+		playHistory();
+	}
+
+	setupHistoryIntro();
+</script>
+
+<style>
+	:global(html.history-pending) { overflow: hidden; }
+
+	.history-overlay {
+		position: fixed;
+		inset: 0;
+		z-index: 5000;
+		background: #000;
+		opacity: 0;
+		transition: opacity 180ms linear;
+	}
+
+	.history-overlay.is-active { opacity: 1; }
+	.history-overlay.is-leaving { opacity: 0; transition-duration: 360ms; }
+
+	.history-stage {
+		--era-bg: #020b04;
+		--era-panel: #020b04;
+		--era-text: #58ff7a;
+		--era-muted: #2ea747;
+		--era-accent: #58ff7a;
+		--era-border: 1px solid #58ff7a;
+		--era-shadow: none;
+		--era-font: 'JetBrains Mono', ui-monospace, monospace;
+		position: absolute;
+		inset: 0;
+		display: grid;
+		place-items: center;
+		padding: clamp(18px, 5vw, 72px);
+		background: var(--era-bg);
+		color: var(--era-text);
+		font-family: var(--era-font);
+		transition: background 160ms steps(2, end), color 160ms steps(2, end);
+		overflow: hidden;
+	}
+
+	.history-stage[data-era='mac'] {
+		--era-bg: repeating-conic-gradient(#c8c8c8 0 25%, #ededed 0 50%) 0 / 4px 4px;
+		--era-panel: #f5f5f5;
+		--era-text: #111;
+		--era-muted: #555;
+		--era-accent: #111;
+		--era-border: 2px solid #111;
+		--era-shadow: 8px 8px 0 #111;
+		--era-font: Geneva, Chicago, system-ui, sans-serif;
+	}
+
+	.history-stage[data-era='win95'] {
+		--era-bg: #008080;
+		--era-panel: #c0c0c0;
+		--era-text: #000;
+		--era-muted: #404040;
+		--era-accent: #000080;
+		--era-border: 3px outset #eee;
+		--era-shadow: 8px 8px 0 rgba(0, 0, 0, .45);
+		--era-font: 'MS Sans Serif', Tahoma, system-ui, sans-serif;
+	}
+
+	.history-stage[data-era='browser'] {
+		--era-bg: #5d7fa8;
+		--era-panel: #fff;
+		--era-text: #111;
+		--era-muted: #555;
+		--era-accent: #0000ee;
+		--era-border: 3px outset #eee;
+		--era-shadow: 10px 10px 0 rgba(0, 0, 0, .35);
+		--era-font: 'Times New Roman', serif;
+	}
+
+	.history-stage[data-era='linux'] {
+		--era-bg: #343434;
+		--era-panel: #151515;
+		--era-text: #efefef;
+		--era-muted: #9c9c9c;
+		--era-accent: #ffb000;
+		--era-border: 2px solid #777;
+		--era-shadow: 10px 10px 0 #101010;
+		--era-font: 'JetBrains Mono', ui-monospace, monospace;
+	}
+
+	.history-stage[data-era='mac2000'] {
+		--era-bg: linear-gradient(145deg, #315ea8 0%, #96c8ec 45%, #e8f4ff 100%);
+		--era-panel: linear-gradient(#f7fbff, #c8d8e8);
+		--era-text: #10233d;
+		--era-muted: #53677e;
+		--era-accent: #1765c1;
+		--era-border: 1px solid #6686a7;
+		--era-shadow: 0 18px 45px rgba(6, 35, 72, .48);
+		--era-font: 'Lucida Grande', Helvetica, system-ui, sans-serif;
+	}
+
+	.history-stage[data-era='xp'] {
+		--era-bg: linear-gradient(#4a92db 0 62%, #77b94d 62% 100%);
+		--era-panel: #ece9d8;
+		--era-text: #111;
+		--era-muted: #595959;
+		--era-accent: #245edb;
+		--era-border: 3px solid #245edb;
+		--era-shadow: 10px 12px 24px rgba(0, 0, 0, .4);
+		--era-font: Tahoma, 'Segoe UI', system-ui, sans-serif;
+	}
+
+	.history-stage[data-era='present'] {
+		--era-bg: #171717;
+		--era-panel: #171717;
+		--era-text: #fff;
+		--era-muted: #dedede;
+		--era-accent: #f20505;
+		--era-border: 2px solid #fff;
+		--era-shadow: 10px 10px 0 #f20505;
+		--era-font: 'Satoshi', sans-serif;
+	}
+
+	.history-scanlines {
+		position: absolute;
+		inset: 0;
+		pointer-events: none;
+		background: repeating-linear-gradient(transparent 0 3px, rgba(0, 0, 0, .18) 3px 4px);
+		opacity: .7;
+		z-index: 4;
+	}
+
+	.history-stage:not([data-era='terminal']) .history-scanlines { opacity: 0; }
+
+	.history-desktop-bar {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		display: flex;
+		justify-content: space-between;
+		padding: 7px 12px;
+		background: var(--era-panel);
+		border-bottom: var(--era-border);
+		font-family: var(--era-font);
+		font-size: clamp(.62rem, 1.4vw, .8rem);
+		font-weight: 700;
+		letter-spacing: .04em;
+		z-index: 3;
+	}
+
+	.history-stage[data-era='terminal'] .history-desktop-bar,
+	.history-stage[data-era='browser'] .history-desktop-bar,
+	.history-stage[data-era='present'] .history-desktop-bar { background: transparent; }
+
+	.history-stage[data-era='win95'] .history-desktop-bar,
+	.history-stage[data-era='xp'] .history-desktop-bar { top: auto; bottom: 0; border-top: var(--era-border); border-bottom: 0; }
+
+	.history-browser-bar {
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 3;
+		background: #c0c0c0;
+		color: #111;
+		font: 12px Arial, sans-serif;
+		border-bottom: 3px outset #eee;
+	}
+
+	.history-stage[data-era='browser'] .history-browser-bar { display: block; }
+	.history-browser-menu { padding: 5px 9px; border-bottom: 1px solid #777; }
+	.history-address { padding: 6px 9px; background: #fff; border: 2px inset #ddd; }
+	.history-address span { background: #c0c0c0; padding: 2px 8px; margin-right: 8px; }
+
+	.history-window {
+		position: relative;
+		z-index: 2;
+		width: min(960px, 90vw);
+		min-height: min(560px, 72vh);
+		display: grid;
+		grid-template-rows: auto 1fr auto;
+		background: var(--era-panel);
+		border: var(--era-border);
+		box-shadow: var(--era-shadow);
+		transition: all 160ms steps(2, end);
+	}
+
+	.history-stage[data-era='terminal'] .history-window { border-inline: 0; width: min(1040px, 92vw); }
+	.history-stage[data-era='browser'] .history-window { margin-top: 48px; }
+
+	.history-titlebar {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 12px;
+		min-height: 32px;
+		padding: 5px 8px;
+		border-bottom: var(--era-border);
+		background: var(--era-accent);
+		color: var(--era-panel);
+		font-size: .76rem;
+		font-weight: 700;
+		text-align: center;
+	}
+
+	.history-stage[data-era='terminal'] .history-titlebar { justify-content: flex-start; background: transparent; color: var(--era-text); }
+	.history-stage[data-era='mac'] .history-titlebar { background: repeating-linear-gradient(#111 0 1px, #f5f5f5 1px 3px); color: #111; }
+	.history-stage[data-era='mac'] .history-titlebar > span { background: #f5f5f5; padding: 0 8px; }
+	.history-stage[data-era='mac2000'] .history-titlebar { background: linear-gradient(#fff, #8ca9c4); color: #10233d; }
+
+	.history-controls { display: flex; gap: 5px; }
+	.history-controls span { width: 12px; height: 12px; border: 1px solid currentColor; background: var(--era-panel); }
+	.history-stage[data-era='terminal'] .history-controls,
+	.history-stage[data-era='present'] .history-controls { display: none; }
+
+	.history-content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: clamp(24px, 5vw, 64px);
+		overflow: hidden;
+	}
+
+	.history-command,
+	.history-role,
+	.history-quote { margin: 0; }
+
+	.history-command {
+		color: var(--era-muted);
+		font-family: var(--era-font);
+		font-size: clamp(.64rem, 1.5vw, .85rem);
+		letter-spacing: .06em;
+		text-transform: uppercase;
+	}
+
+	.history-command > span:first-child { color: var(--era-accent); font-weight: 900; }
+	.history-cursor { animation: history-blink 500ms steps(1) infinite; }
+
+	.history-role {
+		margin-top: clamp(18px, 3vh, 30px);
+		color: var(--era-accent);
+		font-family: var(--era-font);
+		font-size: clamp(.7rem, 1.7vw, 1rem);
+		font-weight: 700;
+		letter-spacing: .08em;
+		text-transform: uppercase;
+	}
+
+	.history-name {
+		margin-top: 12px;
+		font-family: var(--era-font);
+		font-size: clamp(2.5rem, 9vw, 8.5rem);
+		font-weight: 900;
+		letter-spacing: -.055em;
+		line-height: .84;
+		text-transform: uppercase;
+		text-wrap: balance;
+	}
+
+	.history-stage[data-era='browser'] .history-name { color: #0000ee; text-decoration: underline; }
+	.history-stage[data-era='mac'] .history-name { letter-spacing: -.08em; }
+
+	.history-quote {
+		max-width: 720px;
+		margin-top: 24px;
+		color: var(--era-muted);
+		font-family: var(--era-font);
+		font-size: clamp(.82rem, 2vw, 1.2rem);
+		font-weight: 700;
+	}
+
+	.history-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+	.history-nav span {
+		padding: 7px 10px;
+		border: var(--era-border);
+		color: var(--era-text);
+		font-family: var(--era-font);
+		font-size: clamp(.58rem, 1.2vw, .72rem);
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+
+	.history-stage[data-era='browser'] .history-nav span { border: 0; color: #0000ee; text-decoration: underline; padding-left: 0; }
+	.history-stage[data-era='present'] .history-nav span { color: #fff; }
+
+	.history-statusbar {
+		display: flex;
+		justify-content: space-between;
+		padding: 7px 10px;
+		border-top: var(--era-border);
+		color: var(--era-muted);
+		font-family: var(--era-font);
+		font-size: .64rem;
+		text-transform: uppercase;
+	}
+
+	.history-era {
+		position: absolute;
+		left: clamp(18px, 4vw, 56px);
+		bottom: clamp(28px, 4vh, 52px);
+		z-index: 5;
+		display: flex;
+		align-items: baseline;
+		gap: 12px;
+		padding: 6px 9px;
+		background: var(--era-text);
+		color: var(--era-bg);
+		font-family: 'JetBrains Mono', ui-monospace, monospace;
+		font-size: clamp(.62rem, 1.5vw, .82rem);
+		font-weight: 700;
+		letter-spacing: .05em;
+	}
+
+	.history-era-year { font-size: 1.25em; }
+
+	.history-track {
+		position: absolute;
+		right: clamp(18px, 4vw, 56px);
+		bottom: clamp(34px, 4vh, 58px);
+		z-index: 5;
+		display: flex;
+		gap: 7px;
+	}
+
+	.history-track span { width: clamp(16px, 3vw, 38px); height: 4px; background: var(--era-muted); opacity: .35; }
+	.history-track span.is-current { background: var(--era-accent); opacity: 1; }
+
+	.history-skip,
+	.history-replay {
+		font-family: 'JetBrains Mono', ui-monospace, monospace;
+		font-weight: 700;
+		text-transform: uppercase;
+		cursor: pointer;
+	}
+
+	.history-skip {
+		position: fixed;
+		top: 52px;
+		right: 18px;
+		z-index: 5006;
+		padding: 9px 12px;
+		border: 1px solid currentColor;
+		background: #000;
+		color: #fff;
+		font-size: .7rem;
+	}
+
+	.history-skip:focus-visible,
+	.history-replay:focus-visible { outline: 3px solid var(--accent-red); outline-offset: 3px; }
+
+	.history-replay {
+		position: fixed;
+		right: 18px;
+		bottom: 18px;
+		z-index: 900;
+		padding: 9px 12px;
+		border: var(--border-main);
+		background: var(--bg-dark);
+		color: var(--text-main);
+		font-size: .62rem;
+		box-shadow: 4px 4px 0 var(--accent-red);
+	}
+
+	.history-replay:hover { color: var(--accent-red); transform: translate(-2px, -2px); }
+
+	@keyframes history-blink { 50% { opacity: 0; } }
+
+	@media (max-width: 640px) {
+		.history-stage { padding: 54px 14px 94px; }
+		.history-window { width: 100%; min-height: 64vh; }
+		.history-stage[data-era='browser'] .history-window { margin-top: 72px; }
+		.history-content { padding: 24px 18px; }
+		.history-name { font-size: clamp(2.35rem, 15vw, 4.8rem); }
+		.history-nav span:nth-child(2) { display: none; }
+		.history-era { left: 14px; bottom: 54px; max-width: calc(100% - 28px); }
+		.history-track { left: 14px; right: 14px; bottom: 28px; }
+		.history-track span { flex: 1; }
+		.history-skip { top: 42px; right: 12px; }
+		.history-replay { right: 12px; bottom: 12px; }
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.history-overlay,
+		.history-replay { display: none !important; }
+	}
+</style>

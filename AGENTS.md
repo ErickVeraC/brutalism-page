@@ -51,7 +51,7 @@ docs/
 
 ## Reglas del proyecto (respétalas)
 
-1. **Mantén el sitio estático.** No añadas backend, adaptadores de servidor ni JavaScript de cliente salvo que sea imprescindible (hoy solo hay JS para el menú móvil y el selector de blueprints). Antes de añadir una dependencia, verifica que HTML/CSS/JS nativo no basten.
+1. **Mantén el sitio estático.** No añadas backend, adaptadores de servidor ni JavaScript de cliente salvo que sea imprescindible (hoy solo hay JS nativo para el menú móvil, el selector de blueprints y la introducción histórica de las páginas de inicio). Antes de añadir una dependencia, verifica que HTML/CSS/JS nativo no basten.
 2. **Los posts en español son la fuente de la verdad.** No cambies su contenido al traducir; una traducción vive en `src/content/blog/{en,pt}/` con el mismo nombre de archivo y comparte `translationKey` con el fuente.
 3. **No dupliques imágenes entre traducciones** — todas reusan el mismo `heroImage`. Optimiza a WebP (calidad ~82, héroes ≤2400px). Los assets van en `src/assets` (pipeline de Astro), nunca en `public`.
 4. **Diseño:** usa los tokens de `src/styles/global.css` (`--accent-red`, `--border-main`, `--shadow-brutal`, `--font-mono`). No inventes colores ni radios (el sitio fuerza `border-radius: 0`).
