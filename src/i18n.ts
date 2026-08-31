@@ -14,6 +14,7 @@ export const localeByLanguage: Record<Language, string> = {
 export const ui = {
 	es: {
 		meta: { description: 'Portafolio y bitácora editorial de Erick Vera sobre arquitectura de software, inteligencia artificial, filosofía, arte e historia.' },
+		history: { skip: '[ SALTAR_INTRO ]', replay: '[ REPRODUCIR_HISTORIA_WEB ]' },
 		nav: { manifesto: '/01_MANIFIESTO', blueprints: '/02_PLANOS', log: '/03_BITÁCORA', contact: '/04_CONTACTO', menu: '[ MENÚ ]', close: '[ CERRAR ]' },
 		footer: { heading: ['¿LISTO PARA CONSTRUIR', 'CON LÓGICA?'], hire: '[ CONTRÁTAME_EN_UPWORK ]', location: 'UBICACIÓN: CIUDAD_DE_MÉXICO // TLAXCALA' },
 		blog: {
@@ -26,6 +27,7 @@ export const ui = {
 	},
 	en: {
 		meta: { description: 'Erick Vera’s portfolio and editorial log on software architecture, artificial intelligence, philosophy, art, and history.' },
+		history: { skip: '[ SKIP_INTRO ]', replay: '[ REPLAY_WEB_HISTORY ]' },
 		nav: { manifesto: '/01_MANIFESTO', blueprints: '/02_BLUEPRINTS', log: '/03_LOG', contact: '/04_CONTACT', menu: '[ MENU ]', close: '[ CLOSE ]' },
 		footer: { heading: ['READY TO BUILD', 'WITH LOGIC?'], hire: '[ HIRE_ME_ON_UPWORK ]', location: 'LOCATION: MEXICO_CITY // TLAXCALA' },
 		blog: {
@@ -38,6 +40,7 @@ export const ui = {
 	},
 	pt: {
 		meta: { description: 'Portfólio e diário editorial de Erick Vera sobre arquitetura de software, inteligência artificial, filosofia, arte e história.' },
+		history: { skip: '[ PULAR_INTRO ]', replay: '[ REPRODUZIR_HISTÓRIA_DA_WEB ]' },
 		nav: { manifesto: '/01_MANIFESTO', blueprints: '/02_PROJETOS', log: '/03_DIÁRIO', contact: '/04_CONTATO', menu: '[ MENU ]', close: '[ FECHAR ]' },
 		footer: { heading: ['PRONTO PARA CONSTRUIR', 'COM LÓGICA?'], hire: '[ CONTRATE-ME_NO_UPWORK ]', location: 'LOCALIZAÇÃO: CIDADE_DO_MÉXICO // TLAXCALA' },
 		blog: {

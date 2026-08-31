@@ -4,10 +4,17 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import Gallery from '../../components/Gallery.astro';
 import Blueprints from '../../components/Blueprints.astro';
 import LatestPost from '../../components/LatestPost.astro';
+import WebHistoryIntro from '../../components/WebHistoryIntro.astro';
 import heroImage from '../../assets/hero-concrete.webp';
 ---
 
 <MainLayout title="O Arquiteto Nômade" lang="pt">
+	<WebHistoryIntro
+		lang="pt"
+		title="O ARQUITETO NÔMADE"
+		role="ARQUITETO DE SOFTWARE. DESIGNER DE SISTEMAS DE PENSAMENTO."
+		quote="Construindo estruturas resilientes em código e espaço."
+	/>
 	<section id="home" style="min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; position: relative; overflow: hidden; padding-bottom: 10vh; z-index: 0;">
 		<div class="hero-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: var(--bg-dark);">
 			<Image 

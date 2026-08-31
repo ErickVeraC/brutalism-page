@@ -111,8 +111,11 @@ La mayor parte del sitio no envía JavaScript al navegador. Los scripts existent
 
 - Apertura y cierre del menú móvil.
 - Selección interactiva de blueprints.
+- Introducción histórica de las páginas de inicio: ocho estados visuales, persistencia por sesión, control para omitir/repetir y salida directa con `prefers-reduced-motion`.
 
 Antes de añadir una dependencia o framework cliente, debe comprobarse que HTML, CSS y JavaScript nativo no sean suficientes.
+
+`WebHistoryIntro.astro` es una mejora progresiva: la página completa se genera y permanece detrás de la capa visual. La introducción solo se monta en `/es/`, `/en/` y `/pt/`; nunca en artículos o archivos del blog. Si JavaScript o `sessionStorage` no están disponibles, el contenido queda accesible sin esperar la animación.
 
 ## CI y ramas
 
@@ -142,7 +145,7 @@ Los tres puntos donde se declara la versión de Node deben moverse **juntos** al
 - **Content Collections tipadas** (`astro:content` + esquema Zod en `src/content.config.ts`) para el blog Markdown.
 - **`astro:assets` con Sharp** para optimizar los héroes WebP durante el build.
 - **`getStaticPaths()`** para generar únicamente las combinaciones válidas de idioma y slug del blog.
-- **Islas de JavaScript mínimas**: el sitio no monta ningún framework de UI; los únicos scripts cliente son vanilla (menú móvil y selector de blueprints).
+- **Islas de JavaScript mínimas**: el sitio no monta ningún framework de UI; los únicos scripts cliente son vanilla (menú móvil, selector de blueprints e introducción histórica de las páginas de inicio).
 
 Para actualizar Astro y sus integraciones oficiales de forma coordinada: `pnpm dlx @astrojs/upgrade`. Revisa la [guía de upgrade a v7](https://docs.astro.build/en/guides/upgrade-to/v7/) antes de saltar de major.
 
