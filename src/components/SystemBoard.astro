@@ -140,6 +140,7 @@ const domainOrder: DomainId[] = ['interface', 'application', 'data', 'messaging'
               <button
                 type="button"
                 class={`domain-node domain-${id}`}
+                style={`--reveal-delay: ${index < 4 ? index * 65 : 0}ms`}
                 data-domain={id}
                 data-domain-reveal={revealStage}
                 aria-expanded="true"
@@ -271,6 +272,8 @@ const domainOrder: DomainId[] = ['interface', 'application', 'data', 'messaging'
 
 <style>
   .system-board {
+    --motion-ease: cubic-bezier(.22, 1, .36, 1);
+    --motion-duration: 680ms;
     --chalk: var(--text-main);
     --chalk-muted: var(--text-muted);
     overflow: visible;
@@ -379,7 +382,7 @@ const domainOrder: DomainId[] = ['interface', 'application', 'data', 'messaging'
     color: var(--chalk);
     text-align: left;
     cursor: pointer;
-    transition: opacity 180ms ease, border-color 180ms ease, transform 180ms ease;
+    transition: opacity 420ms var(--motion-ease), border-color 320ms ease, transform 420ms var(--motion-ease);
   }
 
   .domain-node:hover,
@@ -409,8 +412,7 @@ const domainOrder: DomainId[] = ['interface', 'application', 'data', 'messaging'
   .domain-messaging { grid-area: 2 / 3; }
   .domain-infrastructure { grid-area: 3 / 2; }
   .domain-observability { grid-area: 3 / 3; border-style: dashed; }
-  .is-enhanced:not([data-stage='0']):not([data-stage='1']) .idea-brief { display: none; }
-  .is-enhanced:not([data-stage='0']):not([data-stage='1']) .question-field { display: none; }
+
 
   .system-close {
     position: absolute;
@@ -437,7 +439,16 @@ const domainOrder: DomainId[] = ['interface', 'application', 'data', 'messaging'
   .is-enhanced .board-sticky { position: sticky; top: 82px; }
   .is-enhanced .chalkboard { min-height: 0; height: clamp(480px, calc(100svh - 210px), 720px); }
   .is-enhanced [data-reveal],
-  .is-enhanced [data-domain-reveal] { opacity: 0; visibility: hidden; translate: 0 4px; transition: opacity 260ms ease, translate 260ms ease; pointer-events: none; }
+  .is-enhanced [data-domain-reveal] {
+    opacity: 0;
+    visibility: hidden;
+    translate: 0 14px;
+    transition:
+      opacity var(--motion-duration) var(--motion-ease),
+      translate var(--motion-duration) var(--motion-ease),
+      visibility 0s linear var(--motion-duration);
+    pointer-events: none;
+  }
   .is-enhanced[data-stage='0'] [data-reveal='0'],
   .is-enhanced[data-stage='1'] [data-reveal='0'], .is-enhanced[data-stage='1'] [data-reveal='1'],
   .is-enhanced[data-stage='2'] [data-reveal='0'], .is-enhanced[data-stage='2'] [data-reveal='1'], .is-enhanced[data-stage='2'] [data-reveal='2'],
@@ -451,10 +462,31 @@ const domainOrder: DomainId[] = ['interface', 'application', 'data', 'messaging'
   .is-enhanced[data-stage='4'] [data-domain-reveal='2'],
   .is-enhanced[data-stage='5'] [data-domain-reveal]:not([data-domain-reveal='6']),
   .is-enhanced[data-stage='6'] [data-domain-reveal],
-  .is-enhanced[data-stage='7'] [data-domain-reveal] { opacity: 1; visibility: visible; translate: 0 0; }
+  .is-enhanced[data-stage='7'] [data-domain-reveal] {
+    opacity: 1;
+    visibility: visible;
+    translate: 0 0;
+    transition-delay: var(--reveal-delay, 0ms), var(--reveal-delay, 0ms), 0s;
+  }
   .is-enhanced[data-stage='7'] .domain-map,
   .is-enhanced[data-stage='7'] [data-domain-reveal] { pointer-events: auto; }
-  .is-enhanced:not(.is-complete) .explore-prompt { visibility: hidden; }
+  .is-enhanced .idea-brief,
+  .is-enhanced .explore-prompt {
+    transition: opacity 480ms var(--motion-ease), translate 480ms var(--motion-ease), visibility 0s;
+  }
+  .is-enhanced:not([data-stage='0']):not([data-stage='1']) .idea-brief,
+  .is-enhanced:not([data-stage='0']):not([data-stage='1']) .question-field,
+  .is-enhanced:not(.is-complete) .explore-prompt {
+    opacity: 0;
+    visibility: hidden;
+    translate: 0 -8px;
+    transition-delay: 0s, 0s, 480ms;
+    transition-duration: 480ms, 480ms, 0s;
+    pointer-events: none;
+  }
+  .stage-track li, .stage-track li span {
+    transition: color 360ms ease, border-color 360ms ease;
+  }
 
   @media (max-width: 900px) {
     .system-board { padding-inline: 15px; }
