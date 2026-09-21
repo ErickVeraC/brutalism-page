@@ -1,0 +1,495 @@
+---
+import type { Language } from '../i18n';
+
+interface Props {
+  lang: Language;
+}
+
+type DomainId = 'interface' | 'application' | 'data' | 'messaging' | 'infrastructure' | 'observability';
+
+const { lang } = Astro.props;
+
+const content = {
+  es: {
+    label: '// DEL CONCEPTO A LA ESTRUCTURA',
+    title: 'CÓMO CONSTRUYO UN SISTEMA',
+    intro: 'La arquitectura comienza antes que las herramientas: en las preguntas, los límites y las relaciones.',
+    stages: ['IDEA', 'PREGUNTAS', 'DOMINIOS', 'FLUJO', 'TECNOLOGÍA', 'INFRAESTRUCTURA', 'OBSERVABILIDAD', 'SISTEMA'],
+    idea: ['TIENES UNA IDEA.', 'PERO UNA IDEA NO ES UNA ARQUITECTURA.', 'CONSTRUIR UNA PLATAFORMA', 'QUE COMUNIQUE', 'A TRAVÉS DE DISTINTOS CANALES.'],
+    questions: ['¿QUIÉN LO USA?', '¿QUÉ SE MUEVE?', '¿QUÉ DEBE PERSISTIR?', '¿QUÉ PUEDE FALLAR?', '¿CÓMO ESCALA?', '¿CÓMO SABEMOS SI FUNCIONA?'],
+    explore: 'EXPLORA LOS DOMINIOS',
+    close: ['LAS HERRAMIENTAS', 'NO SON LA ARQUITECTURA.', 'LAS RELACIONES LO SON.'],
+    coda: 'SI LA IDEA ES ROBUSTA, EL SOFTWARE ES INEVITABLE.',
+    domains: {
+      interface: { name: 'INTERFAZ', role: 'Cómo interactúan las personas.', tech: ['TYPESCRIPT', 'REACT', 'NEXT.JS'], notes: ['UI', 'EXPERIENCIA DE PRODUCTO', 'ESTADO DEL CLIENTE'] },
+      application: { name: 'APLICACIÓN', role: 'Donde viven las reglas y la orquestación.', tech: ['TYPESCRIPT / NODE.JS', 'GO'], notes: ['CONCURRENCIA', 'THROUGHPUT', 'PROTOCOLOS'] },
+      data: { name: 'DATOS', role: 'Lo que el sistema recuerda.', tech: ['POSTGRESQL', 'REDIS', 'MONGODB'], notes: ['ESTADO RELACIONAL DURABLE', 'ESTADO EFÍMERO RÁPIDO', 'CARGAS DOCUMENTALES'] },
+      messaging: { name: 'MENSAJERÍA', role: 'Cómo se mueve la información.', tech: ['RABBITMQ', 'APIs', 'SMPP'], notes: ['WHATSAPP', 'SMS', 'EMAIL', 'RCS'] },
+      infrastructure: { name: 'INFRAESTRUCTURA', role: 'Lo que mantiene al sistema funcionando.', tech: ['AWS', 'DOCKER', 'KUBERNETES'], notes: ['CÓMPUTO', 'DESPLIEGUE', 'ORQUESTACIÓN'] },
+      observability: { name: 'OBSERVABILIDAD', role: 'Cómo se explica el sistema a sí mismo.', tech: ['OPENTELEMETRY', 'GRAFANA', 'LOKI'], notes: ['TRAZAS', 'MÉTRICAS', 'LOGS'] },
+    },
+  },
+  en: {
+    label: '// FROM IDEA TO STRUCTURE',
+    title: 'HOW I BUILD A SYSTEM',
+    intro: 'Architecture begins before the tools: in the questions, boundaries, and relationships.',
+    stages: ['IDEA', 'QUESTIONS', 'DOMAINS', 'FLOW', 'TECHNOLOGY', 'INFRASTRUCTURE', 'OBSERVABILITY', 'SYSTEM'],
+    idea: ['YOU HAVE AN IDEA.', 'BUT AN IDEA IS NOT AN ARCHITECTURE.', 'BUILD A PLATFORM', 'THAT COMMUNICATES', 'ACROSS CHANNELS.'],
+    questions: ['WHO USES IT?', 'WHAT MOVES?', 'WHAT MUST PERSIST?', 'WHAT CAN FAIL?', 'HOW DOES IT SCALE?', 'HOW DO WE KNOW IT WORKS?'],
+    explore: 'EXPLORE THE DOMAINS',
+    close: ['TOOLS ARE NOT', 'THE ARCHITECTURE.', 'THE RELATIONSHIPS ARE.'],
+    coda: 'IF THE IDEA IS ROBUST, THE SOFTWARE IS INEVITABLE.',
+    domains: {
+      interface: { name: 'INTERFACE', role: 'How users interact.', tech: ['TYPESCRIPT', 'REACT', 'NEXT.JS'], notes: ['UI', 'PRODUCT EXPERIENCE', 'CLIENT STATE'] },
+      application: { name: 'APPLICATION', role: 'Where rules and orchestration live.', tech: ['TYPESCRIPT / NODE.JS', 'GO'], notes: ['CONCURRENCY', 'THROUGHPUT', 'PROTOCOLS'] },
+      data: { name: 'DATA', role: 'What the system remembers.', tech: ['POSTGRESQL', 'REDIS', 'MONGODB'], notes: ['DURABLE RELATIONAL STATE', 'FAST EPHEMERAL STATE', 'DOCUMENT WORKLOADS'] },
+      messaging: { name: 'MESSAGING', role: 'How information moves.', tech: ['RABBITMQ', 'APIs', 'SMPP'], notes: ['WHATSAPP', 'SMS', 'EMAIL', 'RCS'] },
+      infrastructure: { name: 'INFRASTRUCTURE', role: 'What keeps the system running.', tech: ['AWS', 'DOCKER', 'KUBERNETES'], notes: ['COMPUTE', 'DELIVERY', 'ORCHESTRATION'] },
+      observability: { name: 'OBSERVABILITY', role: 'How the system explains itself.', tech: ['OPENTELEMETRY', 'GRAFANA', 'LOKI'], notes: ['TRACES', 'METRICS', 'LOGS'] },
+    },
+  },
+  pt: {
+    label: '// DO CONCEITO À ESTRUTURA',
+    title: 'COMO CONSTRUO UM SISTEMA',
+    intro: 'A arquitetura começa antes das ferramentas: nas perguntas, nos limites e nas relações.',
+    stages: ['IDEIA', 'PERGUNTAS', 'DOMÍNIOS', 'FLUXO', 'TECNOLOGIA', 'INFRAESTRUTURA', 'OBSERVABILIDADE', 'SISTEMA'],
+    idea: ['VOCÊ TEM UMA IDEIA.', 'MAS UMA IDEIA NÃO É UMA ARQUITETURA.', 'CONSTRUIR UMA PLATAFORMA', 'QUE SE COMUNIQUE', 'ENTRE DIFERENTES CANAIS.'],
+    questions: ['QUEM USA?', 'O QUE SE MOVE?', 'O QUE DEVE PERSISTIR?', 'O QUE PODE FALHAR?', 'COMO ESCALA?', 'COMO SABEMOS QUE FUNCIONA?'],
+    explore: 'EXPLORE OS DOMÍNIOS',
+    close: ['AS FERRAMENTAS', 'NÃO SÃO A ARQUITETURA.', 'AS RELAÇÕES SÃO.'],
+    coda: 'SE A IDEIA É ROBUSTA, O SOFTWARE É INEVITÁVEL.',
+    domains: {
+      interface: { name: 'INTERFACE', role: 'Como as pessoas interagem.', tech: ['TYPESCRIPT', 'REACT', 'NEXT.JS'], notes: ['UI', 'EXPERIÊNCIA DE PRODUTO', 'ESTADO DO CLIENTE'] },
+      application: { name: 'APLICAÇÃO', role: 'Onde vivem as regras e a orquestração.', tech: ['TYPESCRIPT / NODE.JS', 'GO'], notes: ['CONCORRÊNCIA', 'THROUGHPUT', 'PROTOCOLOS'] },
+      data: { name: 'DADOS', role: 'O que o sistema lembra.', tech: ['POSTGRESQL', 'REDIS', 'MONGODB'], notes: ['ESTADO RELACIONAL DURÁVEL', 'ESTADO EFÊMERO RÁPIDO', 'CARGAS DOCUMENTAIS'] },
+      messaging: { name: 'MENSAGERIA', role: 'Como a informação se move.', tech: ['RABBITMQ', 'APIs', 'SMPP'], notes: ['WHATSAPP', 'SMS', 'EMAIL', 'RCS'] },
+      infrastructure: { name: 'INFRAESTRUTURA', role: 'O que mantém o sistema funcionando.', tech: ['AWS', 'DOCKER', 'KUBERNETES'], notes: ['COMPUTAÇÃO', 'ENTREGA', 'ORQUESTRAÇÃO'] },
+      observability: { name: 'OBSERVABILIDADE', role: 'Como o sistema explica a si mesmo.', tech: ['OPENTELEMETRY', 'GRAFANA', 'LOKI'], notes: ['TRAÇOS', 'MÉTRICAS', 'LOGS'] },
+    },
+  },
+} satisfies Record<Language, {
+  label: string;
+  title: string;
+  intro: string;
+  stages: string[];
+  idea: string[];
+  questions: string[];
+  explore: string;
+  close: string[];
+  coda: string;
+  domains: Record<DomainId, { name: string; role: string; tech: string[]; notes: string[] }>;
+}>;
+
+const text = content[lang];
+const domainOrder: DomainId[] = ['interface', 'application', 'data', 'messaging', 'infrastructure', 'observability'];
+---
+
+<section class="system-board" id="system-board" aria-labelledby="system-board-title" data-system-board data-stage="7">
+  <header class="board-header">
+    <p class="mono-label board-label">{text.label}</p>
+    <h2 id="system-board-title">{text.title}</h2>
+    <p class="board-intro">{text.intro}</p>
+  </header>
+
+  <div class="board-scroll-track">
+    <div class="board-sticky">
+      <div class="board-status mono-label" aria-live="polite">
+        <span data-stage-number>07</span>
+        <span aria-hidden="true">/</span>
+        <span data-stage-name>{text.stages[7]}</span>
+      </div>
+
+      <div class="chalkboard">
+        <div class="chalk-noise" aria-hidden="true"></div>
+
+        <div class="idea-statement" data-reveal="0">
+          <p class="idea-lead">{text.idea[0]}</p>
+          <p class="idea-counterpoint">{text.idea[1]}</p>
+          <p class="idea-brief">{text.idea.slice(2).map(line => <span>{line}</span>)}</p>
+        </div>
+
+        <div class="question-field" data-reveal="1" aria-label={text.stages[1]}>
+          {text.questions.map((question, index) => (
+            <span class={`chalk-question question-${index + 1}`}>? {question}</span>
+          ))}
+        </div>
+
+        <svg class="flow-lines" viewBox="0 0 1000 680" aria-hidden="true" preserveAspectRatio="none" data-reveal="3">
+          <defs>
+            <marker id={`chalk-arrow-${lang}`} viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z"></path>
+            </marker>
+          </defs>
+          <path class="chalk-line" d="M500 275 L500 365" marker-end={`url(#chalk-arrow-${lang})`}></path>
+          <path class="chalk-line" d="M410 420 L280 420" marker-end={`url(#chalk-arrow-${lang})`}></path>
+          <path class="chalk-line" d="M590 420 L720 420" marker-end={`url(#chalk-arrow-${lang})`}></path>
+          <path class="chalk-line chalk-line-secondary" d="M500 460 L500 545"></path>
+          <path class="chalk-line chalk-line-observe" d="M170 210 C110 330 110 510 180 615"></path>
+          <path class="chalk-line chalk-line-observe" d="M830 210 C890 330 890 510 820 615"></path>
+        </svg>
+
+        <div class="infrastructure-frame" data-reveal="5" aria-hidden="true">
+          <span>{text.domains.infrastructure.name}</span>
+        </div>
+
+        <div class="domain-map" data-reveal="2">
+          {domainOrder.map((id, index) => {
+            const domain = text.domains[id];
+            const revealStage = id === 'infrastructure' ? 5 : id === 'observability' ? 6 : 2;
+            return (
+              <button
+                type="button"
+                class={`domain-node domain-${id}`}
+                data-domain={id}
+                data-domain-reveal={revealStage}
+                aria-expanded="true"
+              >
+                <span class="domain-index mono-label">0{index + 1}</span>
+                <strong>{domain.name}</strong>
+                <span class="domain-role">{domain.role}</span>
+                <span class="domain-tech" data-reveal="4">
+                  {domain.tech.map(item => <span>{item}</span>)}
+                </span>
+                <span class="domain-notes">{domain.notes.join(' · ')}</span>
+              </button>
+            );
+          })}
+        </div>
+
+        <div class="system-close" data-reveal="7">
+          <p>{text.close.map(line => <span>{line}</span>)}</p>
+          <small class="mono-label">{text.coda}</small>
+        </div>
+
+        <p class="explore-prompt mono-label" data-explore-prompt>{text.explore}</p>
+      </div>
+
+      <ol class="stage-track mono-label" aria-label={text.label}>
+        {text.stages.map((stage, index) => (
+          <li class={index === 7 ? 'is-active' : ''} data-stage-marker={index}>
+            <span>{String(index).padStart(2, '0')}</span>{stage}
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+</section>
+
+<script>
+  function setupSystemBoards() {
+    document.querySelectorAll<HTMLElement>('[data-system-board]').forEach(board => {
+      if (board.dataset.initialized === 'true') return;
+      board.dataset.initialized = 'true';
+
+      const stageNames = [...board.querySelectorAll<HTMLElement>('[data-stage-marker]')].map(item => item.textContent?.replace(/^\d{2}/, '').trim() ?? '');
+      const track = board.querySelector<HTMLElement>('.board-scroll-track')!;
+      const sticky = board.querySelector<HTMLElement>('.board-sticky')!;
+      const stageNumber = board.querySelector<HTMLElement>('[data-stage-number]');
+      const stageName = board.querySelector<HTMLElement>('[data-stage-name]');
+      const markers = board.querySelectorAll<HTMLElement>('[data-stage-marker]');
+      const domainButtons = board.querySelectorAll<HTMLButtonElement>('[data-domain]');
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const desktop = window.matchMedia('(min-width: 901px)');
+      let activeStage = -1;
+      let visible = false;
+      let frame = 0;
+
+      function setStage(stage: number) {
+        if (stage === activeStage) return;
+        activeStage = stage;
+        if (stage !== 7) {
+          board.classList.remove('has-domain-selection');
+          domainButtons.forEach(button => {
+            button.classList.remove('is-selected');
+            button.setAttribute('aria-expanded', 'false');
+          });
+        }
+        board.dataset.stage = String(stage);
+        board.classList.toggle('is-complete', stage === 7);
+        if (stageNumber) stageNumber.textContent = String(stage).padStart(2, '0');
+        if (stageName) stageName.textContent = stageNames[stage] ?? '';
+        markers.forEach((marker, index) => marker.classList.toggle('is-active', index === stage));
+      }
+
+      function updateFromScroll() {
+        frame = 0;
+        if (!visible || reducedMotion.matches || !desktop.matches) return;
+        const rect = track.getBoundingClientRect();
+        const stickyTop = parseFloat(getComputedStyle(sticky).top) || 0;
+        const distance = Math.max(1, track.offsetHeight - sticky.offsetHeight);
+        const progress = Math.min(1, Math.max(0, (stickyTop - rect.top) / distance));
+        const thresholds = [0.12, 0.25, 0.40, 0.55, 0.70, 0.80, 0.90];
+        const stage = thresholds.findIndex(threshold => progress < threshold);
+        setStage(stage === -1 ? 7 : stage);
+      }
+
+      function requestUpdate() {
+        if (!frame) frame = window.requestAnimationFrame(updateFromScroll);
+      }
+
+      function configureExperience() {
+        const animated = desktop.matches && !reducedMotion.matches;
+        board.classList.toggle('is-enhanced', animated);
+        if (animated) requestUpdate();
+        else setStage(7);
+      }
+
+      const observer = new IntersectionObserver(entries => {
+        visible = entries[0]?.isIntersecting ?? false;
+        if (visible) requestUpdate();
+      }, { rootMargin: '100px 0px' });
+
+      domainButtons.forEach(button => {
+        button.setAttribute('aria-expanded', 'false');
+        button.addEventListener('click', () => {
+          if (activeStage !== 7) return;
+          const alreadySelected = button.classList.contains('is-selected');
+          domainButtons.forEach(item => {
+            item.classList.remove('is-selected');
+            item.setAttribute('aria-expanded', 'false');
+          });
+          board.classList.toggle('has-domain-selection', !alreadySelected);
+          if (!alreadySelected) {
+            button.classList.add('is-selected');
+            button.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+
+      observer.observe(board);
+      window.addEventListener('scroll', requestUpdate, { passive: true });
+      window.addEventListener('resize', requestUpdate, { passive: true });
+      reducedMotion.addEventListener('change', configureExperience);
+      desktop.addEventListener('change', configureExperience);
+      configureExperience();
+    });
+  }
+
+  setupSystemBoards();
+  document.addEventListener('astro:page-load', setupSystemBoards);
+</script>
+
+<style>
+  .system-board {
+    --chalk: var(--text-main);
+    --chalk-muted: var(--text-muted);
+    overflow: visible;
+    scroll-margin-top: 100px;
+    padding: clamp(72px, 9vw, 140px) 20px;
+    background: var(--bg-dark);
+  }
+
+  .board-header {
+    width: min(1380px, 100%);
+    margin: 0 auto clamp(52px, 7vw, 90px);
+  }
+
+  .board-label { color: var(--accent-red); margin-bottom: 18px; }
+  .board-header h2 { max-width: 13ch; }
+  .board-intro { max-width: 62ch; margin-top: 24px; font-size: clamp(1.05rem, 1.5vw, 1.35rem); }
+
+  .board-scroll-track { min-height: 100vh; }
+  .board-sticky { width: min(1380px, 100%); margin: 0 auto; }
+
+  .board-status {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 14px;
+    color: var(--chalk-muted);
+  }
+
+  .board-status [data-stage-number] { color: var(--accent-red); }
+
+  .chalkboard {
+    position: relative;
+    min-height: 720px;
+    overflow: hidden;
+    border: var(--border-main);
+    background: var(--bg-dark);
+    color: var(--chalk);
+    box-shadow: var(--shadow-white);
+  }
+
+  .chalk-noise {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: .16;
+    background-image:
+      repeating-linear-gradient(7deg, transparent 0 23px, rgba(255,255,255,.025) 24px 25px),
+      radial-gradient(circle at 20% 30%, rgba(255,255,255,.12) 0 1px, transparent 1.5px);
+    background-size: auto, 13px 17px;
+  }
+
+  .idea-statement {
+    position: absolute;
+    z-index: 4;
+    top: 34px;
+    left: 50%;
+    width: min(520px, 48%);
+    text-align: center;
+    transform: translateX(-50%);
+  }
+
+  .idea-lead { font-size: clamp(1.5rem, 3vw, 2.7rem); font-weight: 900; }
+  .idea-counterpoint { margin-top: 6px; color: var(--accent-red); font-family: var(--font-mono); font-size: clamp(.72rem, 1.2vw, .9rem); }
+  .idea-brief { margin-top: 14px; font-family: var(--font-mono); font-size: clamp(.68rem, 1vw, .82rem); line-height: 1.35; }
+  .idea-brief span, .system-close span { display: block; }
+
+  .question-field { position: absolute; inset: 0; z-index: 3; pointer-events: none; }
+  .chalk-question { position: absolute; color: var(--chalk-muted); font-family: var(--font-mono); font-size: clamp(.62rem, .9vw, .78rem); transform: rotate(-2deg); }
+  .question-1 { top: 7%; left: 4%; }
+  .question-2 { top: 19%; right: 5%; transform: rotate(2deg); }
+  .question-3 { top: 31%; left: 8%; transform: rotate(1deg); }
+  .question-4 { top: 36%; right: 7%; }
+  .question-5 { top: 63%; left: 3%; transform: rotate(2deg); }
+  .question-6 { top: 76%; right: 3%; transform: rotate(-1deg); }
+
+  .flow-lines { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; overflow: visible; }
+  .chalk-line { fill: none; stroke: var(--chalk); stroke-width: 2.2; stroke-linecap: round; stroke-dasharray: 7 3 13 2; vector-effect: non-scaling-stroke; }
+  .chalk-line-secondary { opacity: .5; }
+  .chalk-line-observe { stroke-width: 1.5; stroke-dasharray: 3 8; opacity: .55; }
+  .flow-lines marker path { fill: var(--chalk); }
+
+  .infrastructure-frame {
+    position: absolute;
+    z-index: 1;
+    inset: 28% 10% 7%;
+    border: 2px dashed rgba(250, 250, 244, .48);
+  }
+
+  .infrastructure-frame span {
+    position: absolute;
+    right: 18px;
+    bottom: -10px;
+    padding: 0 8px;
+    background: var(--bg-dark);
+    color: var(--chalk-muted);
+    font-family: var(--font-mono);
+    font-size: .68rem;
+  }
+
+  .domain-map { position: absolute; inset: 0; z-index: 2; }
+  .domain-node {
+    position: absolute;
+    width: clamp(150px, 18vw, 235px);
+    padding: 12px;
+    border: 1px solid rgba(250, 250, 244, .72);
+    background: var(--bg-dark);
+    color: var(--chalk);
+    text-align: left;
+    cursor: pointer;
+    transition: opacity 180ms ease, border-color 180ms ease, transform 180ms ease;
+  }
+
+  .domain-node:hover,
+  .domain-node:focus-visible,
+  .domain-node.is-selected { border-color: var(--accent-red); outline: 2px solid transparent; transform: translateY(-2px); }
+  .domain-index { display: block; margin-bottom: 4px; color: var(--accent-red); font-size: .62rem; }
+  .domain-node strong { display: block; font-family: var(--font-mono); font-size: clamp(.85rem, 1.35vw, 1.15rem); }
+  .domain-role { display: block; margin-top: 5px; color: var(--chalk-muted); font-size: .75rem; }
+  .domain-tech { display: flex; flex-wrap: wrap; gap: 4px 8px; margin-top: 9px; font-family: var(--font-mono); font-size: .58rem; }
+  .domain-notes { display: block; margin-top: 9px; padding-top: 8px; border-top: 1px dashed var(--chalk-muted); color: var(--chalk-muted); font-family: var(--font-mono); font-size: .57rem; line-height: 1.4; }
+  .is-enhanced .domain-notes { display: none; }
+  .domain-node.is-selected .domain-notes { display: block; }
+  .has-domain-selection .domain-node:not(.is-selected) { opacity: .28; }
+
+  .domain-map {
+    inset: 28% 4% 4%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+    gap: 14px 5%;
+    align-items: center;
+  }
+  .domain-node { position: relative; width: 100%; padding: 8px; }
+  .domain-interface { grid-area: 1 / 2; }
+  .domain-application { grid-area: 2 / 2; }
+  .domain-data { grid-area: 2 / 1; }
+  .domain-messaging { grid-area: 2 / 3; }
+  .domain-infrastructure { grid-area: 3 / 2; }
+  .domain-observability { grid-area: 3 / 3; border-style: dashed; }
+  .is-enhanced:not([data-stage='0']):not([data-stage='1']) .idea-brief { display: none; }
+  .is-enhanced:not([data-stage='0']):not([data-stage='1']) .question-field { display: none; }
+
+  .system-close {
+    position: absolute;
+    z-index: 5;
+    left: 4%;
+    bottom: 4%;
+    max-width: 27%;
+    padding: 14px;
+    background: var(--bg-dark);
+    border-left: 4px solid var(--accent-red);
+  }
+
+  .system-close p { font-weight: 900; line-height: 1.05; }
+  .system-close small { display: block; margin-top: 12px; color: var(--chalk-muted); font-size: .58rem; }
+  .explore-prompt { margin-top: 22px; color: var(--chalk-muted); text-align: right; }
+
+  .stage-track { display: grid; grid-template-columns: repeat(8, 1fr); margin-top: 22px; list-style: none; }
+  .stage-track li { padding-top: 9px; border-top: 2px solid rgba(255,255,255,.18); color: var(--chalk-muted); font-size: clamp(.48rem, .65vw, .65rem); }
+  .stage-track li span { display: block; color: var(--chalk-muted); }
+  .stage-track li.is-active { border-color: var(--accent-red); color: var(--text-main); }
+  .stage-track li.is-active span { color: var(--accent-red); }
+
+  .is-enhanced .board-scroll-track { height: 500vh; }
+  .is-enhanced .board-sticky { position: sticky; top: 82px; }
+  .is-enhanced .chalkboard { min-height: 0; height: clamp(480px, calc(100svh - 210px), 720px); }
+  .is-enhanced [data-reveal],
+  .is-enhanced [data-domain-reveal] { opacity: 0; visibility: hidden; translate: 0 4px; transition: opacity 260ms ease, translate 260ms ease; pointer-events: none; }
+  .is-enhanced[data-stage='0'] [data-reveal='0'],
+  .is-enhanced[data-stage='1'] [data-reveal='0'], .is-enhanced[data-stage='1'] [data-reveal='1'],
+  .is-enhanced[data-stage='2'] [data-reveal='0'], .is-enhanced[data-stage='2'] [data-reveal='1'], .is-enhanced[data-stage='2'] [data-reveal='2'],
+  .is-enhanced[data-stage='3'] [data-reveal]:not([data-reveal='4']):not([data-reveal='5']):not([data-reveal='6']):not([data-reveal='7']),
+  .is-enhanced[data-stage='4'] [data-reveal]:not([data-reveal='5']):not([data-reveal='6']):not([data-reveal='7']),
+  .is-enhanced[data-stage='5'] [data-reveal]:not([data-reveal='6']):not([data-reveal='7']),
+  .is-enhanced[data-stage='6'] [data-reveal]:not([data-reveal='7']),
+  .is-enhanced[data-stage='7'] [data-reveal],
+  .is-enhanced[data-stage='2'] [data-domain-reveal='2'],
+  .is-enhanced[data-stage='3'] [data-domain-reveal='2'],
+  .is-enhanced[data-stage='4'] [data-domain-reveal='2'],
+  .is-enhanced[data-stage='5'] [data-domain-reveal]:not([data-domain-reveal='6']),
+  .is-enhanced[data-stage='6'] [data-domain-reveal],
+  .is-enhanced[data-stage='7'] [data-domain-reveal] { opacity: 1; visibility: visible; translate: 0 0; }
+  .is-enhanced[data-stage='7'] .domain-map,
+  .is-enhanced[data-stage='7'] [data-domain-reveal] { pointer-events: auto; }
+  .is-enhanced:not(.is-complete) .explore-prompt { visibility: hidden; }
+
+  @media (max-width: 900px) {
+    .system-board { padding-inline: 15px; }
+    .board-scroll-track { min-height: 0; }
+    .board-status, .stage-track { display: none; }
+    .chalkboard { min-height: 0; padding: 28px 18px; overflow: visible; }
+    .idea-statement, .question-field, .domain-map, .system-close, .infrastructure-frame { position: relative; inset: auto; width: 100%; transform: none; }
+    .idea-statement { text-align: left; }
+    .question-field { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 32px 0; }
+    .chalk-question { position: static; padding: 8px 0; transform: none; border-bottom: 1px dashed rgba(255,255,255,.22); }
+    .flow-lines { display: none; }
+    .domain-map { display: grid; grid-template-columns: 1fr; grid-template-rows: none; gap: 18px; }
+    .domain-node { position: relative; inset: auto; grid-area: auto; width: 100%; transform: none; padding: 18px; }
+    .domain-node:hover, .domain-node:focus-visible, .domain-node.is-selected,
+    .domain-interface:hover, .domain-interface:focus-visible, .domain-interface.is-selected,
+    .domain-application:hover, .domain-application:focus-visible, .domain-application.is-selected,
+    .domain-infrastructure:hover, .domain-infrastructure:focus-visible, .domain-infrastructure.is-selected { transform: translateY(-2px); }
+    .domain-node::after { content: '↓'; display: block; position: absolute; left: 50%; bottom: -22px; color: var(--chalk-muted); }
+    .domain-node:last-child::after { content: none; }
+    .domain-role { font-size: .88rem; }
+    .domain-tech { font-size: .68rem; }
+    .domain-notes { display: block; }
+    .domain-infrastructure { border: 2px dashed var(--chalk-muted); }
+    .domain-observability { border-style: dashed; }
+    .infrastructure-frame { display: none; }
+    .system-close { max-width: none; margin-top: 36px; }
+    .explore-prompt { display: none; }
+  }
+
+  @media (max-width: 520px) {
+    .question-field { grid-template-columns: 1fr; gap: 5px; }
+    .chalkboard { padding: 24px 14px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .system-board *, .system-board *::before, .system-board *::after { transition-duration: .001ms !important; animation-duration: .001ms !important; }
+  }
+</style>
