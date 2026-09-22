@@ -7,111 +7,111 @@ const blueprintTexts = {
   es: {
     title: "// PLANOS_TÉCNICOS",
     subtitle: "SISTEMAS DE ALTA PRECISIÓN",
-    description: "Cada arquitectura es una respuesta lógica a un problema de negocio. Selecciona una para ver la tecnología recomendada.",
+    description: "Cada arquitectura responde a restricciones distintas. Selecciona un escenario para revisar sus prioridades de diseño.",
     scenarios: [
       {
         id: "landing",
         label: "01_LANDING / CONTENT FIRST",
         summary: "Enfocado en Core Web Vitals, SEO y máxima velocidad de carga estática.",
-        stack: ["Astro 7", "Vanilla CSS", "Vercel / AWS Amplify", "Google Tag Manager", "GitHub Actions"]
+        priorities: ["Jerarquía de contenido", "Entrega estática", "Accesibilidad", "Medición", "Mantenibilidad"]
       },
       {
         id: "saas",
         label: "02_SCALABLE SAAS / WEB APP",
         summary: "Arquitectura moderna para aplicaciones interactivas con tipos seguros y despliegue rápido.",
-        stack: ["Next.js / React", "Hono / Node.js", "PostgreSQL (Prisma/Drizzle)", "Auth.js / Clerk", "Terraform"]
+        priorities: ["Límites de dominio", "Identidad y acceso", "Consistencia de datos", "Procesos asíncronos", "Estrategia de despliegue"]
       },
       {
         id: "highperf",
         label: "03_HIGH PERFORMANCE / EVENT-DRIVEN",
         summary: "Sistemas distribuidos para procesamiento masivo de datos y baja latencia.",
-        stack: ["Go / Python", "Kafka / RabbitMQ", "MongoDB / TimescaleDB", "Kubernetes (K8s)", "AWS EKS / EC2"]
+        priorities: ["Control de presión", "Idempotencia", "Aislamiento de fallos", "Throughput", "Operabilidad"]
       },
       {
         id: "ecommerce",
         label: "04_E-COMMERCE / HIGH CONVERSION",
         summary: "Plataformas de venta optimizadas para conversión, velocidad y escalabilidad global.",
-        stack: ["Next.js (ISR)", "Stripe / Adyen", "Algolia Search", "Redis Cache", "Vercel Edge Functions"]
+        priorities: ["Ruta de conversión", "Búsqueda de catálogo", "Integridad de pagos", "Estrategia de caché", "Entrega global"]
       },
       {
         id: "admin",
         label: "05_ADMIN / INVENTORY CONTROL",
         summary: "Sistemas internos robustos con alta integridad de datos y gestión compleja de recursos.",
-        stack: ["Angular Dashboard", "Node.js API", "PostgreSQL (ACID)", "Docker", "AWS RDS / S3"]
+        priorities: ["Integridad de datos", "Roles y permisos", "Trazabilidad", "Flujos operativos", "Recuperación"]
       }
     ]
   },
   en: {
     title: "// TECHNICAL_BLUEPRINTS",
     subtitle: "HIGH PRECISION SYSTEMS",
-    description: "Each architecture is a logical response to a business problem. Select one to see the recommended stack.",
+    description: "Each architecture responds to different constraints. Select a scenario to inspect its design priorities.",
     scenarios: [
       {
         id: "landing",
         label: "01_LANDING / CONTENT FIRST",
         summary: "Focused on Core Web Vitals, SEO, and maximum static loading speed.",
-        stack: ["Astro 7", "Vanilla CSS", "Vercel / AWS Amplify", "Google Tag Manager", "GitHub Actions"]
+        priorities: ["Content hierarchy", "Static delivery", "Accessibility", "Measurement", "Maintainability"]
       },
       {
         id: "saas",
         label: "02_SCALABLE SAAS / WEB APP",
         summary: "Modern architecture for interactive applications with type safety and fast deployment.",
-        stack: ["Next.js / React", "Hono / Node.js", "PostgreSQL (Prisma/Drizzle)", "Auth.js / Clerk", "Terraform"]
+        priorities: ["Domain boundaries", "Identity and access", "Data consistency", "Asynchronous work", "Deployment strategy"]
       },
       {
         id: "highperf",
         label: "03_HIGH PERFORMANCE / EVENT-DRIVEN",
         summary: "Distributed systems for massive data processing and low latency.",
-        stack: ["Go / Python", "Kafka / RabbitMQ", "MongoDB / TimescaleDB", "Kubernetes (K8s)", "AWS EKS / EC2"]
+        priorities: ["Backpressure", "Idempotency", "Fault isolation", "Throughput", "Operability"]
       },
       {
         id: "ecommerce",
         label: "04_E-COMMERCE / HIGH CONVERSION",
         summary: "Sales platforms optimized for conversion, speed, and global scalability.",
-        stack: ["Next.js (ISR)", "Stripe / Adyen", "Algolia Search", "Redis Cache", "Vercel Edge Functions"]
+        priorities: ["Conversion path", "Catalog search", "Payment integrity", "Cache strategy", "Global delivery"]
       },
       {
         id: "admin",
         label: "05_ADMIN / INVENTORY CONTROL",
         summary: "Robust internal systems with high data integrity and complex resource management.",
-        stack: ["Angular Dashboard", "Node.js API", "PostgreSQL (ACID)", "Docker", "AWS RDS / S3"]
+        priorities: ["Data integrity", "Roles and permissions", "Audit trail", "Operational workflows", "Recovery"]
       }
     ]
   },
   pt: {
     title: "// PROJETOS_TÉCNICOS",
     subtitle: "SISTEMAS DE ALTA PRECISÃO",
-    description: "Cada arquitetura é uma resposta lógica a um problema de negócio. Selecione uma para ver as tecnologias recomendadas.",
+    description: "Cada arquitetura responde a restrições diferentes. Selecione um cenário para revisar suas prioridades de design.",
     scenarios: [
       {
         id: "landing",
         label: "01_LANDING / CONTENT FIRST",
         summary: "Focado em Core Web Vitals, SEO e velocidade máxima de carregamento estático.",
-        stack: ["Astro 7", "Vanilla CSS", "Vercel / AWS Amplify", "Google Tag Manager", "GitHub Actions"]
+        priorities: ["Hierarquia de conteúdo", "Entrega estática", "Acessibilidade", "Medição", "Manutenibilidade"]
       },
       {
         id: "saas",
         label: "02_SCALABLE SAAS / WEB APP",
         summary: "Arquitetura moderna para aplicações interativas, com tipagem segura e implantação rápida.",
-        stack: ["Next.js / React", "Hono / Node.js", "PostgreSQL (Prisma/Drizzle)", "Auth.js / Clerk", "Terraform"]
+        priorities: ["Limites de domínio", "Identidade e acesso", "Consistência de dados", "Processos assíncronos", "Estratégia de implantação"]
       },
       {
         id: "highperf",
         label: "03_HIGH PERFORMANCE / EVENT-DRIVEN",
         summary: "Sistemas distribuídos para processamento massivo de dados e baixa latência.",
-        stack: ["Go / Python", "Kafka / RabbitMQ", "MongoDB / TimescaleDB", "Kubernetes (K8s)", "AWS EKS / EC2"]
+        priorities: ["Controle de pressão", "Idempotência", "Isolamento de falhas", "Throughput", "Operabilidade"]
       },
       {
         id: "ecommerce",
         label: "04_E-COMMERCE / HIGH CONVERSION",
         summary: "Plataformas de vendas otimizadas para conversão, velocidade e escalabilidade global.",
-        stack: ["Next.js (ISR)", "Stripe / Adyen", "Algolia Search", "Redis Cache", "Vercel Edge Functions"]
+        priorities: ["Caminho de conversão", "Busca de catálogo", "Integridade de pagamentos", "Estratégia de cache", "Entrega global"]
       },
       {
         id: "admin",
         label: "05_ADMIN / INVENTORY CONTROL",
         summary: "Sistemas internos robustos com alta integridade de dados e gestão complexa de recursos.",
-        stack: ["Angular Dashboard", "Node.js API", "PostgreSQL (ACID)", "Docker", "AWS RDS / S3"]
+        priorities: ["Integridade de dados", "Papéis e permissões", "Trilha de auditoria", "Fluxos operacionais", "Recuperação"]
       }
     ]
   }
@@ -153,12 +153,12 @@ const content = blueprintTexts[lang];
           </div>
 
           <div class="stack-grid">
-            {s.stack.map(tech => (
+            {s.priorities.map((priority, priorityIndex) => (
               <div class="tech-card">
                 <div class="tech-icon-placeholder">
-                  <span class="mono-label">{tech.substring(0, 2).toUpperCase()}</span>
+                  <span class="mono-label">{String(priorityIndex + 1).padStart(2, '0')}</span>
                 </div>
-                <span class="tech-label mono-label">{tech}</span>
+                <span class="tech-label mono-label">{priority}</span>
               </div>
             ))}
           </div>

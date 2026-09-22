@@ -58,7 +58,7 @@ body {
   font-family: var(--font-primary);
   font-weight: 300;
   line-height: 1.4;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* Typography Giga */
@@ -118,7 +118,7 @@ section {
   overflow-x: hidden;
 }
 
-header {
+.site-header {
   position: fixed;
   top: 0;
   width: 100%;
@@ -190,7 +190,7 @@ footer {
   }
 
   /* Hide lang selector in header — it moves inside the mobile menu */
-  header .lang-selector {
+  .site-header .lang-selector {
     display: none;
   }
 

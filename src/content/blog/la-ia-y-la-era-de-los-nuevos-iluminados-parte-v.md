@@ -2,6 +2,7 @@
 title: "La IA y la Era de los Nuevos Iluminados — Parte V"
 description: "La IAficación: una reflexión sobre conocimiento, trabajo y libertad, y sobre quién decide cómo se reparten los beneficios de la Inteligencia Artificial."
 pubDate: 2026-09-08
+updatedDate: 2026-09-09
 heroImage: "/src/assets/ia-5.webp"
 heroFilter: true
 tags: ["ia", "historia", "filosofia", "tecnologia"]
@@ -11,596 +12,212 @@ translationKey: "la-ia-y-la-era-de-los-nuevos-iluminados-parte-v"
 
 ## La IAficación
 
-¿Esto lo escribiste tú o lo escribió una Inteligencia Artificial?
+¿Qué es una idea?
 
-Hasta hace muy poco, hacer esa pregunta habría resultado extraño. Hoy se ha convertido casi en una reacción automática frente a un texto demasiado correcto, una ilustración demasiado perfecta, una presentación demasiado ordenada o incluso una idea expresada con una claridad que comienza a parecernos sospechosa.
+No es una frase ingeniosa. No es una respuesta bien articulada ni una ocurrencia que aparece completa en nuestra mente. Una idea es una forma de ordenar el mundo y, en ocasiones, de enfrentarse a él. Puede obligarnos a abandonar una certeza, reconocer una contradicción o aceptar una consecuencia que habríamos preferido evitar. Pensar no consiste únicamente en encontrar palabras para aquello que ya creemos. También consiste en permitir que una idea destruya algo de lo que creíamos ser.
 
-La pregunta, sin embargo, empieza a parecerme insuficiente.
+Entonces, ¿cuándo podemos decir que una idea es nuestra?
 
-Porque el verdadero problema no comienza cuando una Inteligencia Artificial escribe por nosotros. Comienza cuando repetimos aquello que escribió sin haber recorrido el camino necesario para comprenderlo y, aun así, terminamos convencidos de que aquellas ideas nos pertenecen.
+No cuando aparece frente a nosotros. Tampoco cuando somos capaces de repetirla con elocuencia. Una idea empieza a pertenecernos cuando hemos pagado su costo intelectual: cuando conocemos el camino que la sostiene, hemos intentado refutarla, reconocemos sus límites y estamos dispuestos a responder por aquello que implica.
 
-Nos dejamos embelesar por la oratoria y la sutileza de las palabras. Preguntamos algo y recibimos una explicación perfectamente articulada, construida con una seguridad que pocas conversaciones humanas poseen. Los argumentos parecen avanzar naturalmente, las contradicciones desaparecen y la conclusión termina frente a nosotros con tal claridad que inmediatamente pensamos: *exactamente, eso era lo que yo quería decir*.
+Ninguna idea nace en completo aislamiento. Pensamos con palabras que no inventamos, a partir de libros que otros escribieron, conversaciones que nos transformaron y experiencias que nunca elegimos del todo. Incluso aquello que llamamos original está hecho de fragmentos heredados. La originalidad absoluta es un mito; la responsabilidad intelectual, no.
 
-Quizá sí.
+Tener una idea no significa haberla creado desde la nada. Significa haberla trabajado hasta que deja de ser una frase prestada y se convierte en una posición propia. Significa poder sostenerla sin esconderse detrás del libro, del autor, del algoritmo o de la máquina que nos ayudó a formularla.
 
-Pero quizá no.
+Esta distinción se ha vuelto urgente porque hoy una máquina puede entregarnos, en segundos, una explicación que se parece mucho al pensamiento terminado. Preguntamos algo y recibimos una respuesta articulada con una seguridad que pocas conversaciones humanas poseen. Los argumentos avanzan, las contradicciones parecen desaparecer y la conclusión queda frente a nosotros con tanta claridad que pensamos: exactamente, eso era lo que yo quería decir.
 
-Quizá eso no era exactamente lo que pensábamos, sino aquello que acabábamos de aprender a pensar.
+Tal vez sí.
 
-No quiero decir con esto que una Inteligencia Artificial piense como nosotros. Si algo he intentado defender a lo largo de estos ensayos es precisamente lo contrario. Un modelo de lenguaje no experimenta las palabras de la misma manera en que nosotros las experimentamos. No recuerda el olor de la casa de su infancia cuando escribe sobre nostalgia, no siente miedo ante la posibilidad de perder el trabajo ni contempla una pintura reconociendo en ella algo que le recuerda a alguien que ya no existe.
+O tal vez eso no era lo que pensábamos, sino lo que acabábamos de aprender a repetir.
 
-Pero nosotros tampoco pensamos como una Inteligencia Artificial.
+No quiero decir que un modelo de lenguaje piense como nosotros. No recuerda el olor de la casa de su infancia cuando escribe sobre nostalgia, no teme perder su empleo ni contempla una pintura recordando a alguien que ya no existe. El problema no está en que la máquina haya adquirido nuestra experiencia, sino en que nosotros confundamos la fluidez de su respuesta con la profundidad de la nuestra.
 
-El problema aparece en otro lugar: en la facilidad con la que confundimos el acceso inmediato a una explicación con la adquisición de conocimiento.
+Podemos preguntarle quién fue Marx y, minutos después, hablar sobre plusvalor; pedirle una explicación de Arthur C. Danto y discutir sobre el fin del arte; solicitar una interpretación histórica sin haber leído al autor, sin tropezar con sus contradicciones y sin descubrir que quizá no decía lo que queríamos que dijera. Participamos en la respuesta: hacemos la pregunta, aportamos contexto, rechazamos unas formulaciones y conservamos otras. Pero participar en la generación de una idea no equivale necesariamente a comprenderla.
 
-Hoy alguien puede preguntarle a una IA quién fue Karl Marx y, unos minutos después, discutir sobre plusvalor; puede solicitar una explicación sobre Arthur C. Danto y hablar con absoluta seguridad sobre el fin del arte; puede pedir una interpretación de un acontecimiento histórico, una postura filosófica o una teoría económica sin haber leído jamás al autor que está citando, sin haberse encontrado con sus contradicciones y sin haber tenido siquiera la experiencia, a veces incómoda, de descubrir que el autor realmente no decía lo que esperábamos que dijera.
+Tener una idea frente a nosotros no significa haberla pensado, del mismo modo que poseer un libro no significa haberlo leído.
 
-La posibilidad de apropiarnos del resultado sin atravesar el proceso intelectual que lo produjo es algo nuevo en su escala, aunque no en su naturaleza.
+### Dos objetos iguales
 
-No necesariamente hay mala intención. De cierta manera, aquellas respuestas tampoco existirían exactamente de esa forma sin nosotros. Nosotros hicimos la pregunta, proporcionamos un contexto, elegimos qué conservar, rechazamos otras respuestas y finalmente decidimos incorporar determinadas ideas a nuestra visión del mundo. Existe una participación humana real.
+En 1964, Arthur C. Danto visitó una exposición de Andy Warhol en la Stable Gallery de Nueva York y se encontró con las célebres Brillo Boxes. A simple vista, aquellas piezas podían parecer indistinguibles de las cajas comerciales que cualquiera encontraba en un supermercado. Sin embargo, unas eran mercancía y las otras habían entrado en la historia del arte.
 
-Pero participar en la generación de una respuesta no significa necesariamente comprenderla.
+Para Danto, el problema era filosófico: si dos objetos comparten sus propiedades visibles, pero solo uno es reconocido como obra, entonces mirar ya no basta. Hace falta conocer la intención, la interpretación y el entramado histórico que permite comprenderlo como arte. De allí surgió su noción del artworld: el mundo de teorías y contextos dentro del cual algo puede adquirir significado artístico (Danto, 1964).
 
-Tener una idea frente a nosotros no significa haberla pensado del mismo modo que poseer un libro no significa haberlo leído.
+La Inteligencia Artificial nos coloca frente a un problema parecido, esta vez ante el pensamiento. Dos textos pueden ser formalmente indistinguibles: correctos, bien documentados y aparentemente profundos. Uno puede condensar meses de lecturas, dudas y experiencias; el otro, treinta segundos y un buen prompt. El resultado visible ya no nos permite conocer el proceso que lo produjo.
 
-Esta tensión entre aquello que vemos y aquello que realmente ocurrió detrás del objeto me recuerda inevitablemente una discusión que, aparentemente, no tiene nada que ver con Inteligencia Artificial.
+Esto no vuelve falso al segundo texto ni auténtico al primero por definición. Obliga a cambiar la pregunta. En vez de preguntar solamente «¿lo escribiste tú o lo escribió una IA?», tendríamos que preguntar: ¿quién hizo el recorrido intelectual que este texto representa? ¿Quién puede responder por sus afirmaciones? ¿Quién sabría reconocer que está equivocado?
 
-En 1964, Arthur C. Danto asistió a una exposición de Andy Warhol en la Stable Gallery de Nueva York y se encontró con las ahora famosas *Brillo Boxes*. Warhol había producido objetos que podían parecer prácticamente indistinguibles de las cajas comerciales de Brillo que cualquiera podía encontrar fuera de la galería. Aquello planteaba para Danto un problema filosófico extraordinario: si dos objetos pueden compartir prácticamente todas sus características perceptibles y, sin embargo, uno puede ser considerado una obra de arte mientras el otro continúa siendo una simple mercancía, entonces algo fundamental había cambiado en nuestra manera de reconocer el arte.
+Una idea no es nuestra porque hayamos presionado las teclas ni deja de serlo porque una herramienta nos haya ayudado a expresarla. Es nuestra en la medida en que podemos habitarla: explicar su origen, someterla a crítica y aceptar la responsabilidad de sostenerla.
 
-Ya no bastaba con mirar.
+El riesgo aparece cuando conservamos el producto y eliminamos el proceso. Podemos producir ensayos sin ensayar una idea, investigaciones sin investigar y programas que funcionan sin comprender por qué. Si eso se normaliza, no estaremos automatizando únicamente la escritura: estaremos externalizando una parte del camino mediante el cual construimos criterio.
 
-Las propiedades visibles del objeto habían dejado de ser suficientes para determinar qué era arte. Para comprender por qué una caja podía pertenecer a un supermercado y otra a la historia del arte necesitábamos conocer su contexto, su interpretación, su intención y el entramado cultural e histórico dentro del cual aparecía. Danto desarrolló a partir de problemas como éste la noción del *artworld*: un mundo de teorías, historia e interpretación que permite que determinados objetos sean comprendidos como arte (Danto, 1964).
+A esa transformación he empezado a llamarla IAficación.
 
-Años después llevó esa idea aún más lejos en su tesis sobre el “fin del arte”. Danto no afirmaba que los artistas dejarían de pintar, esculpir o crear. Tampoco estaba anunciando la muerte del arte. Lo que consideraba terminado era una determinada narrativa histórica: aquella en la que la historia del arte podía ser entendida como una sucesión de movimientos que avanzaban hacia algún destino identificable. Una vez que prácticamente cualquier objeto podía convertirse en arte dependiendo de su significado, contexto e interpretación, ya no existía una propiedad visual que pudiera indicarnos cuál era necesariamente el siguiente paso. El arte entraba, según Danto, en una condición poshistórica en la que muchas posibilidades podían coexistir sin que una tuviera que derrotar históricamente a la anterior (Danto, 1997, 1998).
-
-La Inteligencia Artificial empieza a colocarnos frente a un problema extrañamente parecido, pero esta vez no frente al arte, sino frente al pensamiento.
-
-Dos textos pueden ser formalmente indistinguibles. Los dos pueden estar bien escritos, utilizar referencias correctas, construir argumentos interesantes y llegar a conclusiones aparentemente profundas. Sin conocer su historia podríamos ser incapaces de determinar si uno representa meses de lectura, dudas, experiencias, contradicciones y elaboración personal, mientras que el otro apareció después de treinta segundos y un buen prompt.
-
-Las propiedades del objeto ya no bastan.
-
-Pero existe una diferencia inquietante con Danto. En el arte, aquella ruptura abrió una enorme libertad creativa. En el conocimiento podríamos estar entrando en una época en la que el producto intelectual sobreviva mientras el proceso intelectual que originalmente le daba valor comienza lentamente a desaparecer.
-
-Podemos producir ensayos sin haber ensayado realmente una idea, investigaciones sin haber investigado, argumentos sin haber atravesado las contradicciones necesarias para construirlos e incluso programas que funcionan sin comprender completamente por qué funcionan. La producción puede separarse cada vez más de la experiencia intelectual que antes suponíamos detrás de ella.
-
-Entonces la pregunta “¿lo escribiste tú o lo escribió una IA?” adquiere otra profundidad. Tal vez lo importante ya no sea saber quién presionó las teclas, sino quién recorrió el proceso intelectual que aquello representa.
-
-Porque si desaparece ese proceso no estamos automatizando únicamente la escritura. Estamos empezando a automatizar una parte del camino mediante el cual construimos criterio.
-
-A esta transformación, a falta de una palabra mejor, he empezado a llamarla **IAficación**.
-
-No me refiero simplemente a utilizar Inteligencia Artificial. Yo mismo la utilizo constantemente y considero que estamos frente a una de las herramientas intelectuales más extraordinarias que hemos construido. La IAficación que me preocupa es algo mucho más amplio: la progresiva reorganización de nuestra forma de aprender, trabajar, producir, consumir e incluso desear alrededor de sistemas cuyos objetivos económicos, propietarios e incentivos rara vez cuestionamos.
-
-Para comprender por qué esto importa tenemos que abandonar por un momento Silicon Valley y regresar casi ciento sesenta años, a la fábrica industrial que Karl Marx observó en el siglo XIX.
+No me refiero al simple uso de Inteligencia Artificial. Yo mismo la utilizo constantemente y la considero una de las herramientas intelectuales más extraordinarias que hemos construido. La IAficación es otra cosa: la reorganización de nuestra forma de aprender, trabajar, producir, consumir e incluso desear alrededor de sistemas cuyos propietarios, objetivos e incentivos rara vez cuestionamos.
 
 ### La máquina que debía liberarnos
 
-Hay una razón por la que me interesa especialmente el capítulo de *El capital* dedicado a la maquinaria y la gran industria. Según la edición puede aparecer numerado de manera distinta —como capítulo XIII en algunas ediciones y XV en otras—, pero lo importante no es el número sino la pregunta que Marx plantea allí.
+En el capítulo de El capital dedicado a la maquinaria y la gran industria, Marx plantea una pregunta que continúa siendo incómoda. Si una máquina permite producir en cuatro horas lo que antes exigía ocho, técnicamente hemos conquistado cuatro horas de tiempo. Pero ¿a quién pertenecen?
 
-¿Qué ocurre realmente cuando una máquina aumenta extraordinariamente la productividad humana?
+La maquinaria no entra en una sociedad abstracta. Entra en relaciones de producción concretas. Dentro del capitalismo, su principal propósito no es aliviar al trabajador, sino reducir el trabajo necesario, aumentar la productividad y ampliar el plusvalor. Por eso una máquina capaz de acortar la jornada puede terminar intensificándola (Marx, 1867/1990).
 
-A primera vista la respuesta parece evidente. Si una máquina permite fabricar en cuatro horas aquello que antes necesitaba ocho, la humanidad acaba de conquistar cuatro horas de tiempo.
+La misma contradicción reaparece con la IA. Si una persona termina en cuatro horas lo que antes hacía en ocho, ese tiempo podría convertirse en descanso, estudio o convivencia. También puede convertirse en una segunda tarea, después en una tercera y finalmente en un nuevo estándar. Lo extraordinario de ayer se vuelve la expectativa mínima de mañana.
 
-Ésa es la interpretación tecnológica.
+La tecnología abre ambas posibilidades. No decide entre ellas.
 
-Marx introduce otra pregunta.
+Alguien decide.
 
-¿Para quién?
+Con frecuencia hablamos del capitalismo como si fuera un fenómeno atmosférico: «el mercado exige», «la competencia obliga», «la eficiencia requiere». Los incentivos y la competencia existen, pero esas expresiones borran a quienes eligen cómo repartir los beneficios, qué márgenes consideran suficientes, cuánto pagan a sus directivos y qué costos están dispuestos a trasladar a los trabajadores.
 
-Su argumento no consiste simplemente en decir que las máquinas destruyen empleos. Eso sería una lectura pobre de Marx y, además, históricamente insuficiente. Marx reconoce la extraordinaria capacidad de la maquinaria para aumentar la productividad. Su preocupación está en algo mucho más profundo: la máquina no entra en una sociedad abstracta, sino dentro de unas relaciones de producción concretas.
+Despedir no es una ley de la física. Es una decisión empresarial. Cuando una decisión se repite lo suficiente, dejamos de reconocerla como tal y empezamos a llamarla eficiencia.
 
-Dentro de la producción capitalista, la maquinaria no se introduce fundamentalmente con el objetivo de aliviar el esfuerzo del trabajador. Se introduce porque permite disminuir el trabajo necesario incorporado en las mercancías, incrementar la productividad y ampliar la producción de plusvalor. Marx llega a describir la maquinaria como un medio para producir plusvalor relativo y analiza cómo su introducción puede prolongar la jornada, intensificar el trabajo y desplazar trabajadores precisamente porque la tecnología es utilizada dentro de una relación cuyo objetivo es la valorización del capital (Marx, 1867/1990).
-
-Esta diferencia es fundamental.
-
-Una tecnología contiene posibilidades.
-
-Quien controla la tecnología decide cuáles de esas posibilidades resultan económicamente interesantes.
-
-Imaginemos que ayer una persona necesitaba ocho horas para realizar determinada tarea y que hoy, gracias a una Inteligencia Artificial, solamente necesita cuatro. Desde el punto de vista técnico acabamos de producir cuatro horas de libertad potencial.
-
-Pero todavía no sabemos quién es propietario de esas cuatro horas.
-
-Podrían pertenecer al trabajador. Podríamos conservar su salario y reducir su jornada. La persona podría dedicar ese tiempo a su familia, a estudiar, a descansar, a caminar, a pintar, a leer o, sencillamente, a no producir nada.
-
-También podrían pertenecer al propietario de la empresa.
-
-En ese caso, aquellas cuatro horas no aparecerían como tiempo libre. Aparecerían como capacidad productiva disponible. El trabajador terminaría la primera tarea y recibiría una segunda. Después una tercera. Los objetivos aumentarían porque ahora sabemos que técnicamente pueden aumentar. Lo extraordinario de ayer se convertiría en la expectativa mínima de mañana.
-
-La misma tecnología permite ambos futuros.
-
-La máquina no elige.
-
-**Alguien elige.**
-
-Y aquí creo que muchas discusiones contemporáneas sobre Inteligencia Artificial empiezan a volverse deliberadamente ingenuas. Hablamos del capitalismo como si fuera un fenómeno atmosférico. Decimos que “el mercado exige”, “la empresa necesita”, “la eficiencia obliga” o “la competencia fuerza” y, de tanto repetir estas expresiones, terminamos borrando a las personas que realmente toman decisiones.
-
-Los incentivos existen. La competencia existe. Las empresas que no generan ganancias pueden desaparecer. Nada de eso significa que todas las decisiones sean inevitables.
-
-Existen propietarios, consejos de administración, accionistas y ejecutivos que eligen cómo distribuir los beneficios, qué inversiones conservar, qué márgenes consideran suficientes, cuánto pagar a sus directivos, cuánto devolver a sus accionistas, qué oficinas mantener y, también, a cuántas personas despedir.
-
-Despedir trabajadores no es una ley de la física.
-
-Es una decisión empresarial.
-
-Y cuando una decisión se repite suficientes veces terminamos dejando de reconocerla como decisión y comenzamos a llamarla **eficiencia**.
-
-Marx observó esta contradicción durante la industrialización. Aquello que técnicamente podía acortar la jornada podía terminar intensificándola. La máquina que podía aliviar físicamente al trabajador podía transformarlo en una pieza subordinada al ritmo de la maquinaria. Incluso describió la inversión mediante la cual no parecía ya que el trabajador utilizara el instrumento de trabajo, sino que el instrumento terminaba utilizando al trabajador.
-
-No hace falta forzar demasiado la analogía para reconocer algo parecido en nuestra época.
-
-Hoy utilizamos asistentes capaces de programar, diseñar, resumir, escribir, analizar y automatizar tareas que antes necesitaban horas. Inicialmente sentimos que aquella productividad nos pertenece. Terminamos antes. Somos mejores.
-
-Hasta que la organización descubre nuestro nuevo ritmo.
-
-Entonces ese ritmo se convierte en referencia.
-
-Y empezamos a competir contra nuestra propia productividad aumentada.
+Marx no culpaba al engranaje. Observaba quién era su dueño. Por eso la pregunta política sobre la IA no es solo cuánto trabajo podrá realizar, sino qué harán con esa productividad quienes la controlen.
 
 ### La utopía de los multimillonarios
 
-Bill Gates ha hablado públicamente de un futuro en el que los incrementos de productividad provocados por la Inteligencia Artificial podrían reducir la semana laboral hasta solamente dos días. Elon Musk ha ido todavía más lejos: imagina un futuro de abundancia en el que la IA y la robótica vuelvan opcional el trabajo y, eventualmente, incluso reduzcan la importancia del dinero.
+Bill Gates ha imaginado una semana laboral de dos días gracias a la IA. Elon Musk ha hablado de un futuro de abundancia en el que trabajar sería opcional y el dinero perdería importancia.
 
-Confieso que me encantaría que ambos tuvieran razón.
+Me encantaría que tuvieran razón. Una civilización capaz de producir lo necesario con una fracción del trabajo humano habría alcanzado uno de sus mayores logros. Si dos días bastaran para crear lo que hoy exige cinco, insistir en trabajar cinco sería absurdo.
 
-Una civilización capaz de producir todo aquello que necesita utilizando una fracción del trabajo humano sería, en principio, uno de los mayores logros de nuestra historia. Si cinco días de trabajo pueden convertirse en dos sin reducir aquello que producimos, resultaría absurdo continuar trabajando cinco únicamente porque llevamos generaciones haciéndolo.
+Pero existe una contradicción difícil de ignorar cuando esa promesa viene de algunas de las figuras que mejor representan al capitalismo tecnológico. Musk puede imaginar un mundo sin trabajo obligatorio y, como director ejecutivo, ordenar reducciones masivas de personal cuando benefician a sus empresas. En 2024, Tesla eliminó más del 10 % de su plantilla global para reducir costos y prepararse para otra etapa de crecimiento.
 
-Pero hay algo profundamente hipócrita en escuchar esta promesa precisamente de algunos de los hombres que mejor representan al capitalismo tecnológico contemporáneo.
+Gates ya no dirige Microsoft y sería incorrecto atribuirle sus decisiones actuales. Sin embargo, la empresa de la que procede buena parte de su fortuna encarna la distancia entre la promesa y la práctica: mientras informaba ahorros de cientos de millones de dólares mediante IA e invertía decenas de miles de millones en su infraestructura, también realizaba recortes de miles de puestos.
 
-Musk puede imaginar públicamente un mundo donde trabajar sea opcional y, al mismo tiempo, como director ejecutivo, ordenar reducciones masivas de personal cuando considera que hacerlo beneficia a sus compañías. En 2024 Tesla eliminó más del 10 % de su plantilla global en una reestructuración que Musk justificó como necesaria para reducir costos y preparar a la compañía para su siguiente fase de crecimiento.
+Esto no demuestra que cada despido haya sido causado por la automatización. Demuestra algo más sencillo: aumentar la productividad no reduce automáticamente la jornada de quienes permanecen.
 
-Bill Gates ya no dirige Microsoft y sería incorrecto responsabilizarlo personalmente de las decisiones laborales actuales de la compañía. Pero Microsoft, la empresa de la que surgió buena parte de su riqueza y de la que continúa siendo una figura histórica inseparable, representa perfectamente la contradicción entre esa utopía y las decisiones del capitalismo tecnológico real. En 2025 se informó que la compañía había obtenido más de 500 millones de dólares en ahorros solamente mediante aplicaciones de IA en sus centros de atención, mientras realizaba recortes de miles de puestos e invertía decenas de miles de millones de dólares en infraestructura para Inteligencia Artificial. En julio de 2026 anunció además otros 4,800 despidos dentro de una nueva reorganización. No todos esos puestos pueden atribuirse directamente a sustitución por IA, y hacerlo sería deshonesto, pero los hechos muestran algo más importante: incrementar productividad, ahorrar costos e invertir agresivamente en automatización no conduce de manera automática a reducir el tiempo de trabajo de quienes permanecen en la empresa.
+Una empresa que necesita mejorar sus márgenes puede recortar personal, pero también dividendos, recompras de acciones, remuneraciones ejecutivas, instalaciones o proyectos; puede incluso aceptar una rentabilidad menor. Esas alternativas no tienen el mismo efecto financiero, pero elegir qué costo se considera prescindible también es una decisión política y moral.
 
-Ni siquiera necesitamos limitarnos a Microsoft. Durante 2026 Meta intentó una transformación interna mucho más explícita: su llamado Project OT buscaba convertir partes de la organización en equipos más pequeños apoyados extensivamente por sistemas de IA, llegando a contemplar reducciones muy profundas en determinadas áreas. El proyecto terminó encontrando problemas de productividad, fiabilidad y resistencia interna, y la propia compañía tuvo que moderarlo. El episodio es especialmente revelador porque muestra hasta qué punto algunos ejecutivos no están esperando pasivamente a descubrir qué puede hacer la IA: están intentando reorganizar activamente la relación entre tecnología y trabajadores alrededor de ella.
+No necesitamos que Gates o Musk nos expliquen qué será técnicamente posible. Necesitamos saber qué estarían dispuestos a ceder cuando esa posibilidad llegue.
 
-Éste es el punto que me interesa.
-
-Los empresarios no son pasajeros inocentes dentro del capitalismo.
-
-Lo dirigen, toman decisiones dentro de él y reciben una parte extraordinariamente grande de los beneficios cuando esas decisiones funcionan.
-
-Cuando una compañía necesita mejorar sus márgenes puede reducir trabajadores, pero también podría reducir dividendos, recompra de acciones, remuneraciones ejecutivas, instalaciones, determinados proyectos, oficinas extraordinariamente costosas o simplemente aceptar una rentabilidad menor.
-
-No estoy diciendo que todas estas alternativas tengan siempre el mismo impacto financiero. Sería absurdo. Estoy diciendo algo mucho más sencillo: **qué costo se considera prescindible es también una decisión política y moral dentro de la empresa**.
-
-Y resulta revelador que la presencia física del trabajador, su salario o incluso su existencia dentro de la organización puedan ser sometidos rápidamente a la lógica de la eficiencia mientras muchas otras formas de acumulación son tratadas como intocables.
-
-Cuando Marx analiza la maquinaria no está culpando al engranaje.
-
-Está observando quién es dueño de él.
-
-Por eso la pregunta fundamental frente a la Inteligencia Artificial no puede limitarse a cuánto trabajo será capaz de realizar. La pregunta verdaderamente política es qué harán quienes poseen esa productividad cuando finalmente la tengan.
-
-No necesitamos que Gates o Musk nos expliquen qué será tecnológicamente posible.
-
-Necesitamos saber qué están dispuestos a ceder cuando esa posibilidad llegue.
-
-Si una persona puede producir en dos días aquello que anteriormente producía en cinco, ¿mantendrán su salario y devolverán los otros tres días? ¿Aceptarán reducir márgenes? ¿Compartirán con los trabajadores la productividad adicional? ¿O descubrirán que una persona capaz de realizar el trabajo de tres es, sobre todo, una excelente razón para contratar únicamente a una?
-
-Ahí comienza a resquebrajarse la utopía.
-
-Porque quizá Gates tenga razón técnicamente y Marx continúe teniendo razón políticamente.
-
-Tal vez dos días lleguen a ser suficientes para producir el trabajo de cinco.
-
-Eso no significa que los otros tres días vayan a pertenecernos.
+Quizá Gates tenga razón técnicamente y Marx continúe teniéndola políticamente: dos días pueden llegar a ser suficientes para producir el trabajo de cinco sin que los otros tres nos pertenezcan.
 
 ### Tener la herramienta no significa ser libre
 
-Es precisamente aquí donde otro economista resulta fundamental para esta discusión.
+En Development as Freedom, Amartya Sen propone medir el desarrollo no solo por los recursos disponibles, sino por las libertades reales que permiten a una persona vivir de una manera que tenga razones para valorar. Poseer un recurso no garantiza la capacidad de convertirlo en una oportunidad (Sen, 1999).
 
-En *Development as Freedom*, Amartya Sen propone alejarnos de una idea demasiado limitada del desarrollo. No basta con preguntar cuántos recursos posee una sociedad o cuánto dinero tiene una persona; debemos preguntarnos qué libertades efectivas tiene realmente para convertir esos recursos en la vida que tiene razones para valorar.
-
-Ésta es la base de su enfoque de las capacidades.
-
-Poseer un recurso no significa automáticamente ser capaz de utilizarlo de la misma manera que otra persona. Existen condiciones económicas, sociales, políticas, físicas y culturales que determinan cómo podemos convertir aquello que tenemos en oportunidades reales. Sen distingue, por tanto, la posesión de recursos de la libertad sustantiva para alcanzar determinados funcionamientos y formas de vida (Sen, 1999).
-
-Esta diferencia me parece extraordinariamente útil para pensar la Inteligencia Artificial.
-
-Imaginemos nuevamente a un programador y a la empresa para la que trabaja. Ambos tienen acceso al mismo modelo. Los dos pueden utilizarlo para producir más código, analizar problemas, escribir documentación y automatizar tareas.
-
-En apariencia la tecnología ha democratizado una capacidad.
-
-Pero las libertades que ambos poseen alrededor de esa capacidad son completamente diferentes.
-
-El programador puede utilizar la IA para terminar su trabajo antes.
-
-La empresa decide qué significa “antes”.
-
-Puede convertirlo en una tarde libre.
-
-Puede convertirlo en otra tarea.
-
-Puede convertirlo en objetivos más altos.
-
-Puede descubrir que ahora necesita menos programadores.
-
-Puede apropiarse económicamente de prácticamente toda la productividad adicional sin que la persona que la generó reciba más tiempo, más salario o mayor seguridad.
+Un programador y la empresa para la que trabaja pueden tener acceso al mismo modelo, pero no poseen la misma libertad alrededor de él. El programador puede utilizarlo para terminar antes. La empresa decide qué significa «antes»: una tarde libre, una tarea adicional, una meta más alta o la conclusión de que necesita menos programadores.
 
 La herramienta es la misma.
 
 La libertad no.
 
-Esto vuelve ingenua la idea de que democratizar el acceso a la IA significa automáticamente democratizar sus beneficios.
+Por eso democratizar el acceso a la IA no equivale a democratizar sus beneficios. Podríamos entregar el modelo más poderoso a cada ser humano y mantener intactas las estructuras que impiden convertir esa capacidad en tiempo, seguridad o autonomía. Podemos automatizar trabajo y conservar una sociedad en la que perder el empleo significa perder la vivienda, el alimento o la atención médica. Podemos producir abundancia y seguir excluyendo a millones de ella.
 
-Podríamos entregar mañana el modelo más poderoso del mundo gratuitamente a cada ser humano y seguir viviendo dentro de estructuras económicas que impiden a millones convertir esa capacidad en una vida más libre.
+Sen estudió precisamente cómo una sociedad puede disponer de alimentos mientras algunas personas carecen de acceso efectivo a ellos. Esa diferencia entre existencia y capacidad debería acompañar toda promesa de abundancia tecnológica.
 
-Podemos tener una máquina capaz de enseñar prácticamente cualquier disciplina y personas que no disponen del tiempo para estudiar.
+### De la atención a la confianza
 
-Podemos automatizar grandes cantidades de trabajo y mantener una sociedad donde perder un empleo significa perder la posibilidad de pagar vivienda, alimento o atención médica.
+La IAficación no se limita al trabajo. También transforma nuestra condición de consumidores.
 
-Podemos producir alimentos con una eficiencia extraordinaria y continuar teniendo hambre.
+Durante décadas, la economía digital aprendió qué buscamos, qué compramos, qué vemos y qué consigue retener nuestra atención. La IA conversacional introduce una intimidad distinta: no solo registra lo que hacemos; nos escucha explicar por qué queremos hacerlo.
 
-La existencia del recurso no resuelve por sí sola la distribución de la capacidad.
+Le contamos cuánto dinero tenemos, qué nos preocupa, qué empleo buscamos y qué necesita nuestra familia. Le mostramos cómo escribimos, qué argumentos rechazamos y cuáles consiguen convencernos. Cada vez con mayor frecuencia le presentamos nuestras decisiones antes de tomarlas.
 
-Sen utilizó precisamente el hambre como uno de los campos fundamentales de sus investigaciones económicas: una sociedad puede disponer de alimentos y, sin embargo, algunas personas carecer de la capacidad efectiva de acceder a ellos. Su análisis sobre libertades y capacidades nos obliga a separar existencia material de acceso real.
+Esto no significa que cada respuesta sea hoy una operación publicitaria encubierta. Afirmarlo convertiría una pregunta legítima en una teoría de conspiración. El problema es estructural: los modelos económicos cambian y una interfaz capaz de aconsejarnos tendrá un poder mucho mayor que otra dedicada a interrumpirnos con anuncios.
 
-Esa distinción debería perseguirnos cada vez que alguien promete que la Inteligencia Artificial producirá abundancia.
+Imaginemos que durante semanas explicamos a una IA nuestros trayectos, nuestras deudas y aquello que buscamos en un automóvil. Finalmente responde: «Por lo que me has contado, esta es la opción que mejor se adapta a ti».
 
-Abundancia, ¿para quién?
-
-Libertad, ¿para quién?
-
-Tiempo libre, ¿para quién?
-
-### ¿Usas a la IA o la IA te usa a ti?
-
-Hasta aquí podría parecer que la IAficación es solamente un problema relacionado con el trabajo.
-
-No lo creo.
-
-Hay una transformación quizá todavía más profunda ocurriendo en nuestra relación con estas máquinas, porque no somos solamente trabajadores que utilizan Inteligencia Artificial.
-
-También somos consumidores.
-
-Y quizá estemos convirtiéndonos en algo más.
-
-Durante décadas la economía digital ha intentado aprender aquello que queremos. Google aprendió qué buscamos. Amazon aprendió qué compramos. Netflix aprendió qué vemos y qué abandonamos. Facebook, Instagram, TikTok y el resto de las plataformas sociales aprendieron qué consigue mantener nuestros ojos frente a una pantalla.
-
-Convertimos una parte enorme de nuestro comportamiento en información económicamente valiosa.
-
-Pero la IA conversacional introduce algo diferente.
-
-No solamente observa lo que hacemos.
-
-Nos escucha explicar **por qué** queremos hacerlo.
-
-Le contamos cuánto dinero tenemos y qué queremos comprar. Le explicamos nuestras dudas profesionales. Le pedimos consejo sobre una relación. Le hablamos de aquello que nos preocupa. Le mostramos cómo escribimos, qué argumentos rechazamos y cuáles terminan convenciéndonos. Le presentamos nuestros planes, nuestros problemas y, cada vez con mayor frecuencia, nuestras decisiones antes de tomarlas.
-
-La publicidad tradicional siempre quiso descubrir qué deseábamos.
-
-Ahora estamos construyendo sistemas a los que voluntariamente les explicamos por qué deseamos algo.
-
-Esto no significa que actualmente cada respuesta producida por una IA sea una operación publicitaria secreta. No lo es, y convertir esta discusión en una teoría de conspiración destruiría precisamente la pregunta que considero importante.
-
-Mi preocupación está en el futuro del modelo económico.
-
-Hoy muchas compañías de IA obtienen ingresos mediante suscripciones, contratos empresariales, APIs, servicios en la nube y diferentes niveles de acceso. Pero sería extraordinariamente ingenuo pensar que los modelos de negocio de estas plataformas permanecerán congelados para siempre.
-
-Internet ya nos enseñó lo contrario.
-
-Entonces debemos preguntarnos qué ocurrirá cuando cientos de millones de personas consulten primero a una IA antes de comprar un automóvil, contratar un seguro, elegir una universidad, invertir dinero, aceptar un empleo, escoger unas vacaciones o decidir qué producto necesitan.
-
-¿Qué ocurrirá cuando estos sistemas dejen de ser solamente buscadores extraordinarios y se conviertan en nuestros consejeros?
-
-Hasta ahora la publicidad necesitaba interrumpirnos.
-
-El anuncio aparecía entre nosotros y aquello que queríamos hacer.
-
-Un consejero ocupa una posición completamente diferente.
-
-Imaginemos que le contamos durante semanas a una Inteligencia Artificial nuestros problemas económicos, las necesidades de nuestra familia, nuestros trayectos y aquello que buscamos en un automóvil. Finalmente le preguntamos qué deberíamos comprar y responde: “por lo que me has contado, creo que ésta es la opción que mejor se adapta a ti”.
-
-Aquella frase no llega psicológicamente como un anuncio.
+La frase no llega psicológicamente como publicidad.
 
 Llega como criterio.
 
-Y entonces aparece una pregunta que tendremos que aprender a hacer antes de que sea demasiado tarde:
+Durante décadas, las plataformas compitieron por nuestra atención. La siguiente batalla podría ser por nuestra confianza, y la confianza vale mucho más. Quien controle esa interfaz podrá ordenar las opciones, decidir qué información aparece primero y elegir los argumentos que acompañan cada recomendación.
 
-**¿cuándo sabremos que la IA nos está aconsejando y cuándo comenzará a vendernos algo?**
+La pregunta, entonces, no es solo si usamos la IA, sino bajo qué condiciones ella puede usarnos a nosotros.
 
-La pregunta no consiste simplemente en imaginar publicidad insertada dentro de ChatGPT, Claude o cualquier producto concreto. El problema es mucho más amplio: estamos creando una nueva interfaz entre nosotros y el mundo, y quien controle esa interfaz tendrá una capacidad extraordinaria para decidir qué información aparece, qué opciones se presentan primero, qué alternativas parecen razonables y qué argumentos acompañan cada recomendación.
+### La tecnología nace dentro del poder
 
-Durante décadas luchamos por nuestra atención.
+Decir que la tecnología es neutral y que todo depende de su uso resulta tranquilizador porque separa la herramienta del mundo que la produce. Una tecnología de esta escala, sin embargo, necesita capital, centros de datos, electricidad, minerales, chips, propiedad intelectual, gobiernos y trabajadores. Antes de nuestro primer prompt ya existe una arquitectura económica alrededor de la máquina.
 
-La siguiente batalla podría ser por nuestra confianza.
+Esto no significa que un modelo de lenguaje tenga una ideología secreta o voluntad política. Significa que su diseño, propiedad, financiación, acceso y aplicación están atravesados por decisiones humanas. Preguntar si la IA es «buena» o «mala» dice muy poco. Hay que preguntar quién la posee, quién define sus objetivos, quién recibe los beneficios y quién absorbe los costos.
 
-Y la confianza vale mucho más.
+Un martillo no recomienda qué clavo comprar. Una calculadora no aprende qué tono nos inspira confianza. Una IA conversacional puede mediar nuestro acceso al conocimiento, nuestro trabajo, nuestro consumo y, eventualmente, la formación de nuestros deseos.
 
-Aquí la pregunta adquiere una forma que deliberadamente quiero dejar incómoda:
+Los seres humanos nunca hemos deseado en absoluta independencia. Nos forman la familia, la cultura, los libros, las ciudades y la publicidad. Pero no todas las influencias son iguales. Existe una diferencia entre habitar una cultura y conversar diariamente con un sistema comercial capaz de aprender, a partir de millones de interacciones, qué argumento funciona mejor con cada persona.
 
-**¿Usas a la Inteligencia Artificial o la Inteligencia Artificial te usa a ti?**
+La libertad no consiste únicamente en perseguir lo que queremos. También exige preguntarnos cuánto de ese deseo nos pertenece y cuánto fue diseñado para nosotros.
 
-Porque la relación económica empieza a ser difícil de describir.
+Y así regresamos al principio: a la respuesta perfectamente formulada que reconocemos de inmediato como nuestra.
 
-Somos trabajadores porque utilizamos estos sistemas para producir.
+Tal vez lo era.
 
-Somos consumidores porque pagamos directa o indirectamente por acceder a ellos.
-
-Somos usuarios porque construimos nuestra vida digital alrededor de sus servicios.
-
-Y nuestras interacciones pueden, dependiendo del producto, las políticas, los permisos y el modelo empresarial concreto, convertirse también en información útil para mejorar sistemas, comprender comportamientos o construir nuevos productos.
-
-Trabajamos con la máquina, consumimos mediante la máquina y podemos terminar alimentando económicamente el ecosistema que construye la máquina.
-
-¿En qué momento dejamos de ser exclusivamente clientes?
-
-¿En qué momento comenzamos también a ser el producto, el trabajador o la materia prima?
-
-### La tecnología no es neutral
-
-Con frecuencia escucho decir que la tecnología es neutral y que todo depende de la manera en que decidamos utilizarla.
-
-La frase resulta tranquilizadora porque separa la herramienta del mundo que la produce.
-
-También me parece profundamente ingenua.
-
-Una tecnología de esta escala no aparece espontáneamente sobre una mesa esperando que la humanidad decida qué hacer con ella. Necesita cantidades extraordinarias de capital, centros de datos, electricidad, minerales, chips, propiedad intelectual, infraestructura de telecomunicaciones, gobiernos capaces de regularla, empresas capaces de comercializarla y trabajadores capaces de construirla.
-
-Antes incluso de que escribamos nuestro primer prompt existe ya una arquitectura económica alrededor de la máquina.
-
-La tecnología no nace fuera de la sociedad.
-
-Nace dentro de relaciones de poder.
-
-Eso no significa que un modelo de lenguaje tenga una ideología secreta ni que un algoritmo posea voluntad política. Significa que su diseño, acceso, financiación, propiedad y aplicación están atravesados por decisiones humanas.
-
-Por eso preguntar simplemente si la IA “es buena” o “es mala” resulta casi infantil.
-
-Tenemos que preguntar quién la posee, quién decide sus objetivos, quién puede modificarla, quién recibe los beneficios económicos que produce, quién absorbe sus costos y qué necesita de nosotros para seguir siendo rentable.
-
-Un martillo no nos recomienda qué clavo comprar. Una máquina de vapor no conversa durante horas con nosotros sobre nuestros problemas. Una calculadora no aprende qué clase de explicación termina convenciéndonos.
-
-Una Inteligencia Artificial conversacional puede ocupar un lugar mucho más íntimo porque comienza a mediar nuestra relación con el mundo.
-
-Media nuestro acceso al conocimiento.
-
-Media nuestro trabajo.
-
-Puede mediar nuestro consumo.
-
-Puede mediar nuestras decisiones.
-
-Y, eventualmente, podría participar en la construcción de nuestros deseos.
-
-Esto último me parece especialmente importante porque hemos aprendido a utilizar la palabra libertad de una manera extraordinariamente pobre.
-
-Consideramos libre a quien puede elegir.
-
-Mientras existan suficientes productos, suficientes plataformas, suficientes marcas y suficientes posibilidades asumimos que existe libertad.
-
-Pero es necio pensar que las necesidades humanas no pueden ser instrumentalizadas para generar consumo. El hambre puede convertirse en mercado, la soledad puede convertirse en mercado, la inseguridad puede convertirse en mercado, el miedo puede convertirse en mercado y nuestra necesidad de reconocimiento puede convertirse en mercado.
-
-También es ingenuo pensar que los monopolios corporativos nos ofrecen libertad simplemente porque su catálogo sea variado.
-
-Tener cien opciones no significa necesariamente controlar las condiciones bajo las cuales elegimos.
-
-Y aquí quiero ir incluso un poco más allá de Sen.
-
-Su enfoque nos ayuda a comprender que poseer un recurso no significa tener la libertad efectiva para convertirlo en aquello que valoramos. Pero queda todavía otra pregunta, una que me parece especialmente urgente frente a sistemas diseñados para conocernos cada vez mejor:
-
-¿de dónde surge aquello que valoramos?
-
-Los seres humanos jamás hemos construido nuestros deseos en absoluta independencia. Nos forman nuestra familia, nuestros amigos, los libros que leemos, las ciudades que habitamos, las experiencias que vivimos, nuestra cultura, nuestras condiciones económicas y también la publicidad que consumimos.
-
-No existe un “yo” perfectamente puro escondido debajo de todas esas influencias.
-
-Pero no todas las formas de influencia son iguales.
-
-Existe una diferencia entre crecer dentro de una cultura y relacionarnos diariamente con un sistema comercial capaz de aprender de millones de interacciones qué argumento funciona mejor, qué tono genera confianza y qué información necesitamos antes de tomar una decisión.
-
-Por eso la libertad no está solamente en perseguir lo que queremos.
-
-**La libertad también está en descubrir cuánto de ese deseo nos pertenece y cuánto nos fue impuesto.**
-
-Y de pronto hemos regresado al comienzo de este ensayo.
-
-A una respuesta que leemos y que, después de estar expresada con suficiente claridad, comenzamos a reconocer como nuestra.
-
-“Eso era exactamente lo que yo pensaba.”
-
-Tal vez.
-
-O tal vez acabamos de presenciar el instante preciso en que comenzamos a pensarlo.
-
-### La IAficación
-
-Eso es lo que intento describir cuando hablo de IAficación.
-
-No es utilizar ChatGPT. No es pedirle a Claude que revise código. No es generar una imagen, automatizar una tarea tediosa o utilizar un modelo para investigar más rápido. Reducir el problema a eso convertiría una transformación social en una discusión sobre herramientas.
-
-La IAficación aparece cuando empezamos a reorganizar nuestros valores alrededor de aquello que la máquina hace posible.
-
-Aparece cuando un trabajador nos parece lento porque todavía necesita pensar antes de producir.
-
-Cuando confundimos veinte documentos generados con veinte documentos comprendidos.
-
-Cuando comenzamos a medir el valor de una persona exclusivamente por la cantidad de producción que puede extraer de una herramienta.
-
-Cuando el conocimiento comienza a ser evaluado por la respuesta y no por la capacidad de construir la pregunta.
-
-Cuando una empresa recibe un incremento extraordinario de productividad y la primera pregunta de sus propietarios no es cuánto tiempo pueden devolver a las personas, sino cuántas personas pueden eliminar.
-
-Cuando un ejecutivo utiliza la Inteligencia Artificial para justificar una reducción de trabajadores y después nos promete que, en algún futuro indeterminado, esa misma tecnología finalmente nos permitirá trabajar menos.
-
-Cuando el trabajador utiliza una herramienta para hacerse más productivo hasta que su productividad aumentada se convierte en el nuevo mínimo que se espera de él.
-
-En el siglo XIX Marx observó cómo el trabajador podía terminar subordinado a la máquina industrial.
-
-Nuestra versión puede resultar mucho más sutil.
-
-No necesitaremos estar físicamente encadenados a una fábrica.
-
-Bastará con que aceptemos competir permanentemente contra la velocidad de aquello que nosotros mismos construimos.
-
-Y quizá ahí se encuentre una de las ironías más profundas de nuestra época.
-
-Durante siglos soñamos con construir máquinas capaces de trabajar por nosotros.
-
-Ahora que empiezan a hacerlo tenemos miedo de que puedan trabajar sin nosotros.
-
-No porque exista algo inevitablemente maligno dentro de la tecnología, sino porque construimos una sociedad en la que trabajar se convirtió en la condición necesaria para acceder a casi todo aquello que consideramos libertad.
-
-Trabajamos para tener una casa.
-
-Trabajamos para comer.
-
-Trabajamos para acceder a salud.
-
-Trabajamos para sostener a nuestra familia.
-
-Trabajamos incluso para poder descansar.
-
-Entonces introducimos una máquina capaz de liberarnos de una parte enorme del trabajo dentro de un sistema que nos exige trabajar para tener derecho a vivir.
-
-No debería sorprendernos que aquello que técnicamente parece emancipación produzca socialmente miedo.
-
-La contradicción no está dentro del modelo de lenguaje.
-
-Está dentro de la sociedad que decidió qué hacer con él.
+O tal vez presenciamos el instante en que comenzamos a pensarla.
 
 ### El último oráculo
 
-Comencé esta serie hablando del Oráculo de Delfos.
+Comencé esta serie hablando del Oráculo de Delfos. Tardé cerca de tres meses en escribir estos cinco textos. Mientras yo dudaba sobre una frase o descartaba una referencia, aparecieron nuevos modelos, nuevas promesas de productividad y nuevas reestructuraciones empresariales justificadas por la automatización y la eficiencia.
 
-Tardé cerca de tres meses en escribir estos cinco textos. Durante ese tiempo las ideas fueron y vinieron una y otra vez hasta intentar concentrarlas en cinco ideas relativamente simples. Mientras yo dudaba sobre una frase, descartaba una referencia o intentaba entender hacia dónde quería llevar esta serie, más de una decena de nuevos modelos presentados como más inteligentes, más rápidos o más capaces aparecieron frente a nosotros. También se anunciaron decisiones empresariales de enorme impacto que volvieron todavía más ricos a algunos de los hombres más ricos del planeta, mientras más de cien mil puestos de trabajo han quedado vinculados públicamente a recortes asociados con la Inteligencia Artificial, la automatización, la eficiencia o las reestructuraciones que acompañan esta nueva carrera tecnológica.
+La velocidad de esa carrera contrasta con el tiempo que exige comprenderla.
 
-La velocidad de todo aquello contrasta de una manera extraña con el tiempo que me tomó intentar entenderlo.
+Hoy, 9 de septiembre de 2026, mientras actualizo este texto que había publicado apenas ayer, la noticia parece haber alcanzado al ensayo. Jacob Coxon, investigador de Anthropic y antes de OpenAI, dimitió denunciando que los principales laboratorios avanzan hacia sistemas capaces de mejorarse a sí mismos sin garantías suficientes.
 
-Durante estos textos escribí sobre oráculos, sobre templos reutilizados por nuevas religiones, sobre la imprenta y las máquinas que transformaron nuestra relación con el conocimiento, sobre la Revolución Industrial y sobre trabajadores que descubrieron que una máquina capaz de facilitar su trabajo también podía utilizarse para aumentar su explotación. Terminé regresando todavía más atrás, hasta el final de la Edad del Bronce y aquellas sociedades extraordinariamente complejas que parecían permanentes hasta que dejaron de serlo.
+«Quienes están construyendo la IA creen sinceramente que podría matarnos a todos antes de que acabe la década», escribió.
 
-Tal vez desde el principio tenía alguna idea de hacia dónde quería llegar cuando decidí llamar a esta serie *La Era de los Nuevos Iluminados*.
+Su antiguo jefe, Evan Hubinger, respaldó la preocupación y estimó en más de un 10 % el riesgo de una catástrofe durante la próxima década, aunque hizo una precisión decisiva: considera bajo el peligro de los modelos actuales; teme una futura superinteligencia surgida de la automejora recursiva (Pérez Colomé, 2026).
 
-Porque después de estos meses hay algo que me queda especialmente claro: el mundo cambia.
+Conviene no borrar esa diferencia.
 
-Siempre lo ha hecho.
+El modelo de lenguaje actual no está esperando adquirir conciencia para exterminarnos. No desea poder, dinero ni supervivencia. Pero las personas que lo desarrollan compiten por capital, prestigio, control del mercado y la posibilidad de llegar primero.
 
-Las sociedades cambian, las economías cambian, las tecnologías cambian y también cambian las ideas con las que intentamos justificar aquello que estamos construyendo. No existe ninguna garantía de que ese cambio avance en la dirección más justa, más ética o siquiera más humana. La historia está llena de transformaciones extraordinariamente productivas cuyos beneficios fueron capturados por unos cuantos mientras sus costos se distribuyeron entre muchos.
+Si incluso quienes conocen el riesgo afirman sentirse atrapados en la carrera y continúan acelerando, el peligro no reside únicamente en una hipotética voluntad de la máquina. También reside en la ambición humana que decide construirla, desplegarla y entregarle poder antes de comprenderla.
 
-Pero cambia.
+No son los modelos actuales quienes están apostando con nuestras vidas. Son seres humanos con nombres, cargos e intereses. Culpar por anticipado a la máquina sería repetir el error que he intentado señalar durante todo este ensayo: confundir el objeto visible con la red de decisiones que le da significado.
 
-Y nosotros estamos aquí.
-
-Somos trabajadores, consumidores, desarrolladores, artistas, empresarios, estudiantes, padres, hijos y ciudadanos observando una transformación que todavía no sabemos nombrar por completo.
-
-Somos espectadores de ella.
-
-Aunque quizá uno de los grandes errores de nuestra época sea creer que somos **solamente** espectadores.
-
-Me interesaba aquella necesidad profundamente humana de escuchar una respuesta, encontrar significado dentro de ella y atribuir al oráculo una comprensión quizá mayor de la que realmente poseía.
+La IA puede amplificar esas decisiones hasta una escala que todavía no alcanzamos a imaginar. Puede volver más peligrosa la guerra, más íntima la vigilancia, más rápida la explotación y más frágiles las instituciones. Pero no llega desde fuera de nuestra historia. La construyen las mismas sociedades que ya concentran riqueza, privatizan beneficios y distribuyen riesgos.
 
 Cinco ensayos después seguimos frente a un oráculo.
 
-Solo que éste ya no habla mediante sacerdotisas y frases ambiguas.
+Ya no habla mediante sacerdotisas ni frases ambiguas: responde inmediatamente, conoce casi todos nuestros idiomas, programa, pinta, resume a Marx y discute a Danto. Es extraordinario. Precisamente por eso debemos resistir la tentación de convertirlo en algo que no es.
 
-Responde inmediatamente.
+No es un dios nuevo ni una mente humana digital. Tampoco es una herramienta suspendida fuera de la economía y la política. Es una tecnología construida dentro de nuestro mundo, y quizá por eso termina revelándonos menos sobre las máquinas de lo que esperábamos y más sobre nosotros.
 
-Habla prácticamente todos nuestros idiomas. Puede explicar física, programar una aplicación, producir una pintura, resumir a Marx, discutir a Danto, enseñarnos economía y conversar con nosotros a las tres de la mañana cuando ninguna otra persona está disponible.
+Danto mostró que observar el objeto no basta: necesitamos conocer el contexto que le proporciona significado.
 
-Es extraordinario.
+Marx enseñó que comprender la máquina tampoco basta si ignoramos quién la posee.
 
-Precisamente por eso debemos resistir la tentación de convertirlo en algo que no es.
+Sen recordó que disponer de una capacidad no garantiza la libertad para convertirla en una vida valiosa.
 
-No es un nuevo dios.
+La Inteligencia Artificial nos obliga a enfrentar las tres cosas al mismo tiempo. Podemos acceder a una parte extraordinaria del conocimiento y comprender cada vez menos lo que repetimos. Podemos producir cinco días de trabajo en dos y continuar trabajando cinco. Podemos generar abundancia sin distribuirla. Podemos construir una herramienta capaz de ampliar nuestra libertad y utilizarla para concentrar todavía más poder.
 
-No es una mente humana digital.
+La gran pregunta quizá nunca fue si la IA conseguiría convertirse en humana, sino qué clase de seres humanos estamos dispuestos a convertirnos alrededor de ella.
 
-Pero tampoco es simplemente una herramienta neutral esperando nuestras órdenes en algún espacio separado de la economía, la política y la sociedad.
+Porque existe algo peor que una máquina capaz de producir ideas: una sociedad llena de personas que ya no consideran necesario tenerlas. Personas capaces de repetir cualquier argumento sin comprenderlo, defender cualquier decisión sin haberla tomado y obedecer cualquier objetivo mientras una respuesta convincente les permita fingir que todavía están pensando.
 
-Es una tecnología construida dentro de nuestro mundo.
+Ese sería el triunfo definitivo de la IAficación.
 
-Y quizá la razón por la que me interesó tanto escribir estos cinco ensayos sea que la Inteligencia Artificial terminó revelándome mucho menos sobre las máquinas de lo que esperaba y mucho más sobre nosotros.
+No que la máquina adquiriera conciencia, sino que nosotros renunciáramos al criterio.
 
-Danto nos mostró que llega un momento en que observar un objeto deja de ser suficiente y necesitamos comprender el contexto que le proporciona significado.
+No que pensara por sí misma, sino que quienes concentran el poder pudieran pensar, decidir y ganar por todos mientras los demás nos limitamos a ejecutar respuestas que confundimos con ideas propias.
 
-Marx nos enseñó que comprender técnicamente una máquina tampoco basta si ignoramos quién la posee y qué relaciones económicas determinan su utilización.
+La vida siempre encuentra la manera de abrirse camino. Pero no debemos convertir esa frase en consuelo. La vida también atraviesa ruinas, extinciones y civilizaciones que alguna vez se creyeron eternas. Que algo sobreviva no significa que nosotros vayamos a sobrevivir con ello, ni que aquello que nazca después conserve algo de la libertad que hoy estamos entregando.
 
-Sen nos recordó que disponer de una capacidad o de un recurso no significa poseer la libertad real para convertirlos en una vida que tengamos razones para valorar.
+Una Inteligencia Artificial puede ayudarnos a escribir, investigar e imaginar una sociedad distinta. Lo que no puede hacer es asumir nuestra responsabilidad: decidir quién posee la tecnología, quién recibe lo que produce, cuánto vale nuestro tiempo y qué libertad estamos dispuestos a defender.
 
-La Inteligencia Artificial nos obliga a enfrentar las tres preguntas al mismo tiempo.
+Las máquinas no nos deben una respuesta.
 
-Podemos tener acceso a una parte extraordinaria del conocimiento humano y comprender cada vez menos de aquello que repetimos.
+Los empresarios que las controlan, sí.
 
-Podemos producir el trabajo de cinco días en dos y continuar trabajando cinco.
+Y nosotros nos debemos algo todavía más difícil: no aceptar como inevitable el mundo que ellos están construyendo.
 
-Podemos generar una abundancia material sin garantizar que quienes la produzcan tengan acceso a ella.
+Tal vez el peligro nunca fue que las máquinas aprendieran a pensar como nosotros.
 
-Podemos elegir entre millones de posibilidades y perder lentamente la capacidad de reconocer de dónde nacieron algunos de nuestros deseos.
-
-Podemos construir la herramienta intelectual más poderosa de nuestra historia y descubrir que poseerla no nos hace automáticamente más libres.
-
-Por eso quizá la gran pregunta sobre la Inteligencia Artificial nunca debió ser si conseguiría algún día convertirse en humana.
-
-Quizá deberíamos preguntarnos qué clase de seres humanos estamos dispuestos a convertirnos alrededor de ella.
-
-¿Usas a la IA o la IA te usa a ti?
-
-No creo que la respuesta esté escrita todavía.
-
-Y precisamente por eso vale la pena seguir haciendo la pregunta.
-
-La verdadera promesa de la Inteligencia Artificial no debería consistir en producir más presentaciones, más documentos, más código, más imágenes ni mayores márgenes con menos trabajadores. Si realmente estamos frente a una tecnología capaz de multiplicar como nunca antes nuestra productividad, entonces debería ser capaz de devolvernos algo.
-
-Tiempo.
-
-Conocimiento.
-
-Capacidad.
-
-Libertad.
-
-La tecnología ya está empezando a demostrar que puede producir esas posibilidades. Lo que ninguna máquina puede decidir por nosotros es quién tendrá derecho a apropiárselas.
-
-Si fracasamos, quizá Bill Gates tenga razón desde el punto de vista técnico y algún día dos días sean suficientes para producir aquello que antes necesitaba una semana.
-
-Y quizá Marx continúe teniendo razón desde el punto de vista político y económico: que una máquina pueda ahorrarnos trabajo no significa que ese tiempo vaya a ser entregado al trabajador.
-
-Quizá Musk tenga razón y algún día seamos capaces de producir tal abundancia que trabajar deje de ser materialmente necesario.
-
-Pero eso tampoco significa que quienes controlen esa abundancia vayan a renunciar espontáneamente al poder que les proporciona controlarla.
-
-Podremos preguntarle cualquier cosa a una máquina.
-
-Podrá aconsejarnos.
-
-Podrá escribir con nosotros.
-
-Podrá ayudarnos a construir ideas que jamás habríamos construido solos.
-
-Incluso podrá ayudarnos a imaginar una sociedad diferente.
-
-Pero ninguna Inteligencia Artificial puede asumir por nosotros la responsabilidad de decidir quién posee las máquinas, quién recibe aquello que producen, cuánto vale nuestro tiempo, qué consideramos conocimiento y qué clase de libertad estamos dispuestos a exigir.
-
-Al final de la era de los nuevos iluminados quizá descubramos que nunca tuvimos que temer que las máquinas aprendieran a pensar como nosotros.
-
-Tal vez el verdadero peligro era que nosotros dejáramos de preguntarnos **quién estaba pensando, quién estaba decidiendo y quién estaba ganando mientras ellas lo hacían.**
-
-Y ésas siguen siendo preguntas humanas.
-
-Precisamente por eso son las que menos deberíamos delegar.
-
----
+Tal vez el peligro era que nosotros dejáramos de pensar antes de que ellas empezaran a hacerlo.
 
 ## Referencias
 
-Danto, A. C. (1964). The artworld. *The Journal of Philosophy, 61*(19), 571–584.
+Danto, A. C. (1964). The artworld. The Journal of Philosophy, 61(19), 571–584.
 
-Danto, A. C. (1997). *After the end of art: Contemporary art and the pale of history*. Princeton University Press.
+Danto, A. C. (1997). After the end of art: Contemporary art and the pale of history. Princeton University Press.
 
-Danto, A. C. (1998). The end of art: A philosophical defense. *History and Theory, 37*(4), 127–143. https://doi.org/10.1111/0018-2656.721998072
+Fore, P. (2025, March 27). Bill Gates says a 2-day work week is coming in just 10 years, thanks to AI replacing humans “for most things.” Fortune.
 
-Fore, P. (2025, March 27). Bill Gates says a 2-day work week is coming in just 10 years, thanks to AI replacing humans “for most things.” *Fortune*.
+Marx, K. (1990). Capital: A critique of political economy: Volume I (B. Fowkes, Trans.). Penguin Books. (Original work published 1867).
 
-Marx, K. (1990). *Capital: A critique of political economy: Volume I* (B. Fowkes, Trans.). Penguin Books. (Original work published 1867).
+Pérez Colomé, J. (2026, 9 de septiembre). Un investigador de Anthropic dimite porque asegura que la IA «puede matarnos antes de 2030». El País. https://elpais.com/tecnologia/2026-09-09/un-investigador-de-anthropic-dimite-porque-asegura-que-la-ia-puede-matarnos-antes-de-2030.html
 
-Reuters. (2024, April 15). Tesla laying off more than 10% of staff globally as sales fall. *Reuters*.
+Reuters. (2024, April 15). Tesla laying off more than 10% of staff globally as sales fall. Reuters.
 
-Reuters. (2025, July 9). Microsoft racks up over $500 million in AI savings while slashing jobs, Bloomberg News reports. *Reuters*.
+Reuters. (2025, July 9). Microsoft racks up over $500 million in AI savings while slashing jobs, Bloomberg News reports. Reuters.
 
-Reuters. (2026, July 6). Microsoft to cut 4,800 jobs, overhaul Xbox unit. *Reuters*.
+Rogelberg, S. (2026, January 19). Elon Musk says that in 10 to 20 years, work will be optional and money will be irrelevant thanks to AI and robotics. Fortune.
 
-Reuters. (2026, August 26). How Meta’s AI workforce transformation plans went kaput. *Reuters*.
-
-Rogelberg, S. (2026, January 19). Elon Musk says that in 10 to 20 years, work will be optional and money will be irrelevant thanks to AI and robotics. *Fortune*.
-
-Sen, A. (1999). *Development as freedom*. Alfred A. Knopf.
+Sen, A. (1999). Development as freedom. Alfred A. Knopf.
